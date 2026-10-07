@@ -36,7 +36,7 @@ against stim's detector sampler. Details, config format and flags in
 
 ```bash
 cd hardware/compiler/control_system
-python serializer.py <circuit.stim> <config.json> [--mem bin] [--wait-rounds 3 --wait-row copy-last]
+python cli.py <circuit.stim> <config.json> [--wait-rounds 3 --wait-row copy-last] [--instr-reg sim --cw-mem sim --sim dcb readout]
 python validate_serialized.py results/<example>        # round trip against stim: PASS
 ```
 

@@ -78,18 +78,25 @@ PY=python
 ## 1. Compile → regfiles
 
 ```bash
-$PY serializer.py <circuit.stim> <config.json> \
-    [--mem hex|bin] [--out results] \
-    [--output-sync all|output-only] \
-    [--wait-rounds W] [--wait-row normal|copy-last] \
-    [--postselect-layout flat|per_stage]
+$PY cli.py <circuit.stim> <config.json> \
+    [--mem bin|hex] [--out results] \
+    [--output-sync all|output-only] [--wait-rounds W] [--wait-row normal|copy-last] \
+    [--postselect-layout flat|per_stage] \
+    [--instr-reg sim --cw-mem sim --clock-freq MHz] [--sim dcb readout --shots N --seed S]
 ```
+
+The first three lines are the detector-construction compiler proper;
+`serializer.py` accepts them alone and writes only the regfiles. The last line
+adds the per-board instruction and command-word programs (`gen_instr_cw.py`)
+and the simulation stimuli with expected outputs (`gen_sim.py`) that the RTL
+testbenches read.
 
 Example:
 
 ```bash
 C="../../../magic_state_cultivation/circuits_dump/c=end2end-inplace-distillation,p=0.001,noise=uniform,g=css,q=166,b=Y,r=11,r1=3,d1=3,r2=3,d2=9.stim"
-$PY serializer.py "$C" data/config_d3d9_tree3.json --mem bin --wait-rounds 3 --wait-row copy-last
+$PY cli.py "$C" data/config_d3d9_tree3.json --wait-rounds 3 --wait-row copy-last \
+    --instr-reg sim --cw-mem sim --sim dcb readout --shots 100
 ```
 
 This writes `results/<config>__<circuit-key>__<flags>/` — the folder name records
@@ -99,11 +106,11 @@ the compiler flags (`osync=…,wr=…,wrow=…,ps=…`) so distinct settings don
 results/tree3_sized__d1=3,d2=9,b=Y,p=0.001__osync=all,wr=3,wrow=copy-last,ps=flat/
   <circuit>.stim              # copy of the input
   <config>.json              # copy of the input
-  measurement_map.json        # stim record -> (qubit, meas_time)  (emulator input interface)
+  measurement_map.json        # stim record -> (qubit, meas_time)
   manifest.json               # structured index (boards, regfiles, widths, utilization, flags)
   report.txt                  # human-readable utilization + derived params + stage boards
   board<id>/
-    json/                     # semantic regfiles (self-contained for the emulator)
+    json/                     # regfiles in readable form (what validate_serialized.py reads)
       qubit_scope.json        # leaf only: used input-port->qubit + unused (dropped) qubits
       sync.json
       k<i>_selector.json  k<i>_core.json     # one per kernel
@@ -116,7 +123,8 @@ results/tree3_sized__d1=3,d2=9,b=Y,p=0.001__osync=all,wr=3,wrow=copy-last,ps=fla
       sync.mem  k<i>_selector.mem  k<i>_core.mem  ...
 ```
 
-- `--mem hex` (default) or `--mem bin` chooses the `.mem` word format.
+- `--mem bin` (default) or `--mem hex` chooses the `.mem` word format; the RTL
+  testbenches read binary.
 - The `report.txt` shows, per board: `m` (measurement channels), kernels
   used/available, selector `n` used/cap, core `h` used/cap, raw-forward
   normal/+observable/cap, output lines, input ports — and the stage-board map.
@@ -218,15 +226,21 @@ $PY test_harness.py                      # defaults to the two noisy cultivation
 
 ## Notes
 
-- **Well-formedness:** the compiler requires that detectors finishing in the same
-  measurement step have *distinct spatial coordinates* (so each channel emits one
-  detector per step). Cultivation circuits satisfy this; a circuit that reuses a
-  coordinate for its transversal-readout detectors (e.g. the sample BB code as
-  annotated) is reported as infeasible with a clear message rather than
-  mis-compiled.
-- **Observable:** the logical observable is currently only a *reported* forwarding
-  requirement (`raw_selector_obs`), not yet a functional construct-and-emit
-  channel at the root.
+- **Well-formedness:** detectors that finish in the same measurement step must
+  carry *distinct spatial coordinates*, since each channel emits one detector per
+  step. This is a requirement on how a circuit annotates its detectors, not on
+  the code: cultivation circuits satisfy it as generated, while a circuit that
+  annotates several same-step detectors with one coordinate (the
+  transversal-readout detectors of our sample bivariate-bicycle circuit, for
+  instance) is reported as infeasible with a clear message until its
+  coordinates are made distinct.
+- **Observable:** the logical observable is only a *reported* forwarding
+  requirement (`raw_selector_obs`), not a construct-and-emit channel at the
+  root. In deployment it is not needed. The observable exists only in the
+  end-to-end verification circuits, where the data qubits are measured at the
+  end to check the prepared state. When the state is prepared for use, it is
+  handed to the following computation instead of being measured, so there is
+  no observable to construct and the control system needs only the detectors.
 - **Wait-round detector values (`--wait-row copy-last`):** the appended saturating
   row is a *structural placeholder* — it repeats the last round's operations, but
   because the kernel emits with emit-and-clear, the copied "detector" is a raw
