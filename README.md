@@ -19,6 +19,11 @@ fault-tolerant protocol needs:
   post-selection conditions locally, and the root turns decisions, including
   decoding-based acceptance, into global events that abort, retry or finish
   an attempt across every board with deterministic latency.
+- **Integration with existing control hardware.** The runtime is a tree of
+  small, identical control boards with a narrow, event-based interface to the
+  physical layer, so it can be fused into an existing distributed FPGA
+  qubit-control system: the leaf logic sits next to the readout and pulse
+  logic of each FPGA and the tree runs over the links the system already has.
 
 Cultivation is the first protocol we support; others are planned.
 

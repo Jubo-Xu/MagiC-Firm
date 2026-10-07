@@ -12,6 +12,14 @@ hardware/
 └── emulator/                  SystemC model (platform skeleton; no hardware modelled yet)
 ```
 
+The boards are designed to be hosted by an existing distributed FPGA
+control system rather than to replace it. A leaf board needs only the raw
+measurement bits of its qubits and the command words it emits; the boards
+above it exchange compact detector and event messages. Each board is one
+compiled module with literal parameters, so it can be placed on the FPGA
+that already drives those qubits and connected over the system's existing
+links.
+
 The paper's timing results come from the Python estimator in `algorithms/`
 fed with latency constants measured on the RTL and with the decoder
 latencies characterized on micro-blossom. The emulator is not part of that
