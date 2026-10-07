@@ -1,43 +1,65 @@
-# Control-System Emulator (SystemC)
+# hardware/emulator/
 
-A latency-accurate SystemC model of the control-system micro-architecture — the
-hardware that the [detector-construction compiler](../compiler/control_system/)
-targets. It is **config-driven**: it will load the compiler's per-board regfiles
-and replay sampled measurements, checked against stim.
+SystemC model of the control-system micro-architecture. It is the reference
+implementation of every block: each SystemVerilog module under `../rtl/src/`
+is a 1:1 port of the SystemC module of the same name, and the RTL testbench
+generators replay the same compiled examples and expect the same counts.
 
-Modelling style: clocked behavioral (`SC_MODULE` + `SC_METHOD`/`SC_CTHREAD` on a
-clock) with `sc_fifo` channels between blocks. Latency-accurate (cycle counts and
-stalls), not full RTL.
+Modelling style: clocked behavioral (`SC_MODULE` with `SC_METHOD` on a clock),
+cycle-accurate for latency and stalls, not RTL. Register files are
+`RegFileROM`/`SyncROM` instances loaded from the compiler's `.mem` files;
+buses use the runtime-width `Bits` type in `signals.hpp`.
 
-## Status
+```
+include/, src/
+  lib/                        RegFileROM, SyncROM, BankedRAM, .mem parsing
+  control_system/
+    detector_construct/       MeasurementSync, Kernel, RawSelector, DetectorPass,
+                              OutputSync, RootOutputSync, Postselect,
+                              DetectorConstructBlock (one module for every board kind)
+    cultiv_control/           InstrSequencer, InstrUnpack, InstrDecode, PhysicalMMIO,
+                              BoardControl, DrainAggregator
+    control_board.*           the universal per-board wrapper (datapath + control + MMIO)
+    stim_readout.*            per-leaf measurement replay closing the mmio -> readout loop
+    *_loader.hpp              build a board's configuration from a compiled directory
+tests/                        one unit test per block, plus the stim-driven harnesses below
+third_party/nlohmann/         vendored JSON
+```
 
-**M0 — platform skeleton** (done): generic, design-agnostic foundation that
-builds, runs a clock, logs, and exits pass/fail. No hardware modelled yet.
+## Build
 
-Roadmap: M1 config/regfile loader · M2 single-leaf detector construction vs stim ·
-M3 board tree + pass/raw-filter · M4 output path (sync/postselect/global index) ·
-M5 latency/throughput instrumentation.
-
-## Build & run
-
-Requires the locally-built SystemC 3.0.1 (`~/opt/systemc-3.0.1`). One-time per shell:
+Requires SystemC 3.0.1, CMake 3.20 and a C++17 compiler. `env.sh` points
+CMake at a SystemC built under `~/opt/systemc-3.0.1`; edit it for another
+location.
 
 ```bash
 cd hardware/emulator
-source env.sh                 # sets SystemCLanguage_DIR + LD_LIBRARY_PATH
+source env.sh
 cmake -B build -S . && cmake --build build -j
-./build/emu --cycles 5
+ctest --test-dir build          # 17 unit tests, no inputs needed
 ```
 
-CLI knobs (simulation only — the design comes from regfiles later):
-`--cycles N` · `--period NS` · `--seed S` · `--trace[=FILE]` · `--design DIR`.
+## Running against a compiled example
 
-## Layout
+Compile an example first (`../compiler/control_system/README.md`, with
+`--instr-reg sim --cw-mem sim --sim dcb readout` so the stimuli exist), then
+from the repository root:
 
+```bash
+E=hardware/compiler/control_system/results/<example>
+hardware/emulator/build/test_control_board_loader $E [board_id]   # loaders only
+hardware/emulator/build/test_dcb_stim $E [--shots N --input-gap G --shot-gap G]
+hardware/emulator/build/test_control_board_stim $E [root_board_id]
 ```
-include/emu/   common.hpp  log.hpp  sim_config.hpp  system.hpp   # platform layer
-src/           main.cpp                                          # sc_main harness
-third_party/   nlohmann/json.hpp                                 # vendored
-tests/         (unit tests added as blocks land)
-env.sh         SystemC paths
-```
+
+`test_dcb_stim` instantiates one `DetectorConstructBlock` per board, wires
+the tree from `connections.json`, drives the leaves with the sampled
+measurements and checks the root's detectors and every stage board's
+post-select decision against stim. `test_control_board_stim` does the same
+with full `ControlBoard`s and a `StimReadout` per leaf, so the control plane
+is exercised too: START from the host, events down, data and attempt tags
+up, aborts on post-select rejects, finish and drain. Both pass for the
+monolithic and the distributed examples with and without wait rounds.
+
+`build/emu` is a bare clock harness (`--cycles`, `--period`, `--seed`,
+`--trace`) with no design in it; the harnesses above are the entry points.

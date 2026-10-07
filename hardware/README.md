@@ -9,7 +9,7 @@ hardware/
 ├── compiler/control_system/   stim circuit + board config -> per-board register files; validated against stim
 ├── rtl/                       SystemVerilog sources, testbench generators, Verilator harness
 ├── synth/                     Vivado synthesis bundles, a local/remote driver, result collection
-└── emulator/                  SystemC model (platform skeleton; no hardware modelled yet)
+└── emulator/                  SystemC reference model of every block (the RTL is its 1:1 port), unit and system tests
 ```
 
 The boards are designed to be hosted by an existing distributed FPGA

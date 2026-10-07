@@ -78,8 +78,8 @@ testbench, synthesis) feeds the control-latency and FPGA tables.
 | Logical error rate | large per-shot gap tables (`collect_gap_table`), evaluated on a held-out half |
 | FPGA resources | Vivado post-route reports (`hardware/synth/`) |
 
-The SystemC emulator under `hardware/emulator/` is a platform skeleton and
-is not part of the evaluation.
+The SystemC emulator under `hardware/emulator/` is the reference model the
+RTL was ported from; the evaluation uses the RTL, not the emulator.
 
 ## Configuration
 

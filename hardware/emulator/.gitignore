@@ -1,2 +1,4 @@
 build/
 *.vcd
+# written by the unit tests at run time
+*.mem
