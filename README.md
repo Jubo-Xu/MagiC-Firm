@@ -7,8 +7,8 @@ microprograms, and a two-stage early-escape scheme in which a partial
 decoder on a compact, contracted decoding problem accepts high-confidence
 attempts before complete decoding finishes.
 
-The runtime is not tied to cultivation. It provides two things any
-fault-tolerant protocol needs:
+The runtime is not tied to cultivation. It provides what any fault-tolerant
+protocol needs, in a form that fits existing control hardware:
 
 - **Online streaming syndrome construction.** The compiler maps the
   detectors of any stim circuit onto a tree of control boards, each board
