@@ -1,8 +1,11 @@
-# Detector-Construction Compiler
+# Control-System Compiler
 
 Compiles a **stim circuit** + a **hardware config** into per-board register-file
 images (the bitstring masks) that a distributed tree of control boards uses to
 build detectors (syndrome) from raw physical-qubit measurements in real time.
+`cli.py` is the entry point; besides the detector-construction regfiles it emits
+the per-board instruction and command-word programs and the simulation stimuli
+used by the RTL testbenches.
 
 Given the circuit and config it produces, for every board:
 
@@ -44,14 +47,31 @@ PY=python
    See [`data/config.template.json`](data/config.template.json) for the format
    and field documentation. Two sections:
    - `hardware.layers` — leaf → router → root boards (circuit-agnostic),
-   - `postselect` — how to classify postselect detectors (`"none"` |
-     `"cultivation"` | `"cultivation+color"` | a custom object).
+   - `postselect` — which detectors are postselected: `"none"`, an explicit
+     list of stim detector indices, or `{"from_file": "<json>"}` reading the
+     list written by `algorithms/get_desaturated_dem_with_obs_detector.py`.
 
    Ready-made example configs are in `data/config_<circuit>_<shape>.json`
    (shapes: `mono`, `strip2`, `strip4`, `grid4`, `tree3`). To (re)generate them:
    ```bash
    $PY gen_and_test_configs.py        # writes data/config_*.json and tests each
    ```
+
+   To build a config for a circuit from the physical constraints of a
+   deployment instead of writing it by hand:
+   ```bash
+   $PY gen_control_config.py <circuit folder> --q 14 --fanout 29 [--out-dir DIR] [--no-compile]
+   ```
+   `--q` is the maximum number of qubits wired to one leaf board, `--fanout`
+   the maximum number of children per router or root. Qubits are clustered by
+   recursive coordinate bisection into leaves, leaves into routers, until one
+   root remains; kernel counts and `raw_out` are sized from a first compile.
+   It writes `config_q<q>_f<fanout>.json` and `links_q<q>_f<fanout>.json`
+   (per-link message widths for `algorithms/control_latency.py`) under
+   `<circuit folder>/control_system/`, and the compiled tree under the output
+   directory. The circuit folder is one produced by
+   `algorithms/get_desaturated_dem_with_obs_detector.py`, so the postselect
+   list is picked up automatically.
 
 ---
 
@@ -180,6 +200,8 @@ $PY test_harness.py                      # defaults to the two noisy cultivation
 
 | file | role |
 |---|---|
+| `cli.py` | entry point: runs the pipeline below, then the instruction/command-word and simulation-stimulus generators. |
+| `gen_control_config.py` | build a board-tree config for a circuit folder from `--q` and `--fanout`, compile it, record per-link widths. |
 | `parser.py` | scan a stim circuit → measurement/detector structures; `refine()` canonicalizes + builds `channels`, `stages`, etc. Handles the terminal MPP. |
 | `config.py` | load + validate the config, build the board tree, resolve the postselect predicate. |
 | `placement.py` | assign each channel to a board (LCA of its qubits), compute forwarding (normal + observable) and stage boards. |
@@ -188,6 +210,9 @@ $PY test_harness.py                      # defaults to the two noisy cultivation
 | `validate_serialized.py` | round-trip: reconstruct from serialized files, compare to stim. |
 | `test_harness.py` | validate the in-memory compiler against stim. |
 | `gen_and_test_configs.py` | generate a family of example configs and test them. |
+| `gen_instr_cw.py` | per-board instruction regfile and command-word memory for the PhysicalMMIO block. |
+| `gen_sim.py` | sample ground-truth shots and write measurement stimuli plus expected outputs beside the regfiles. |
+| `timing.py` | round completion times of a circuit from the gate-time table (self-contained copy of the estimator's model). |
 
 ---
 
