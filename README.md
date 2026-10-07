@@ -57,9 +57,20 @@ conda env create -f environment.yml && conda activate magicfirm   # or: pip inst
 
 The second form records the chosen locations in `.magicfirm.env`, which the
 scripts read; `MAGICFIRM_OUT` and the other variables in that file can also
-be set in the environment. Decoder latency characterization needs Docker and
-the micro-blossom toolchain image (`docker build -t micro-blossom micro-blossom/`);
-everything else runs with the Python environment alone.
+be set in the environment.
+
+Decoder latency characterization runs micro-blossom's hardware toolchain
+inside Docker. Build the image once, before `setup_local.sh`:
+
+```bash
+docker build -t micro-blossom micro-blossom/
+```
+
+The scripts start and reuse a container named in `.magicfirm.env`; there is
+no container to manage by hand. Without Docker, `reproduce.py figures` and
+`quick` still work from the stored characterizations, and `full` skips the
+characterization commands. Everything else runs with the Python environment
+alone.
 
 ## Artifact evaluation
 

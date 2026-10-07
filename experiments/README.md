@@ -75,6 +75,9 @@ output directory, many cores (the paper used 32 workers), and the
 micro-blossom toolchain container for the `masks` stage and the
 masked-syndrome part of `ablation`. Without the container those commands
 are skipped and later stages use the stored decoder characterizations.
+Parallel characterization (`--workers N`) keeps one micro-blossom checkout
+per worker next to the main one, each several GB once built; the paper's
+32-worker pool took about 190 GB.
 
 Two things to know before running it on a checkout that already holds the
 paper's results:
