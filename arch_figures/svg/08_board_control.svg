@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="870" viewBox="0 0 1540 870">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<defs>
+<marker id="ah-data" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-bus" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-ctrl" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#C62828"/></marker>
+<marker id="ah-ps" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#E65100"/></marker>
+<marker id="ah-mem" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#8A6D00"/></marker>
+<marker id="ah-rst" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#6A1B9A"/></marker>
+<marker id="ah-plain" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#444444"/></marker>
+<marker id="ah-fsm" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#2E7D32"/></marker>
+</defs>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#111111" text-anchor="start"><tspan x="38.0" y="29.2" font-weight="bold">BoardControl — per-board control / attempt state machine (BoardControl.sv)</tspan><tspan x="38.0" y="49.2">two independent axes: EVENT_MODE {ORIGINATE, FORWARD} × DATA_SRC {EXTERNAL, INTERNAL}; a 1-bit attempt tag makes stale data drop-only (no purge window)</tspan></text>
+<rect x="220" y="70" width="1100" height="760" rx="12.0" fill="#FAFAFA" stroke="#7A7A7A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111111" text-anchor="start"><tspan x="228.0" y="86.3" font-weight="bold">BoardControl  #(EVENT_MODE, DATA_SRC, M, PAYLOAD_W)</tspan></text>
+<rect x="20" y="110" width="180" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="125.3">ev_valid / ev_type / ev_payload /</tspan><tspan x="110.0" y="136.6">ev_attempt   (parent | host start/finish)</tspan></text>
+<rect x="20" y="250" width="180" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="265.3">post_select [M] /</tspan><tspan x="110.0" y="276.6">post_select_attempt [M]</tspan></text>
+<rect x="20" y="420" width="180" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="434.9">in_valid, data_attempt</tspan></text>
+<rect x="20" y="560" width="180" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="574.9">drain_done  (DCB det finish)</tspan></text>
+<rect x="20" y="620" width="180" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="634.9">data_valid_output</tspan></text>
+<rect x="250" y="100" width="260" height="70" rx="12.0" fill="#F0EAFA" stroke="#5E35B1" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="380.0" y="119.5">event decode</tspan><tspan x="380.0" y="132.0">is_start  = valid &amp; type==START (00)</tspan><tspan x="380.0" y="144.5">is_abort_ev = valid &amp; type==ABORT (01)</tspan><tspan x="380.0" y="157.0">is_finish = valid &amp; type==FINISH (10)</tspan></text>
+<rect x="250" y="220" width="300" height="100" rx="12.0" fill="#F0EAFA" stroke="#5E35B1" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="400.0" y="248.2">abort detect (ORIGINATE only)</tspan><tspan x="400.0" y="260.8">abort_detected = |( post_select &amp;</tspan><tspan x="400.0" y="273.2">   (post_select_attempt XNOR {M{attempt}}) )</tspan><tspan x="400.0" y="285.8">abort_det_q ← abort_detected &amp; ~abort_det_q  (one-shot)</tspan><tspan x="400.0" y="298.2">abort_now = abort_det_q | is_abort_ev</tspan></text>
+<rect x="620" y="100" width="660" height="300" rx="12.0" fill="#F1F1F1" stroke="#9A9A9A" stroke-width="1" stroke-dasharray="6,4"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="start"><tspan x="628.0" y="114.5" font-weight="bold">FSM (all boards)</tspan></text>
+<ellipse cx="715.0" cy="235.0" rx="55.0" ry="25.0" fill="#E6F4EA" stroke="#2E7D32" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="715.0" y="238.6" font-weight="bold">IDLE</tspan></text>
+<ellipse cx="945.0" cy="235.0" rx="55.0" ry="25.0" fill="#E6F4EA" stroke="#2E7D32" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="945.0" y="238.6" font-weight="bold">EXEC</tspan></text>
+<ellipse cx="1175.0" cy="235.0" rx="55.0" ry="25.0" fill="#E6F4EA" stroke="#2E7D32" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="1175.0" y="238.6" font-weight="bold">DRAIN</tspan></text>
+<rect x="620" y="430" width="300" height="70" rx="0.0" fill="#EDEDED" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="770.0" y="455.8">attempt register (1 bit)</tspan><tspan x="770.0" y="468.2">START → 0 · abort flips (ORIGINATE) /</tspan><tspan x="770.0" y="480.8">adopts ev_attempt (FORWARD) · FINISH → 0</tspan></text>
+<rect x="620" y="530" width="420" height="130" rx="12.0" fill="#F0EAFA" stroke="#5E35B1" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="830.0" y="560.8">combinational outputs</tspan><tspan x="830.0" y="573.2">reset = rst | abort_now | rst_for_finish      (LOCAL, never propagated)</tspan><tspan x="830.0" y="585.8">data_att_eff = INTERNAL ? attempt : data_attempt</tspan><tspan x="830.0" y="598.2">set_in_data_to_zero = in_valid &amp; ((data_att_eff != attempt) | abort_now)</tspan><tspan x="830.0" y="610.8">out_attempt = data_valid_output ? attempt : 0</tspan><tspan x="830.0" y="623.2">cur_attempt = attempt   (stamps the post-select fast path)</tspan><tspan x="830.0" y="635.8">discard = abort_now      (root → host: reset decoder / gap estimator)</tspan></text>
+<rect x="1070" y="430" width="230" height="90" rx="0.0" fill="#EDEDED" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="1185.0" y="459.5">out_ev register (+1 cycle)</tspan><tspan x="1185.0" y="472.0">default = FORWARD relay of ev_*</tspan><tspan x="1185.0" y="484.5">ORIGINATE overrides: START (att 0),</tspan><tspan x="1185.0" y="497.0">ABORT (~attempt), FINISH (attempt)</tspan></text>
+<rect x="250" y="360" width="300" height="80" rx="0.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Courier New, monospace" font-size="10" fill="#111111" text-anchor="start"><tspan x="258.0" y="373.5" font-weight="bold">board             EVENT_MODE  DATA_SRC</tspan><tspan x="258.0" y="386.0">distributed root  ORIGINATE   EXTERNAL</tspan><tspan x="258.0" y="398.5">distributed mid   FORWARD     EXTERNAL</tspan><tspan x="258.0" y="411.0">distributed leaf  FORWARD     INTERNAL</tspan><tspan x="258.0" y="423.5">monolithic        ORIGINATE   INTERNAL</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="258.0" y="703.5">A parent always changes attempt one cycle before its children can, so incoming data whose attempt tag</tspan><tspan x="258.0" y="716.0">mismatches is simply stale and is dropped (set_in_data_to_zero) — no flush / purge window is needed.</tspan><tspan x="258.0" y="728.5">The board-generated abort is registered (abort_det_q) to break the reset → clears-post_select → abort loop.</tspan></text>
+<rect x="1350" y="540" width="150" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1425.0" y="554.9">reset → DCB rst</tspan></text>
+<rect x="1350" y="580" width="150" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1425.0" y="594.9">set_in_data_to_zero</tspan></text>
+<rect x="1350" y="620" width="150" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1425.0" y="634.9">out_attempt / cur_attempt</tspan></text>
+<rect x="1350" y="660" width="150" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1425.0" y="674.9">discard</tspan></text>
+<rect x="1350" y="450" width="150" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1425.0" y="465.3">out_ev_valid / type /</tspan><tspan x="1425.0" y="476.6">payload / attempt</tspan></text>
+<path d="M770.0,235.0 Q830.0,200.0 860.0,217.5 L890.0,235.0" fill="none" stroke="#2E7D32" stroke-width="1.4" marker-end="url(#ah-fsm)"/>
+<rect x="736.9" y="180.0" width="186.2" height="40.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#2E7D32" text-anchor="middle"><tspan x="830.0" y="190.5">is_start:</tspan><tspan x="830.0" y="203.0">attempt ← ORIGIN ? 0 : ev_attempt</tspan><tspan x="830.0" y="215.5">(ORIGIN: emit EV_START)</tspan></text>
+<path d="M923.0,210.0 Q900.0,140.0 945.0,140.0 Q990.0,140.0 978.5,175.0 L967.0,210.0" fill="none" stroke="#2E7D32" stroke-width="1.4" marker-end="url(#ah-fsm)"/>
+<rect x="803.3" y="126.0" width="283.4" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#2E7D32" text-anchor="middle"><tspan x="945.0" y="136.5">abort_now: attempt ← ORIGIN ? ~attempt : ev_attempt</tspan><tspan x="945.0" y="149.0">(ORIGIN: emit EV_ABORT with the NEW attempt)</tspan></text>
+<path d="M1000.0,235.0 Q1060.0,200.0 1090.0,217.5 L1120.0,235.0" fill="none" stroke="#2E7D32" stroke-width="1.4" marker-end="url(#ah-fsm)"/>
+<rect x="991.2" y="180.0" width="137.6" height="40.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#2E7D32" text-anchor="middle"><tspan x="1060.0" y="190.5">is_finish &amp; ~drain_done:</tspan><tspan x="1060.0" y="203.0">ride FINISH down once</tspan><tspan x="1060.0" y="215.5">(ORIGIN: emit EV_FINISH)</tspan></text>
+<path d="M1175.0,260.0 Q1175.0,330.0 945.0,330.0 Q715.0,330.0 715.0,295.0 L715.0,260.0" fill="none" stroke="#2E7D32" stroke-width="1.4" marker-end="url(#ah-fsm)"/>
+<rect x="857.3" y="316.0" width="175.4" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#2E7D32" text-anchor="middle"><tspan x="945.0" y="326.5">drain_done:</tspan><tspan x="945.0" y="339.0">attempt ← 0, rst_for_finish ← 1</tspan></text>
+<path d="M945.0,260.0 Q945.0,300.0 841.0,300.0 Q737.0,300.0 737.0,280.0 L737.0,260.0" fill="none" stroke="#2E7D32" stroke-width="1.4" marker-end="url(#ah-fsm)"/>
+<rect x="774.9" y="286.0" width="132.2" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#2E7D32" text-anchor="middle"><tspan x="841.0" y="296.5">is_finish &amp; drain_done</tspan><tspan x="841.0" y="309.0">(children already idle)</tspan></text>
+<polyline points="200.0,128.0 225.0,128.0 225.0,135.0 250.0,135.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<polyline points="510.0,135.0 565.0,135.0 565.0,160.0 620.0,160.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="507.0" y="139.5" width="116.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="565.0" y="150.0">is_start / is_finish</tspan></text>
+<polyline points="380.0,170.0 380.0,195.0 400.0,195.0 400.0,220.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="356.3" y="187.0" width="67.4" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="390.0" y="197.5">is_abort_ev</tspan></text>
+<polyline points="200.0,268.0 225.0,268.0 225.0,270.0 250.0,270.0" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ps)"/>
+<polyline points="550.0,270.0 585.0,270.0 585.0,280.0 620.0,280.0" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ps)"/>
+<rect x="556.7" y="267.0" width="56.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#E65100" text-anchor="middle"><tspan x="585.0" y="277.5">abort_now</tspan></text>
+<polyline points="200.0,572.0 590.0,572.0 590.0,370.0 620.0,370.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<rect x="480.0" y="564.0" width="62.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#444444" text-anchor="middle"><tspan x="511.0" y="574.5">drain_done</tspan></text>
+<polyline points="752.0,400.0 752.0,415.0 770.0,415.0 770.0,430.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<rect x="700.3" y="407.0" width="121.4" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#444444" text-anchor="middle"><tspan x="761.0" y="417.5">state, rst_for_finish</tspan></text>
+<polyline points="620.0,465.0 400.0,465.0 400.0,320.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<rect x="414.6" y="457.0" width="45.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#444444" text-anchor="middle"><tspan x="437.5" y="467.5">attempt</tspan></text>
+<polyline points="770.0,500.0 770.0,515.0 830.0,515.0 830.0,530.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<rect x="777.1" y="507.0" width="45.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#444444" text-anchor="middle"><tspan x="800.0" y="517.5">attempt</tspan></text>
+<polyline points="490.0,320.0 490.0,595.0 620.0,595.0 620.0,582.0" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ps)"/>
+<rect x="461.7" y="521.0" width="56.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#E65100" text-anchor="middle"><tspan x="490.0" y="531.5">abort_now</tspan></text>
+<polyline points="200.0,432.0 230.0,432.0 230.0,608.0 620.0,608.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<polyline points="200.0,632.0 240.0,632.0 240.0,634.0 620.0,634.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<polyline points="1181.0,400.0 1181.0,415.0 1185.0,415.0 1185.0,430.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="1135.8" y="407.0" width="94.4" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="1183.0" y="417.5">ORIGINATE events</tspan></text>
+<polyline points="110.0,110.0 110.0,60.0 1310.0,60.0 1310.0,457.0 1300.0,457.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="781.9" y="52.0" width="213.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="888.5" y="62.5">FORWARD relay (ev_* delayed one cycle)</tspan></text>
+<polyline points="1300.0,484.0 1325.0,484.0 1325.0,468.0 1350.0,468.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<polyline points="1040.0,549.5 1195.0,549.5 1195.0,552.0 1350.0,552.0" fill="none" stroke="#6A1B9A" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#ah-rst)"/>
+<polyline points="1040.0,582.0 1195.0,582.0 1195.0,592.0 1350.0,592.0" fill="none" stroke="#6A1B9A" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#ah-rst)"/>
+<polyline points="1040.0,614.5 1195.0,614.5 1195.0,632.0 1350.0,632.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<polyline points="1040.0,647.0 1195.0,647.0 1195.0,672.0 1350.0,672.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+</svg>

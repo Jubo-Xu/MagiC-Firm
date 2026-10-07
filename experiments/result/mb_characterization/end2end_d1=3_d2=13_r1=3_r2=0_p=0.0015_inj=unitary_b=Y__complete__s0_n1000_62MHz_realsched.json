@@ -1,0 +1,95 @@
+{
+  "config": {
+    "folder": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.0015_inj=unitary_b=Y",
+    "partial": null,
+    "decoder_key": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.0015_inj=unitary_b=Y__complete",
+    "seed": 0,
+    "shots": 1000,
+    "acceptance": 0.39961,
+    "graph_stats": {
+      "skipped_components": 0,
+      "isolated_vertices": 20
+    },
+    "needed_rounds": {
+      "num_circuit_rounds": 8,
+      "first_needed_round": 0,
+      "last_needed_round": 7,
+      "rounds_saved_at_end": 0,
+      "obs_detector_excluded": true
+    },
+    "workers": 8,
+    "identity": {
+      "graph_hash": "8bc7765621bfa2f9",
+      "num_layer_fusion": 11,
+      "measurement_cycle_ns": 1000,
+      "frequency_hz": 62000000.0,
+      "stim_version": "1.15.0",
+      "trace": {
+        "circuit_sha": "e0a017661a0e6c61",
+        "master_seed": 0,
+        "batch_size": 1000
+      },
+      "layer_schedule": [
+        0,
+        0,
+        821,
+        1617,
+        2574,
+        3506,
+        3506,
+        4438,
+        4438,
+        5370,
+        6302
+      ]
+    },
+    "trace": {
+      "format_version": 1,
+      "master_seed": 0,
+      "batch_size": 1000,
+      "chunk_attempts": 1000000,
+      "stim_version": "1.15.0",
+      "circuit_sha": "e0a017661a0e6c61",
+      "num_detectors": 833,
+      "num_observables": 1,
+      "layer_det_ranges": [],
+      "layer_meas_ranges": [],
+      "num_attempts": 1000000
+    }
+  },
+  "latency": {
+    "serial": {
+      "mean_us": 24.697199,
+      "p50_us": 24.484,
+      "p99_us": 43.49206999999999,
+      "max_us": 52.065,
+      "mean_cycles": 1531.226338
+    },
+    "parallel": {
+      "mean_us": 12.520844,
+      "p50_us": 12.395,
+      "p99_us": 21.778519999999997,
+      "max_us": 27.484,
+      "mean_cycles": 776.292328
+    },
+    "on": {
+      "mean_us": 12.517005,
+      "p50_us": 12.395,
+      "p99_us": 21.715159999999997,
+      "max_us": 27.484,
+      "mean_cycles": 776.05431
+    },
+    "off": {
+      "mean_us": 12.180194,
+      "p50_us": 12.032,
+      "p99_us": 20.814389999999992,
+      "max_us": 24.597,
+      "mean_cycles": 755.172028
+    }
+  },
+  "raw": {
+    "cache": "out/mb/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0015_inj=unitary_b=Y__complete/latency_cache_s0_62MHz_realsched.npz",
+    "rows_used": 1000,
+    "rows_available": 1000
+  }
+}

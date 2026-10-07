@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1530" height="750" viewBox="0 0 1530 750">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<defs>
+<marker id="ah-data" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-bus" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-ctrl" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#C62828"/></marker>
+<marker id="ah-ps" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#E65100"/></marker>
+<marker id="ah-mem" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#8A6D00"/></marker>
+<marker id="ah-rst" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#6A1B9A"/></marker>
+<marker id="ah-plain" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#444444"/></marker>
+<marker id="ah-fsm" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#2E7D32"/></marker>
+</defs>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#111111" text-anchor="start"><tspan x="38.0" y="29.2" font-weight="bold">PhysicalMMIO — command-word generator for one physical control core (PhysicalMMIO.sv)</tspan><tspan x="38.0" y="49.2">one per control core on a leaf (P per board); turns the board's events into a stream of command words; program = instruction regfile + CW memory</tspan></text>
+<rect x="220" y="70" width="1060" height="640" rx="12.0" fill="#FAFAFA" stroke="#7A7A7A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111111" text-anchor="start"><tspan x="228.0" y="86.3" font-weight="bold">PhysicalMMIO  #(INSTR_DEPTH, CW_DEPTH, DATA_W, WT_W, INSTR_FILE, CW_FILE)</tspan></text>
+<rect x="20" y="130" width="180" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="145.3">ev_valid / ev_type / ev_payload</tspan><tspan x="110.0" y="156.6">(board event source)</tspan></text>
+<rect x="20" y="200" width="180" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="214.9">clk / rst  (system reset)</tspan></text>
+<rect x="250" y="110" width="330" height="130" rx="12.0" fill="#E6F4EA" stroke="#2E7D32" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="415.0" y="144.2" font-weight="bold">InstrSequencer  (FSM)  →  10_instr_fsms</tspan><tspan x="415.0" y="157.9">IDLE / EXEC / DRAIN</tspan><tspan x="415.0" y="171.7">owns instruction pointer ptr (saturates at</tspan><tspan x="415.0" y="185.4">DEPTH−1 = the compiled WAIT instruction)</tspan><tspan x="415.0" y="199.2">registers instr_en / instr_addr (no-stall handoff)</tspan><tspan x="415.0" y="212.9">rst_out = rst | is_abort | rst_for_finish</tspan></text>
+<rect x="700" y="110" width="330" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="865.0" y="137.0" font-weight="bold">Instruction regfile  (RegFileROM, async → LUTRAM)</tspan><tspan x="865.0" y="149.5">INSTR_DEPTH × INSTR_W  ·  MMIO_instr_&lt;p&gt;.mem</tspan></text>
+<rect x="700" y="210" width="330" height="70" rx="12.0" fill="#F0EAFA" stroke="#5E35B1" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="865.0" y="235.8">InstrUnpack  (pure combinational)</tspan><tspan x="865.0" y="248.2">splits the packed word — the ONLY place</tspan><tspan x="865.0" y="260.8">that knows the instruction encoding</tspan></text>
+<rect x="720" y="300" width="130" height="40" rx="0.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="785.0" y="317.0">wt  [WT_W]</tspan><tspan x="785.0" y="329.5">idle cycles before 1st read</tspan></text>
+<rect x="850" y="300" width="110" height="40" rx="0.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="905.0" y="317.0">start_addr  [ADDR_W]</tspan><tspan x="905.0" y="329.5">first CW address</tspan></text>
+<rect x="960" y="300" width="100" height="40" rx="0.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="1010.0" y="317.0">end_addr  [ADDR_W]</tspan><tspan x="1010.0" y="329.5">last CW address</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="728.0" y="358.5">INSTR_W = 2·ADDR_W + WT_W   (MSB … LSB)</tspan></text>
+<rect x="250" y="320" width="330" height="110" rx="12.0" fill="#E6F4EA" stroke="#2E7D32" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="415.0" y="351.1" font-weight="bold">InstrDecode  (Mealy FSM)  →  10_instr_fsms</tspan><tspan x="415.0" y="364.8">IDLE / WAITC / STREAM</tspan><tspan x="415.0" y="378.6">wait wt idle cycles, then r_addr = start … end</tspan><tspan x="415.0" y="392.3">(one per cycle, r_en high); one_instr_end on</tspan><tspan x="415.0" y="406.1">the cycle r_addr == end</tspan></text>
+<rect x="250" y="500" width="330" height="90" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="415.0" y="529.5" font-weight="bold">Command-word memory  (SyncROM, 1-cycle → BRAM)</tspan><tspan x="415.0" y="542.0">CW_DEPTH × DATA_W  ·  MMIO_cw_&lt;p&gt;.mem</tspan><tspan x="415.0" y="554.5">NO reset by design: the last word of a finishing</tspan><tspan x="415.0" y="567.0">instruction is still delivered</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="648.0" y="473.5">Output contract: out_valid alone says 'there is a command this cycle'; when low, out_data = 0 and the core does nothing —</tspan><tspan x="648.0" y="486.0">idle cycles cost no CW memory.  Critical path (combinational, by design of the zero-stall handoff):</tspan><tspan x="648.0" y="498.5">InstrSequencer regs → instr_addr mux → instruction regfile (async) → InstrUnpack → InstrDecode → CW memory address.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="648.0" y="573.5">Abort handling: EV_ABORT restarts the program from instruction 0 (rst_out clears InstrDecode the same cycle);</tspan><tspan x="648.0" y="586.0">EV_FINISH lets the in-flight instruction drain, then cw_gen_finish pulses in the SAME cycle as the final out_valid.</tspan></text>
+<rect x="1310" y="520" width="180" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1400.0" y="535.3">out_data [DATA_W]</tspan><tspan x="1400.0" y="546.5">out_valid → physical control core</tspan></text>
+<rect x="1310" y="160" width="180" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1400.0" y="175.3">cw_gen_finish</tspan><tspan x="1400.0" y="186.6">→ board (1-cycle pulse)</tspan></text>
+<polyline points="200.0,148.0 225.0,148.0 225.0,149.0 250.0,149.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<polyline points="200.0,212.0 225.0,212.0 225.0,207.5 250.0,207.5" fill="none" stroke="#6A1B9A" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#ah-rst)"/>
+<polyline points="580.0,149.0 640.0,149.0 640.0,140.0 700.0,140.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="609.0" y="130.5" width="62.0" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="640.0" y="141.0">instr_en,</tspan><tspan x="640.0" y="153.5">instr_addr</tspan></text>
+<polyline points="865.0,170.0 865.0,190.0 865.0,210.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="807.0" y="182.0" width="116.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="865.0" y="192.5">instr_word [INSTR_W]</tspan></text>
+<polyline points="700.0,245.0 640.0,245.0 640.0,358.0 580.0,358.0 580.0,358.5" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="571.2" y="293.8" width="137.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="640.0" y="304.2">wt, start_addr, end_addr</tspan></text>
+<polyline points="349.0,240.0 349.0,280.0 349.0,320.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="309.9" y="272.0" width="78.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="349.0" y="282.5">en = instr_en</tspan></text>
+<polyline points="497.5,240.0 497.5,280.0 497.5,320.0" fill="none" stroke="#6A1B9A" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#ah-rst)"/>
+<rect x="415.2" y="272.0" width="164.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6A1B9A" text-anchor="middle"><tspan x="497.5" y="282.5">rst_out (single reset source)</tspan></text>
+<polyline points="250.0,375.0 235.0,375.0 235.0,233.0 250.0,233.0 250.0,233.5" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<rect x="195.9" y="295.8" width="78.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#444444" text-anchor="middle"><tspan x="235.0" y="306.2">one_instr_end</tspan></text>
+<polyline points="415.0,430.0 415.0,465.0 415.0,500.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="354.3" y="457.0" width="121.4" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="415.0" y="467.5">r_en, r_addr [ADDR_W]</tspan></text>
+<polyline points="580.0,545.0 945.0,545.0 945.0,538.0 1310.0,538.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="851.9" y="533.5" width="186.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="945.0" y="544.0">data / data_valid (1 cycle later)</tspan></text>
+<polyline points="415.0,110.0 415.0,95.0 1200.0,95.0 1200.0,178.0 1310.0,178.0" fill="none" stroke="#444444" stroke-width="1.2" marker-end="url(#ah-plain)"/>
+<rect x="811.5" y="87.0" width="170.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#444444" text-anchor="middle"><tspan x="896.5" y="97.5">cw_gen_finish = rst_for_finish</tspan></text>
+</svg>

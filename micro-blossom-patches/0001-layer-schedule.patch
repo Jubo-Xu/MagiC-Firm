@@ -1,0 +1,236 @@
+diff --git a/src/cpu/blossom/src/bin/embedded_simulator.rs b/src/cpu/blossom/src/bin/embedded_simulator.rs
+index e0ac210..d93de28 100644
+--- a/src/cpu/blossom/src/bin/embedded_simulator.rs
++++ b/src/cpu/blossom/src/bin/embedded_simulator.rs
+@@ -217,6 +217,16 @@ extern "C" fn setup_load_stall_emulator(start_time: u64, interval: u32, context_
+     driver.setup_load_stall_emulator(start_time, interval).unwrap();
+ }
+ 
++/// [MagiC-Firm patch]
++#[no_mangle]
++extern "C" fn setup_load_stall_schedule(offsets: *const u32, len: u16, context_id: u16) {
++    let mut simulator = SIMULATOR_DRIVER.lock();
++    let driver = simulator.as_mut().unwrap();
++    driver.context_id = context_id;
++    let offsets = unsafe { core::slice::from_raw_parts(offsets, len as usize) };
++    driver.setup_load_stall_schedule(offsets).unwrap();
++}
++
+ #[no_mangle]
+ extern "C" fn get_last_load_time(context_id: u16) -> u64 {
+     let mut simulator = SIMULATOR_DRIVER.lock();
+diff --git a/src/cpu/blossom/src/dual_module_axi4.rs b/src/cpu/blossom/src/dual_module_axi4.rs
+index d754430..bb71f7d 100644
+--- a/src/cpu/blossom/src/dual_module_axi4.rs
++++ b/src/cpu/blossom/src/dual_module_axi4.rs
+@@ -194,6 +194,18 @@ impl DualModuleAxi4Driver {
+         self.memory_write_32(base + 120, interval)
+     }
+ 
++    /// [MagiC-Firm patch] program the per-layer arrival-offset table (native
++    /// cycles, added to start time) and enable schedule mode. Pre-window
++    /// configuration: call once before timed work begins.
++    pub fn setup_load_stall_schedule(&mut self, offsets: &[u32]) -> std::io::Result<()> {
++        let base = Self::READOUT_BASE + 128 * self.context_id as usize;
++        self.memory_write_32(base + 88, 0)?;
++        for &offset in offsets {
++            self.memory_write_32(base + 96, offset)?;
++        }
++        self.memory_write_32(base + 104, 1)
++    }
++
+     pub fn get_last_load_time(&mut self) -> std::io::Result<u64> {
+         let base = Self::READOUT_BASE + 128 * self.context_id as usize;
+         self.memory_read_64(base)
+diff --git a/src/cpu/embedded/src/binding.rs b/src/cpu/embedded/src/binding.rs
+index 77dfdcd..1ca9db3 100644
+--- a/src/cpu/embedded/src/binding.rs
++++ b/src/cpu/embedded/src/binding.rs
+@@ -98,6 +98,8 @@ pub mod extern_c {
+         pub fn reset_context(context_id: uint16_t);
+         pub fn reset_all(context_depth: uint16_t);
+         pub fn setup_load_stall_emulator(start_time: uint64_t, interval: uint32_t, context_id: uint16_t);
++        /// [MagiC-Firm patch] program per-layer arrival-offset table (pre-window)
++        pub fn setup_load_stall_schedule(offsets: *const uint32_t, len: uint16_t, context_id: uint16_t);
+         pub fn get_last_load_time(context_id: uint16_t) -> uint64_t;
+         pub fn get_last_finish_time(context_id: uint16_t) -> uint64_t;
+ 
+diff --git a/src/cpu/embedded/src/mains/benchmark_decoding.rs b/src/cpu/embedded/src/mains/benchmark_decoding.rs
+index 9ff77d5..62bfa5a 100644
+--- a/src/cpu/embedded/src/mains/benchmark_decoding.rs
++++ b/src/cpu/embedded/src/mains/benchmark_decoding.rs
+@@ -45,6 +45,12 @@ pub const IGNORE_EMPTY_DEFECT: bool = option_env!("IGNORE_EMPTY_DEFECT").is_some
+ pub const MAX_ROUND: usize = unwrap_ctx!(parse_usize(option::unwrap_or!(option_env!("MAX_ROUND"), "0")));
+ /// disabling the detail print will significantly speed up the process
+ pub const DISABLE_DETAIL_PRINT: bool = option_env!("DISABLE_DETAIL_PRINT").is_some();
++/// [MagiC-Firm patch] non-uniform layer arrival schedule: comma-separated
++/// CUMULATIVE ns offsets from the FIRST layer's arrival (entry 0 must be 0),
++/// one per fusion layer. Empty/absent -> uniform MEASUREMENT_CYCLE_NS spacing
++/// (behavior unchanged). Requires USE_LAYER_FUSION.
++pub const LAYER_SCHEDULE_NS: &'static str = option::unwrap_or!(option_env!("LAYER_SCHEDULE_NS"), "");
++pub const MAX_SCHEDULE_LAYERS: usize = 256;
+ 
+ static mut PRIMAL_MODULE: UnsafeCell<PrimalModuleEmbedded<MAX_NODE_NUM>> = UnsafeCell::new(PrimalModuleEmbedded::new());
+ static mut DUAL_MODULE: UnsafeCell<DualModuleStackless<DualDriverTracked<DualDriver, MAX_NODE_NUM>>> =
+@@ -82,12 +88,45 @@ pub fn main() {
+         "measurement_cycle_native: {measurement_cycle_native}, actual measurement cycle: {:.3}us",
+         actual_measurement_cycle * 1e6
+     );
++    // [MagiC-Firm patch] parse the optional non-uniform layer schedule
++    let use_schedule = !LAYER_SCHEDULE_NS.is_empty();
++    let mut schedule_ns = [0u64; MAX_SCHEDULE_LAYERS];
++    let mut schedule_native = [0u64; MAX_SCHEDULE_LAYERS];
++    let mut schedule_native_u32 = [0u32; MAX_SCHEDULE_LAYERS];
++    if use_schedule {
++        assert!(USE_LAYER_FUSION, "LAYER_SCHEDULE_NS requires USE_LAYER_FUSION");
++        let mut n = 0;
++        for part in LAYER_SCHEDULE_NS.split(',') {
++            let ns: u64 = part.parse().expect("bad LAYER_SCHEDULE_NS entry");
++            if n == 0 {
++                assert!(ns == 0, "LAYER_SCHEDULE_NS must start at 0");
++            }
++            schedule_ns[n] = ns;
++            // integer round-half-up: f32 truncation loses cycles (e.g. 7000ns
++            // @100MHz -> 699.99994 -> 699), arming layers one cycle early
++            let freq_hz = native_frequency as u64;
++            schedule_native[n] = (ns * freq_hz + 500_000_000) / 1_000_000_000;
++            assert!(schedule_native[n] <= u32::MAX as u64, "schedule offset overflows u32 cycles");
++            schedule_native_u32[n] = schedule_native[n] as u32;
++            n += 1;
++        }
++        assert!(n == NUM_LAYER_FUSION, "LAYER_SCHEDULE_NS length != NUM_LAYER_FUSION");
++        println!("LAYER_SCHEDULE_NS: {} layers, last offset {}ns", n, schedule_ns[n - 1]);
++    }
+     // delay the syndrome by 1us to make sure the syndrome is stalled at the first decoding instance
+     let syndrome_start_delay_ns = 1000u64;
+     let syndrome_start_delay_cycle = ((syndrome_start_delay_ns as f32) * 1e-9 * native_frequency) as u64;
+ 
+     // create primal and dual modules
+     let context_id = 0;
++    if use_schedule {
++        // [MagiC-Firm patch] program the arrival-offset table ONCE, before any
++        // timed work: per-shot in-window traffic stays identical to uniform
++        unsafe {
++            extern_c::setup_load_stall_schedule(
++                schedule_native_u32.as_ptr(), NUM_LAYER_FUSION as u16, context_id)
++        };
++    }
+     let primal_module = unsafe { PRIMAL_MODULE.get().as_mut().unwrap() };
+     // adapt bit width of primal module so that node index will not overflow
+     primal_module.nodes.blossom_begin = (1 << hardware_info.vertex_bits) / 2;
+@@ -132,7 +171,8 @@ pub fn main() {
+         let native_start = unsafe { extern_c::get_native_time() };
+         let fast_start = unsafe { extern_c::get_fast_cpu_time() };
+         let syndrome_start = native_start + syndrome_start_delay_cycle; // wait for setting up everything
+-        let syndrome_finish = syndrome_start + finish_delta;
++        let syndrome_finish = syndrome_start
++            + if use_schedule { schedule_native[NUM_LAYER_FUSION - 1] } else { finish_delta };
+         unsafe { extern_c::setup_load_stall_emulator(syndrome_start, interval, context_id) };
+         // solve it
+         while layer_id < NUM_LAYER_FUSION {
+@@ -143,9 +183,19 @@ pub fn main() {
+             if USE_LAYER_FUSION && MULTIPLE_FUSION {
+                 // fuse multiple layers at once if it can be done without any stall
+                 let duration_ns = unsafe { extern_c::get_fast_cpu_duration_ns(fast_start) };
+-                while duration_ns > syndrome_start_delay_ns + (layer_id as u64) * (MEASUREMENT_CYCLE_NS as u64)
+-                    && layer_id < NUM_LAYER_FUSION
+-                {
++                loop {
++                    if layer_id >= NUM_LAYER_FUSION {
++                        break;
++                    }
++                    // [MagiC-Firm patch] schedule-aware arrival time of this layer
++                    let arrival_ns = if use_schedule {
++                        schedule_ns[layer_id]
++                    } else {
++                        (layer_id as u64) * (MEASUREMENT_CYCLE_NS as u64)
++                    };
++                    if duration_ns <= syndrome_start_delay_ns + arrival_ns {
++                        break;
++                    }
+                     unsafe {
+                         extern_c::execute_instruction(
+                             Instruction32::load_syndrome_external(ni!(layer_id)).into(),
+diff --git a/src/fpga/Xilinx/VMK180_Micro_Blossom/src/binding.c b/src/fpga/Xilinx/VMK180_Micro_Blossom/src/binding.c
+index 23c1ae9..2915864 100644
+--- a/src/fpga/Xilinx/VMK180_Micro_Blossom/src/binding.c
++++ b/src/fpga/Xilinx/VMK180_Micro_Blossom/src/binding.c
+@@ -141,6 +141,15 @@ uint64_t get_fast_cpu_duration_ns(uint64_t start)
+     Xil_Out32(UB_CONTEXT(context_id) + 120, interval);
+ }
+ 
++/* [MagiC-Firm patch] program per-layer arrival-offset table (pre-window) */
++void setup_load_stall_schedule(const uint32_t* offsets, uint16_t len, uint16_t context_id) {
++    Xil_Out32(UB_CONTEXT(context_id) + 88, 0);
++    for (uint16_t i = 0; i < len; i++) {
++        Xil_Out32(UB_CONTEXT(context_id) + 96, offsets[i]);
++    }
++    Xil_Out32(UB_CONTEXT(context_id) + 104, 1);
++}
++
+ uint64_t get_last_load_time(uint16_t context_id) {
+     return Xil_In64(UB_CONTEXT(context_id));
+ }
+diff --git a/src/fpga/microblossom/MicroBlossomBus.scala b/src/fpga/microblossom/MicroBlossomBus.scala
+index ea3b349..fc3460f 100644
+--- a/src/fpga/microblossom/MicroBlossomBus.scala
++++ b/src/fpga/microblossom/MicroBlossomBus.scala
+@@ -86,6 +86,12 @@ import org.rogach.scallop._
+ //        ...
+ //     112: (RW) 64 bit start time of load-stall emulator (if enabled)
+ //     120: (RW) 32 bit interval of load-stall emulator (if enabled)
++//      88: (W) [MagiC-Firm patch] schedule table write index (auto-increments on 96)
++//      96: (W) [MagiC-Firm patch] schedule table entry: per-layer ready-time offset
++//              (native cycles, u32) added to start time when schedule mode is on
++//     104: (W) [MagiC-Firm patch] schedule mode enable (bit 0); when on, the
++//              emulator uses start + table[layerId] and ignores interval
++//              (all three 8-aligned: the 64-bit bus requires word alignment)
+ //    [context 1]
+ //      128: ...
+ //
+@@ -394,11 +400,22 @@ case class MicroBlossomBus[T <: IMasterSlave, F <: BusSlaveFactoryDelayed](
+     }
+     val interval = loadStall.interval.constructReadWriteSyncChannel()
+   }
++  // [MagiC-Firm patch] per-layer arrival-offset table: programmed BEFORE the
++  // timed window (like start/interval), so non-uniform schedules add zero
++  // in-window bus traffic. Global (not per-context).
++  var loadStallSchedule = (config.supportLoadStallEmulator) generate new Area {
++    val mode = Reg(Bool) init (False)
++    val writeIndex = Reg(UInt(config.layerIdBits bits)) init (0)
++    val table = Mem(UInt(32 bits), 1 << config.layerIdBits) init (List.fill(1 << config.layerIdBits)(U(0, 32 bits)))
++  }
+   var loadStallEmulator = (config.supportLoadStallEmulator) generate LoadStallEmulator(config)
+   if (config.supportLoadStallEmulator) {
+     loadStallEmulator.io.currentTime := counter.value
+-    loadStallEmulator.io.startTime := (fsmLoadStall.startTime.upper.data ## fsmLoadStall.startTime.lower.data).asUInt
+-    loadStallEmulator.io.interval := fsmLoadStall.interval.data
++    val loadStallBaseStart = (fsmLoadStall.startTime.upper.data ## fsmLoadStall.startTime.lower.data).asUInt
++    // [MagiC-Firm patch] combinational table lookup by the instruction's layerId
++    val loadStallTableOffset = loadStallSchedule.table.readAsync(loadStallEmulator.io.layerId)
++    loadStallEmulator.io.startTime := loadStallBaseStart + Mux(loadStallSchedule.mode, loadStallTableOffset.resize(64), U(0, 64 bits))
++    loadStallEmulator.io.interval := Mux(loadStallSchedule.mode, U(0, 32 bits), fsmLoadStall.interval.data)
+     loadStallEmulator.io.layerId := 0
+   }
+   // data that are used to communicate between states
+@@ -478,6 +495,20 @@ case class MicroBlossomBus[T <: IMasterSlave, F <: BusSlaveFactoryDelayed](
+                 fsmLoadStall.interval.writeNext(readout.writeContextId, readout.writeValue(31 downto 0))
+                 isWriteHalt := False
+               }
++              // [MagiC-Firm patch] schedule table programming (pre-window config)
++              builder.elsewhen(readout.writeSubAddress === U(88)) {
++                loadStallSchedule.writeIndex := readout.writeValue(config.layerIdBits - 1 downto 0)
++                isWriteHalt := False
++              }
++              builder.elsewhen(readout.writeSubAddress === U(96)) {
++                loadStallSchedule.table.write(loadStallSchedule.writeIndex, readout.writeValue(31 downto 0))
++                loadStallSchedule.writeIndex := loadStallSchedule.writeIndex + 1
++                isWriteHalt := False
++              }
++              builder.elsewhen(readout.writeSubAddress === U(104)) {
++                loadStallSchedule.mode := readout.writeValue(0)
++                isWriteHalt := False
++              }
+             }
+             builder.otherwise {
+               hasError := True

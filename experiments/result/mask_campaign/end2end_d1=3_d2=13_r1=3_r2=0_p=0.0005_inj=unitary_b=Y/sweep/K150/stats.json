@@ -1,0 +1,170 @@
+{
+ "folder": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y",
+ "config": {
+  "folder": "experiments/data/circuits/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y",
+  "base": "logical_ambiguity",
+  "base_size": 150,
+  "q_type": "exp",
+  "detectors": null,
+  "left_len": null,
+  "top_len": null,
+  "t": null,
+  "mode": "rectangle",
+  "triangle_half": "left",
+  "stage_name": "escape",
+  "augment": null,
+  "prune": null,
+  "closure": null,
+  "essentials_dir": null,
+  "essentials_canonical": null,
+  "essentials_causal": null,
+  "essentials_meangap": null,
+  "essentials_logical_ambiguity": "experiments/data/circuits/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+  "blending_alpha": null,
+  "contract": false,
+  "weight_cutoff": 15.0,
+  "connectivity_fix": "per_detector",
+  "shots": 100000,
+  "seed": 0,
+  "workers": 48,
+  "tc": 40.0,
+  "tl": 0.0,
+  "th": 60.0,
+  "iso_fh": 0.001,
+  "stages": false,
+  "diag": false,
+  "out_root": "out",
+  "save": "experiments/result/mask_campaign/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y/sweep/K150",
+  "ops": [
+   [
+    "closure",
+    null,
+    0.0
+   ]
+  ]
+ },
+ "shots": {
+  "n": 100000,
+  "seed": 0,
+  "workers": 48
+ },
+ "results": [
+  {
+   "label": "final: --base-size 150 --q-type exp --closure --weight-cutoff 15.0 --essentials-logical-ambiguity experiments/data/circuits/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y_logical_ambiguity_shots2000000.json --shots 100000 --seed 0 --workers 48 --tc 40.0 --tl 0 --th 60 --iso-fh 0.001 --save experiments/result/mask_campaign/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y/sweep/K150",
+   "structure": {
+    "num_detectors": 776,
+    "selected": 201,
+    "selected_fraction": 0.25902061855670105,
+    "contracted_vertices": 258,
+    "contracted_dem": {
+     "num_fault_nodes": 5353,
+     "num_components": 5353,
+     "n_boundary_edges": 565,
+     "n_edges": 4788,
+     "n_hyperedges": 0,
+     "n_obs_flipping": 300
+    },
+    "detector_degree": {
+     "min": 1.0,
+     "mean": 39.3062015503876,
+     "median": 37.0,
+     "max": 300.0,
+     "p95": 80.0,
+     "p99": 91.0
+    },
+    "fault_node_degree": {
+     "min": 1.0,
+     "mean": 1.8944517093218756,
+     "median": 2.0,
+     "max": 2.0,
+     "p95": 2.0,
+     "p99": 2.0
+    },
+    "S_crossing_mass": 0.4835988919134171,
+    "straddles_per_shot": {
+     "mean": 0.6653,
+     "p_any": 0.38519
+    }
+   },
+   "gap": {
+    "p_equal": 0.81523,
+    "p_below": 0.18017,
+    "p_above": 0.0046,
+    "mean_abs_diff": 6.51575,
+    "mean_diff": -6.41265,
+    "mean_deficit_given_below": 35.87833712604762,
+    "mean_excess_given_above": 11.206521739130435,
+    "diff_quantiles": {
+     "1": -70.0,
+     "5": -54.0,
+     "25": 0.0,
+     "50": 0.0,
+     "75": 0.0,
+     "95": 0.0,
+     "99": 0.0
+    },
+    "spearman": 0.684779807168626
+   },
+   "gating": {
+    "tc": 40.0,
+    "tl": 0.0,
+    "th": 60.0,
+    "tier_share": {
+     "T1_reject": 0.0,
+     "T2_defer": 0.29015,
+     "T3_accept": 0.70985
+    },
+    "early_reject_error": 0.0,
+    "early_reject_joint": 0.0,
+    "false_high": 0.00022539973233781784,
+    "false_high_joint": 0.00016,
+    "accept_rate": 0.96354,
+    "complete_only_accept_rate": 0.96338,
+    "ler_accepted": 1.0378396330199058e-05,
+    "errors_accepted": 1,
+    "ler_complete_only": 0.0,
+    "errors_complete_only": 0
+   },
+   "iso": {
+    "false_high_cap": 0.001,
+    "tc": 40.0,
+    "tl": 0.0,
+    "th": 40,
+    "tier_share": {
+     "T1_reject": 0.0,
+     "T2_defer": 0.13137,
+     "T3_accept": 0.86863
+    },
+    "early_reject_error": 0.0,
+    "early_reject_joint": 0.0,
+    "false_high": 0.0004835200257877347,
+    "false_high_joint": 0.00042,
+    "accept_rate": 0.9638,
+    "complete_only_accept_rate": 0.96338,
+    "ler_accepted": 1.0375596596804316e-05,
+    "errors_accepted": 1,
+    "ler_complete_only": 0.0,
+    "errors_complete_only": 0
+   },
+   "base": {
+    "type": "logical_ambiguity",
+    "K_Q": 150,
+    "q_type": "exp",
+    "essentials_file": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+    "essentials_shots": 2000000
+   },
+   "ops": [
+    {
+     "op": "closure",
+     "tau": 0.0,
+     "applied": 51,
+     "iterations": 6,
+     "S_before": 0.6696102649994347,
+     "S_after": 0.4835988919134171,
+     "converged": true,
+     "mask_sum_after": 201
+    }
+   ]
+  }
+ ]
+}

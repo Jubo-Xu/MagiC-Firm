@@ -1,0 +1,61 @@
+{
+  "_README": {
+    "about": "Compiler configuration for the detector-construction compiler. Two sections: 'hardware' (the tree of control boards; circuit-agnostic) and 'postselect' (the explicit set of postselect detectors; circuit/decoder-specific). Provide only physical facts + the postselect list; the compiler derives the rest (measurement widths, detector in/out widths, channel placement, stage boards).",
+    "name": "free-text name of this configuration",
+    "version": "config format version (integer)",
+
+    "hardware": "the board tree; contains 'layers'",
+    "hardware.layers": "ordered list of board layers; level 0 = leaf layer (wired to qubits), last level = root",
+    "hardware.layers[].level": "layer index; 0 for the leaf layer, increasing toward the root",
+    "hardware.layers[].type": "board type in this layer: 'leaf' | 'router' | 'root'",
+    "hardware.layers[].boards": "list of boards in this layer",
+    "board_id": "globally-unique integer id for the board (unique across ALL layers)",
+    "qubits": "[leaf, or a monolithic root] every physical qubit index wired to this board (measured or not); the compiler keeps the ones actually measured into detectors",
+    "monolithic": "a single-board system = ONE layer of type 'root' whose board carries 'qubits' (leaf+root fused): it is wired to qubits AND is the endpoint (no children, no raw_out). Example: hardware.layers=[{level:0,type:'root',boards:[{board_id:0,qubits:[...],kernels:{...}}]}]",
+    "children": "[router/root only] board_id list of the boards in the previous layer that feed this board",
+    "kernels": "list of detector channels this board has; length = number of kernels (k)",
+    "kernels[].n": "selector width: how many measurement lines this kernel may pick from the board's measurements",
+    "kernels[].h": "number of cores in this kernel = how many detector time-indices it can build in parallel",
+    "raw_out": "[leaf/router only] max number of raw (unconstructed) measurements this board may forward to its parent; root has none (endpoint)",
+
+    "postselect": "WHICH detectors to postselect (fire => discard the shot): 'none' (or []) for codes without postselection, an explicit list of stim detector indices, or {'from_file': <json path>} reading the list from a JSON file (a bare list, or a dict whose 'postselected_detectors' key holds it; override the key via 'key'). Relative paths resolve against this config's directory.",
+    "postselect_source": "the postselect set is a circuit+decoder property computed by the decoder workflow, not by a coordinate rule in the compiler — for cultivation circuits, algorithms/get_desaturated_dem_with_obs_detector.py writes postselected_detectors.json next to the circuit copy",
+
+    "derived_not_here": "m (measurement inputs), detector in/out widths, raw inputs, each router/root's qubit scope, channel->kernel assignment, and per-stage postselect/matchable split are all derived by the compiler"
+  },
+
+  "name": "example_compiler_config",
+  "version": 1,
+
+  "hardware": {
+    "layers": [
+      {
+        "level": 0,
+        "type": "leaf",
+        "boards": [
+          { "board_id": 0, "qubits": [0,1,2,3,4,5,6,7],        "kernels": [ {"n":4,"h":3}, {"n":4,"h":3}, {"n":3,"h":2} ], "raw_out": 6 },
+          { "board_id": 1, "qubits": [8,9,10,11,12,13,14,15],   "kernels": [ {"n":4,"h":3}, {"n":4,"h":3} ],                "raw_out": 6 },
+          { "board_id": 2, "qubits": [16,17,18,19,20,21,22,23], "kernels": [ {"n":4,"h":3}, {"n":4,"h":3} ],                "raw_out": 6 },
+          { "board_id": 3, "qubits": [24,25,26,27,28,29,30,31], "kernels": [ {"n":4,"h":3}, {"n":4,"h":3} ],                "raw_out": 6 }
+        ]
+      },
+      {
+        "level": 1,
+        "type": "router",
+        "boards": [
+          { "board_id": 100, "children": [0,1], "kernels": [ {"n":6,"h":4}, {"n":6,"h":4} ], "raw_out": 8 },
+          { "board_id": 101, "children": [2,3], "kernels": [ {"n":6,"h":4}, {"n":6,"h":4} ], "raw_out": 8 }
+        ]
+      },
+      {
+        "level": 2,
+        "type": "root",
+        "boards": [
+          { "board_id": 200, "children": [100,101], "kernels": [ {"n":8,"h":5}, {"n":8,"h":5}, {"n":10,"h":6} ] }
+        ]
+      }
+    ]
+  },
+
+  "postselect": { "from_file": "postselected_detectors.json" }
+}

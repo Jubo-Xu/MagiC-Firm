@@ -1,0 +1,85 @@
+{
+ "circuit": "end2end_d1=5_d2=15_r1=5_r2=0_p=0.0005_inj=unitary_b=Y",
+ "partial": "partial_qexp250_cl_wc15",
+ "shots": 2000,
+ "repeats": 5,
+ "graph": {
+  "complete_vertices": 2057,
+  "complete_edges": 48325,
+  "contracted_vertices": 848,
+  "contracted_edges": 10702,
+  "mask_detectors": 375,
+  "num_detectors": 1584
+ },
+ "latency": {
+  "complete": {
+   "serial": {
+    "mean_us": 319.913617,
+    "median_us": 314.11749999999995,
+    "p99_us": 562.3319399999999
+   },
+   "parallel": {
+    "mean_us": 311.667304,
+    "median_us": 306.346,
+    "p99_us": 550.1496099999999
+   },
+   "on": {
+    "mean_us": 179.940133,
+    "median_us": 213.11849999999998,
+    "p99_us": 522.72474
+   },
+   "off": {
+    "mean_us": 139.97348399999998,
+    "median_us": 9.985,
+    "p99_us": 502.57544999999993
+   },
+   "defects_mean": 22.9545
+  },
+  "masked": {
+   "serial": {
+    "mean_us": 188.4702575,
+    "median_us": 187.0155,
+    "p99_us": 333.73811
+   },
+   "parallel": {
+    "mean_us": 169.840783,
+    "median_us": 173.83100000000002,
+    "p99_us": 300.49791
+   },
+   "on": {
+    "mean_us": 126.29996900000002,
+    "median_us": 129.87650000000002,
+    "p99_us": 291.21362
+   },
+   "off": {
+    "mean_us": 62.170288500000005,
+    "median_us": 8.748000000000001,
+    "p99_us": 278.38862
+   },
+   "defects_mean": 5.313
+  },
+  "contracted": {
+   "serial": {
+    "mean_us": 70.606787,
+    "median_us": 68.3055,
+    "p99_us": 135.77270000000001
+   },
+   "parallel": {
+    "mean_us": 62.294042000000005,
+    "median_us": 61.269999999999996,
+    "p99_us": 122.853
+   },
+   "on": {
+    "mean_us": 44.4805455,
+    "median_us": 43.0085,
+    "p99_us": 119.19919999999999
+   },
+   "off": {
+    "mean_us": 26.1262415,
+    "median_us": 5.9185,
+    "p99_us": 111.46869
+   },
+   "defects_mean": 5.313
+  }
+ }
+}

@@ -1,0 +1,143 @@
+<mxfile host="MagiC-Firm/gen_arch_figures.py" version="24.7.0" type="device">
+  <diagram id="page7" name="07_small_blocks">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1310" pageHeight="610" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="ttl" value="&lt;b&gt;Small datapath / control blocks&lt;/b&gt;&lt;br&gt;RawSelector.sv · DetectorPass.sv · Postselect.sv · DrainAggregator.sv" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=16;fillColor=none;strokeColor=none;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="1000" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs" value="&lt;b&gt;RawSelector  #(R, M)  — forward R of the M raw lines up the tree&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fillColor=#FAFAFA;strokeColor=#7A7A7A;rounded=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="70" width="600" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs_i" value="in_meas / in_valid /&lt;br&gt;in_finish [M]" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="120" width="150" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs_c" value="selector_indexes&lt;br&gt;[R × ⌈log2 M⌉] (static)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="150" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs_mux" value="R index muxes&lt;br&gt;sel_meas[i]  = in_meas[idx_i]&lt;br&gt;sel_valid[i] = in_valid[idx_i]&lt;br&gt;sel_finish = OR_i (in_valid[idx_i] &amp;amp; in_finish[idx_i])" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#F0EAFA;strokeColor=#5E35B1;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="240" y="110" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs_reg" value="1-cycle register" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#EDEDED;strokeColor=#1A1A1A;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="240" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="rs_o" value="out_meas / out_valid [R]&lt;br&gt;out_finish (single)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="210" width="120" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="dp" value="&lt;b&gt;DetectorPass  #(D)  — forward children's detectors up the tree (identity form of RawSelector)&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fillColor=#FAFAFA;strokeColor=#7A7A7A;rounded=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="670" y="70" width="600" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="dp_i" value="in_det / in_valid /&lt;br&gt;in_finish [D]" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="690" y="150" width="150" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="dp_reg" value="1-cycle register of the whole D-line bus&lt;br&gt;out_det ← in_det · out_valid ← in_valid&lt;br&gt;out_finish ← in_finish  (per line, stays aligned)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#EDEDED;strokeColor=#1A1A1A;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="880" y="130" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="dp_o" value="out_det / out_valid /&lt;br&gt;out_finish [D]" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="150" width="100" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps" value="&lt;b&gt;Postselect  #(D)  — stage-board reject: 'a postselect detector fired this det-time'&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fillColor=#FAFAFA;strokeColor=#7A7A7A;rounded=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="330" width="600" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps_v" value="in_valid  (OutputSync.out_valid)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="380" width="170" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps_d" value="in_det [D]  (OutputSync.out_det)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="420" width="170" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps_m" value="postselect_mask [D]&lt;br&gt;(ps regfile @ shared osync_pc)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="480" width="170" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps_reg" value="mask_reg ← postselect_mask&lt;br&gt;(1-cycle align, like gi_reg)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#EDEDED;strokeColor=#1A1A1A;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="260" y="470" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps_or" value="post_select =&lt;br&gt;in_valid &amp;amp; |(mask_reg &amp;amp; in_det)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#F0EAFA;strokeColor=#5E35B1;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="260" y="380" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps_o" value="post_select&lt;br&gt;(→ BoardControl abort)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="490" y="390" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="ps_n" value="No own pc: the postselect and output_sync regfiles are built row-for-row by det-time, so the&lt;br&gt;shared osync_pc keeps them aligned and the copy-last saturation (zero row ⇒ no reject in wait rounds) is inherited." style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=none;strokeColor=none;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="525" width="570" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="da" value="&lt;b&gt;DrainAggregator  #(N)  — join N one-cycle pulses (a leaf's P cw_gen_finish) into one 'all done' pulse&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fillColor=#FAFAFA;strokeColor=#7A7A7A;rounded=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="670" y="330" width="600" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="da_i" value="drain_done_in [N]&lt;br&gt;(pulses, different cycles)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="690" y="380" width="160" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="da_c" value="clear  (START)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="690" y="440" width="160" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="da_l" value="latched ← latched | drain_done_in&lt;br&gt;(cleared by clear / rst)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#EDEDED;strokeColor=#1A1A1A;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="880" y="380" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="da_e" value="all_latched = &amp;amp;latched&lt;br&gt;all_drain_done = all_latched &amp;amp; ~all_latched_q&lt;br&gt;(edge-aligned, one full cycle wide)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#F0EAFA;strokeColor=#5E35B1;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="880" y="460" width="220" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="da_o" value="all_drain_done" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="480" width="120" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="da_n" value="Fires one cycle after the LAST input arrives. Router-side drain aggregation is retired:&lt;br&gt;subtree drain now rides the DATA path (DCB det out_finish)." style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=none;strokeColor=none;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="690" y="525" width="560" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="e0" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#1F3A93;strokeWidth=2.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="rs_i" target="rs_mux">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#8A6D00;strokeWidth=1.3;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" edge="1" parent="1" source="rs_c" target="rs_mux">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="218"/>
+              <mxPoint x="220" y="174"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#1F3A93;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rs_mux" target="rs_reg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#1F3A93;strokeWidth=2.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rs_reg" target="rs_o">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#1F3A93;strokeWidth=2.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="dp_i" target="dp_reg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#1F3A93;strokeWidth=2.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="dp_reg" target="dp_o">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="ps_v" target="ps_or">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#1F3A93;strokeWidth=2.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="ps_d" target="ps_or">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#8A6D00;strokeWidth=1.3;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="ps_m" target="ps_reg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#8A6D00;strokeWidth=1.3;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ps_reg" target="ps_or">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#E65100;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;" edge="1" parent="1" source="ps_or" target="ps_o">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="da_i" target="da_l">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" edge="1" parent="1" source="da_c" target="da_l">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="865" y="452"/>
+              <mxPoint x="865" y="420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="da_l" target="da_e">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="da_e" target="da_o">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

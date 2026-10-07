@@ -1,0 +1,51 @@
+30 circuit folders -> experiments/data/circuits
+[1/30] end2end_d1=3_d2=11_r1=3_r2=0_p=0.0005_inj=unitary_b=Y: exists, skip
+[2/30] end2end_d1=3_d2=13_r1=3_r2=0_p=0.0005_inj=unitary_b=Y: exists, skip
+[3/30] end2end_d1=3_d2=15_r1=3_r2=0_p=0.0005_inj=unitary_b=Y: exists, skip
+[4/30] end2end_d1=3_d2=17_r1=3_r2=0_p=0.0005_inj=unitary_b=Y: exists, skip
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [204]
+[5/30] end2end_d1=3_d2=19_r1=3_r2=0_p=0.0005_inj=unitary_b=Y: OK (1637 dets, 7s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [243]
+[6/30] end2end_d1=3_d2=21_r1=3_r2=0_p=0.0005_inj=unitary_b=Y: OK (1996 dets, 9s)
+[7/30] end2end_d1=3_d2=11_r1=3_r2=0_p=0.0007_inj=unitary_b=Y: exists, skip
+[8/30] end2end_d1=3_d2=13_r1=3_r2=0_p=0.0007_inj=unitary_b=Y: exists, skip
+[9/30] end2end_d1=3_d2=15_r1=3_r2=0_p=0.0007_inj=unitary_b=Y: exists, skip
+[10/30] end2end_d1=3_d2=17_r1=3_r2=0_p=0.0007_inj=unitary_b=Y: exists, skip
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [204]
+[11/30] end2end_d1=3_d2=19_r1=3_r2=0_p=0.0007_inj=unitary_b=Y: OK (1637 dets, 7s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [243]
+[12/30] end2end_d1=3_d2=21_r1=3_r2=0_p=0.0007_inj=unitary_b=Y: OK (1996 dets, 9s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [88]
+[13/30] end2end_d1=3_d2=11_r1=3_r2=0_p=0.0009_inj=unitary_b=Y: OK (561 dets, 2s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [111]
+[14/30] end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y: OK (776 dets, 2s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [138]
+[15/30] end2end_d1=3_d2=15_r1=3_r2=0_p=0.0009_inj=unitary_b=Y: OK (1027 dets, 4s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [169]
+[16/30] end2end_d1=3_d2=17_r1=3_r2=0_p=0.0009_inj=unitary_b=Y: OK (1314 dets, 5s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [204]
+[17/30] end2end_d1=3_d2=19_r1=3_r2=0_p=0.0009_inj=unitary_b=Y: OK (1637 dets, 7s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [243]
+[18/30] end2end_d1=3_d2=21_r1=3_r2=0_p=0.0009_inj=unitary_b=Y: OK (1996 dets, 9s)
+[19/30] end2end_d1=3_d2=11_r1=3_r2=0_p=0.001_inj=unitary_b=Y: exists, skip
+[20/30] end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y: exists, skip
+[21/30] end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y: exists, skip
+[22/30] end2end_d1=3_d2=17_r1=3_r2=0_p=0.001_inj=unitary_b=Y: exists, skip
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [204]
+[23/30] end2end_d1=3_d2=19_r1=3_r2=0_p=0.001_inj=unitary_b=Y: OK (1637 dets, 7s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [243]
+[24/30] end2end_d1=3_d2=21_r1=3_r2=0_p=0.001_inj=unitary_b=Y: OK (1996 dets, 10s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [88]
+[25/30] end2end_d1=3_d2=11_r1=3_r2=0_p=0.0015_inj=unitary_b=Y: OK (561 dets, 2s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [111]
+[26/30] end2end_d1=3_d2=13_r1=3_r2=0_p=0.0015_inj=unitary_b=Y: OK (776 dets, 2s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [138]
+[27/30] end2end_d1=3_d2=15_r1=3_r2=0_p=0.0015_inj=unitary_b=Y: OK (1027 dets, 3s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [169]
+[28/30] end2end_d1=3_d2=17_r1=3_r2=0_p=0.0015_inj=unitary_b=Y: OK (1314 dets, 5s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [204]
+[29/30] end2end_d1=3_d2=19_r1=3_r2=0_p=0.0015_inj=unitary_b=Y: OK (1637 dets, 7s)
+    WARNING: 1 postselect detector(s) not expressible by any coordinate rule (error-derived): [243]
+[30/30] end2end_d1=3_d2=21_r1=3_r2=0_p=0.0015_inj=unitary_b=Y: OK (1996 dets, 9s)
+
+done=18 skipped=12 failed=0 total 1.7 min

@@ -1,0 +1,150 @@
+{
+ "folder": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y",
+ "config": {
+  "folder": "experiments/data/circuits/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y",
+  "base": "logical_ambiguity",
+  "base_size": 100,
+  "q_type": "exp",
+  "detectors": null,
+  "left_len": null,
+  "top_len": null,
+  "t": null,
+  "mode": "rectangle",
+  "triangle_half": "left",
+  "stage_name": "escape",
+  "augment": null,
+  "prune": null,
+  "closure": null,
+  "essentials_dir": null,
+  "essentials_canonical": null,
+  "essentials_causal": null,
+  "essentials_meangap": null,
+  "essentials_logical_ambiguity": "experiments/data/circuits/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+  "blending_alpha": null,
+  "contract": false,
+  "weight_cutoff": 15.0,
+  "connectivity_fix": "per_detector",
+  "shots": 100000,
+  "seed": 0,
+  "workers": 48,
+  "tc": 40.0,
+  "tl": 0.0,
+  "th": 60.0,
+  "iso_fh": 0.001,
+  "stages": false,
+  "diag": false,
+  "out_root": "out",
+  "save": "experiments/result/mask_campaign/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y/sweep/K100",
+  "ops": [
+   [
+    "closure",
+    null,
+    0.0
+   ]
+  ]
+ },
+ "shots": {
+  "n": 100000,
+  "seed": 0,
+  "workers": 48
+ },
+ "results": [
+  {
+   "label": "final: --base-size 100 --q-type exp --closure --weight-cutoff 15.0 --essentials-logical-ambiguity experiments/data/circuits/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y_logical_ambiguity_shots2000000.json --shots 100000 --seed 0 --workers 48 --tc 40.0 --tl 0 --th 60 --iso-fh 0.001 --save experiments/result/mask_campaign/end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y/sweep/K100",
+   "structure": {
+    "num_detectors": 776,
+    "selected": 160,
+    "selected_fraction": 0.20618556701030927,
+    "contracted_vertices": 217,
+    "contracted_dem": {
+     "num_fault_nodes": 4242,
+     "num_components": 4242,
+     "n_boundary_edges": 468,
+     "n_edges": 3774,
+     "n_hyperedges": 0,
+     "n_obs_flipping": 244
+    },
+    "detector_degree": {
+     "min": 1.0,
+     "mean": 36.94009216589862,
+     "median": 36.0,
+     "max": 244.0,
+     "p95": 82.0,
+     "p99": 109.0
+    },
+    "fault_node_degree": {
+     "min": 1.0,
+     "mean": 1.8896746817538896,
+     "median": 2.0,
+     "max": 2.0,
+     "p95": 2.0,
+     "p99": 2.0
+    },
+    "S_crossing_mass": 0.6038621417567445,
+    "straddles_per_shot": {
+     "mean": 0.90884,
+     "p_any": 0.46921
+    }
+   },
+   "gap": {
+    "p_equal": 0.73384,
+    "p_below": 0.23972,
+    "p_above": 0.02644,
+    "mean_abs_diff": 7.94921,
+    "mean_diff": -7.36813,
+    "mean_deficit_given_below": 31.948398131153013,
+    "mean_excess_given_above": 10.988653555219365,
+    "diff_quantiles": {
+     "1": -65.0,
+     "5": -51.0,
+     "25": 0.0,
+     "50": 0.0,
+     "75": 0.0,
+     "95": 0.0,
+     "99": 11.0
+    },
+    "spearman": 0.6688697538555434
+   },
+   "gating": {
+    "tc": 40.0,
+    "tl": 0.0,
+    "th": 60.0,
+    "tier_share": {
+     "T1_reject": 0.0,
+     "T2_defer": 0.49169,
+     "T3_accept": 0.50831
+    },
+    "early_reject_error": 0.0,
+    "early_reject_joint": 0.0,
+    "false_high": 0.002478802305679605,
+    "false_high_joint": 0.00126,
+    "accept_rate": 0.90543,
+    "complete_only_accept_rate": 0.90417,
+    "ler_accepted": 7.731133273693163e-05,
+    "errors_accepted": 7,
+    "ler_complete_only": 4.4239468241591735e-05,
+    "errors_complete_only": 4
+   },
+   "iso": null,
+   "base": {
+    "type": "logical_ambiguity",
+    "K_Q": 100,
+    "q_type": "exp",
+    "essentials_file": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.0009_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+    "essentials_shots": 2000000
+   },
+   "ops": [
+    {
+     "op": "closure",
+     "tau": 0.0,
+     "applied": 60,
+     "iterations": 10,
+     "S_before": 0.9553880161071314,
+     "S_after": 0.6038621417567445,
+     "converged": true,
+     "mask_sum_after": 160
+    }
+   ]
+  }
+ ]
+}

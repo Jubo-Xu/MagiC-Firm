@@ -1,0 +1,2138 @@
+{
+  "circuit_file": "end2end_d1=5_d2=15_r1=5_r2=0_p=0.0015_inj=unitary_b=Y.stim",
+  "n_circuit_dets": 1584,
+  "n_gap_dets": 2057,
+  "obs_detector_index": 2056,
+  "postselected_detectors": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    91,
+    92,
+    93,
+    94,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    104,
+    105,
+    106,
+    108,
+    109,
+    110,
+    114,
+    118,
+    211,
+    216,
+    219,
+    226,
+    229,
+    238,
+    239,
+    254,
+    441,
+    446,
+    449,
+    456,
+    459,
+    468,
+    671,
+    676,
+    679,
+    686,
+    689,
+    698,
+    901,
+    906,
+    909,
+    916,
+    919,
+    928,
+    1138,
+    1147
+  ],
+  "annotation_convention": {
+    "annotation_coord_index": 4,
+    "compiler_remaining_index": 1,
+    "hidden_values": [
+      "unannotated",
+      -9
+    ],
+    "visible_color_values": [
+      0,
+      4
+    ],
+    "matching_compiler_preset": "cultivation+color"
+  },
+  "compiler_preset_covers_all": false,
+  "detectors_not_expressible_by_coords": [
+    239,
+    254
+  ],
+  "postselect_annotations": [
+    {
+      "detector": 0,
+      "coords": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 1,
+      "coords": [
+        4.0,
+        1.0,
+        0.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 2,
+      "coords": [
+        2.0,
+        2.0,
+        0.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 3,
+      "coords": [
+        1.0,
+        3.0,
+        0.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 4,
+      "coords": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 5,
+      "coords": [
+        3.0,
+        1.0,
+        0.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 6,
+      "coords": [
+        1.0,
+        2.0,
+        0.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 7,
+      "coords": [
+        2.14286,
+        1.0,
+        1.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 8,
+      "coords": [
+        4.0,
+        1.0,
+        2.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 9,
+      "coords": [
+        3.0,
+        1.0,
+        2.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 10,
+      "coords": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 11,
+      "coords": [
+        1.0,
+        0.0,
+        2.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 12,
+      "coords": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 13,
+      "coords": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 14,
+      "coords": [
+        5.0,
+        2.0,
+        4.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 15,
+      "coords": [
+        6.0,
+        2.0,
+        4.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 16,
+      "coords": [
+        5.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 17,
+      "coords": [
+        4.0,
+        5.0,
+        4.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 18,
+      "coords": [
+        3.0,
+        5.0,
+        4.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 19,
+      "coords": [
+        1.25,
+        0.25,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 20,
+      "coords": [
+        1.5,
+        1.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 21,
+      "coords": [
+        1.75,
+        0.25,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 22,
+      "coords": [
+        2.0,
+        1.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 23,
+      "coords": [
+        3.075,
+        0.9125,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 24,
+      "coords": [
+        3.5,
+        4.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 25,
+      "coords": [
+        3.575,
+        0.9125,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 26,
+      "coords": [
+        4.0,
+        4.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 27,
+      "coords": [
+        5.25,
+        2.0,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 28,
+      "coords": [
+        5.0,
+        3.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 29,
+      "coords": [
+        5.75,
+        2.0,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 30,
+      "coords": [
+        5.5,
+        3.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 31,
+      "coords": [
+        7.0,
+        0.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 32,
+      "coords": [
+        7.5,
+        0.875,
+        5.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 33,
+      "coords": [
+        1.0,
+        0.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 34,
+      "coords": [
+        1.0,
+        2.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 35,
+      "coords": [
+        2.0,
+        0.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 36,
+      "coords": [
+        2.0,
+        2.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 37,
+      "coords": [
+        3.0,
+        1.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 38,
+      "coords": [
+        3.0,
+        3.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 39,
+      "coords": [
+        3.0,
+        5.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 40,
+      "coords": [
+        4.0,
+        1.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 41,
+      "coords": [
+        4.0,
+        3.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 42,
+      "coords": [
+        4.0,
+        5.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 43,
+      "coords": [
+        5.0,
+        0.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 44,
+      "coords": [
+        5.0,
+        2.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 45,
+      "coords": [
+        5.0,
+        4.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 46,
+      "coords": [
+        6.0,
+        0.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 47,
+      "coords": [
+        6.0,
+        2.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 48,
+      "coords": [
+        6.0,
+        4.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 49,
+      "coords": [
+        7.0,
+        1.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 50,
+      "coords": [
+        8.0,
+        1.0,
+        6.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 51,
+      "coords": [
+        1.0,
+        0.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 52,
+      "coords": [
+        1.0,
+        2.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 53,
+      "coords": [
+        2.0,
+        0.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 54,
+      "coords": [
+        2.0,
+        2.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 55,
+      "coords": [
+        3.0,
+        1.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 56,
+      "coords": [
+        3.0,
+        3.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 57,
+      "coords": [
+        3.0,
+        5.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 58,
+      "coords": [
+        4.0,
+        1.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 59,
+      "coords": [
+        4.0,
+        3.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 60,
+      "coords": [
+        4.0,
+        5.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 61,
+      "coords": [
+        5.0,
+        0.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 62,
+      "coords": [
+        5.0,
+        2.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 63,
+      "coords": [
+        5.0,
+        4.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 64,
+      "coords": [
+        6.0,
+        0.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 65,
+      "coords": [
+        6.0,
+        2.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 66,
+      "coords": [
+        6.0,
+        4.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 67,
+      "coords": [
+        7.0,
+        1.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 68,
+      "coords": [
+        8.0,
+        1.0,
+        7.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 69,
+      "coords": [
+        2.25889,
+        1.08534,
+        8.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 70,
+      "coords": [
+        4.0,
+        3.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 71,
+      "coords": [
+        4.0,
+        5.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 72,
+      "coords": [
+        2.0,
+        2.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 73,
+      "coords": [
+        2.0,
+        4.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 74,
+      "coords": [
+        1.0,
+        0.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 75,
+      "coords": [
+        2.0,
+        0.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 76,
+      "coords": [
+        5.0,
+        1.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 77,
+      "coords": [
+        6.0,
+        0.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 78,
+      "coords": [
+        7.0,
+        3.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 79,
+      "coords": [
+        0.0,
+        1.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 80,
+      "coords": [
+        3.0,
+        1.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 81,
+      "coords": [
+        4.0,
+        1.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 82,
+      "coords": [
+        7.0,
+        1.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 83,
+      "coords": [
+        6.0,
+        2.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 84,
+      "coords": [
+        3.0,
+        3.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 85,
+      "coords": [
+        5.0,
+        2.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 86,
+      "coords": [
+        5.0,
+        4.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 87,
+      "coords": [
+        5.0,
+        6.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 88,
+      "coords": [
+        8.0,
+        1.0,
+        9.0
+      ],
+      "remaining": [],
+      "annotation": null,
+      "class": "hidden_unannotated"
+    },
+    {
+      "detector": 91,
+      "coords": [
+        1.0625,
+        0.0625,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 92,
+      "coords": [
+        1.125,
+        1.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 93,
+      "coords": [
+        1.9375,
+        0.0625,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 94,
+      "coords": [
+        2.0,
+        1.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 96,
+      "coords": [
+        3.0625,
+        1.0,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 97,
+      "coords": [
+        3.0625,
+        3.0,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 98,
+      "coords": [
+        3.125,
+        4.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 99,
+      "coords": [
+        3.9375,
+        1.0,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 100,
+      "coords": [
+        3.9375,
+        3.0,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 101,
+      "coords": [
+        4.0,
+        4.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 104,
+      "coords": [
+        5.0625,
+        0.0625,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 105,
+      "coords": [
+        5.0625,
+        2.0,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 106,
+      "coords": [
+        5.0,
+        3.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 108,
+      "coords": [
+        5.9375,
+        0.0625,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 109,
+      "coords": [
+        5.9375,
+        2.0,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 110,
+      "coords": [
+        5.875,
+        3.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 114,
+      "coords": [
+        7.0,
+        0.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 118,
+      "coords": [
+        7.875,
+        0.96875,
+        11.0,
+        -1.0,
+        -9.0
+      ],
+      "remaining": [
+        -1.0,
+        -9.0
+      ],
+      "annotation": -9,
+      "class": "hidden_marked"
+    },
+    {
+      "detector": 211,
+      "coords": [
+        1.0,
+        0.0,
+        12.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 216,
+      "coords": [
+        2.0,
+        2.0,
+        12.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 219,
+      "coords": [
+        3.0,
+        3.0,
+        12.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 226,
+      "coords": [
+        4.0,
+        5.0,
+        12.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 229,
+      "coords": [
+        5.0,
+        0.0,
+        12.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 238,
+      "coords": [
+        6.0,
+        2.0,
+        12.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 239,
+      "coords": [
+        6.0,
+        4.0,
+        12.0,
+        5.0,
+        5.0
+      ],
+      "remaining": [
+        5.0,
+        5.0
+      ],
+      "annotation": 5,
+      "class": "hidden_error_derived"
+    },
+    {
+      "detector": 254,
+      "coords": [
+        8.0,
+        1.0,
+        12.0,
+        5.0,
+        5.0
+      ],
+      "remaining": [
+        5.0,
+        5.0
+      ],
+      "annotation": 5,
+      "class": "hidden_error_derived"
+    },
+    {
+      "detector": 441,
+      "coords": [
+        1.0,
+        0.0,
+        13.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 446,
+      "coords": [
+        2.0,
+        2.0,
+        13.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 449,
+      "coords": [
+        3.0,
+        3.0,
+        13.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 456,
+      "coords": [
+        4.0,
+        5.0,
+        13.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 459,
+      "coords": [
+        5.0,
+        0.0,
+        13.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 468,
+      "coords": [
+        6.0,
+        2.0,
+        13.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 671,
+      "coords": [
+        1.0,
+        0.0,
+        14.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 676,
+      "coords": [
+        2.0,
+        2.0,
+        14.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 679,
+      "coords": [
+        3.0,
+        3.0,
+        14.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 686,
+      "coords": [
+        4.0,
+        5.0,
+        14.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 689,
+      "coords": [
+        5.0,
+        0.0,
+        14.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 698,
+      "coords": [
+        6.0,
+        2.0,
+        14.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 901,
+      "coords": [
+        1.0,
+        0.0,
+        15.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 906,
+      "coords": [
+        2.0,
+        2.0,
+        15.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 909,
+      "coords": [
+        3.0,
+        3.0,
+        15.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 916,
+      "coords": [
+        4.0,
+        5.0,
+        15.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 919,
+      "coords": [
+        5.0,
+        0.0,
+        15.0,
+        0.0,
+        0.0
+      ],
+      "remaining": [
+        0.0,
+        0.0
+      ],
+      "annotation": 0,
+      "class": "visible_color"
+    },
+    {
+      "detector": 928,
+      "coords": [
+        6.0,
+        2.0,
+        15.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 1138,
+      "coords": [
+        2.0,
+        2.0,
+        16.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    },
+    {
+      "detector": 1147,
+      "coords": [
+        4.0,
+        5.0,
+        16.0,
+        4.0,
+        4.0
+      ],
+      "remaining": [
+        4.0,
+        4.0
+      ],
+      "annotation": 4,
+      "class": "visible_color"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "mode": "rectangle",
+  "triangle_half": "left",
+  "stage_name": "escape",
+  "left_len_start": 1,
+  "left_len_end": 16,
+  "top_len_start": 1,
+  "top_len_end": 14,
+  "t_start": 1,
+  "t_end": 5,
+  "hybrid_slice_index": 3,
+  "hybrid_slice_tick": 31,
+  "slice_ticks": [
+    0,
+    14,
+    24,
+    31,
+    37,
+    48,
+    58,
+    68,
+    78
+  ],
+  "slice_qubit_counts": [
+    13,
+    7,
+    7,
+    12,
+    7,
+    170,
+    170,
+    170,
+    170
+  ],
+  "selected_slice_ticks": [
+    31,
+    37,
+    48,
+    58
+  ],
+  "z_start": 2,
+  "z_end": 6,
+  "z_levels_selected": [
+    2,
+    4,
+    5,
+    6
+  ],
+  "selected_detector_count": 335
+}

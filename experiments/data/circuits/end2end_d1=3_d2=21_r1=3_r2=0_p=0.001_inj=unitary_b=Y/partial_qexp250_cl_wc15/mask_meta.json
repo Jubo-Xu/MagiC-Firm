@@ -1,0 +1,56 @@
+{
+  "mode": "custom",
+  "triangle_half": null,
+  "stage_name": "custom",
+  "left_len_start": null,
+  "left_len_end": null,
+  "top_len_start": null,
+  "top_len_end": null,
+  "t_start": null,
+  "t_end": null,
+  "hybrid_slice_index": 3,
+  "hybrid_slice_tick": 31,
+  "slice_ticks": [
+    0,
+    14,
+    24,
+    31,
+    37,
+    48,
+    58,
+    68,
+    78
+  ],
+  "slice_qubit_counts": [
+    13,
+    7,
+    7,
+    12,
+    7,
+    442,
+    442,
+    442,
+    442
+  ],
+  "selected_slice_ticks": [
+    0,
+    14,
+    24,
+    31,
+    37,
+    48,
+    58,
+    68,
+    78
+  ],
+  "z_start": 4,
+  "z_end": 8,
+  "z_levels_selected": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "selected_detector_count": 250
+}

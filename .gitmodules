@@ -1,0 +1,7 @@
+[submodule "magic_state_cultivation/upstream"]
+	path = magic_state_cultivation/upstream
+	url = https://github.com/Strilanc/magic-state-cultivation.git
+	ignore = dirty
+[submodule "micro-blossom"]
+	path = micro-blossom
+	url = https://github.com/yuewuo/micro-blossom.git

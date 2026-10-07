@@ -1,0 +1,1464 @@
+# DETECTOR_COORD  new_xy | old_xy | new_t old_t (remaining)  det_idx
+DETECTOR_COORD (2, 0) | (2, 0) | 0 0.0 () 0
+DETECTOR_COORD (4, 1) | (4, 1) | 0 0.0 () 1
+DETECTOR_COORD (2, 2) | (2, 2) | 0 0.0 () 2
+DETECTOR_COORD (1, 3) | (1, 3) | 0 0.0 () 3
+DETECTOR_COORD (1, 0) | (1, 0) | 0 0.0 () 4
+DETECTOR_COORD (3, 1) | (3, 1) | 0 0.0 () 5
+DETECTOR_COORD (1, 2) | (1, 2) | 0 0.0 () 6
+DETECTOR_COORD (2.14286, 1) | (2.14286, 1) | 1 1.0 (-1, -9) 7
+DETECTOR_COORD (4, 1) | (4, 1) | 2 2.0 () 8
+DETECTOR_COORD (3, 1) | (3, 1) | 2 2.0 () 9
+DETECTOR_COORD (2, 1) | (2, 1) | 2 2.0 () 10
+DETECTOR_COORD (1, 0) | (1, 0) | 2 2.0 () 11
+DETECTOR_COORD (2, 2) | (2, 2) | 2 2.0 () 12
+DETECTOR_COORD (0, 1) | (0, 1) | 2 2.0 () 13
+DETECTOR_COORD (3, 5) | (3, 5) | 3 4.0 (0, 6) 14
+DETECTOR_COORD (1.125, 0.125) | (1.125, 0.125) | 3 4.0 (-1, -9) 15
+DETECTOR_COORD (1.25, 1.9375) | (1.25, 1.9375) | 3 4.0 (-1, -9) 16
+DETECTOR_COORD (1.875, 0.125) | (1.875, 0.125) | 3 4.0 (-1, -9) 17
+DETECTOR_COORD (2, 1.9375) | (2, 1.9375) | 3 4.0 (-1, -9) 18
+DETECTOR_COORD (3, -2) | (3, -2) | 3 4.0 (3, 7) 19
+DETECTOR_COORD (3, 0.9375) | (3, 0.9375) | 3 4.0 (-1, -9) 20
+DETECTOR_COORD (3, 3) | (3, 3) | 3 4.0 (0, 6) 21
+DETECTOR_COORD (3.75, 0.9375) | (3.75, 0.9375) | 3 4.0 (-1, -9) 22
+DETECTOR_COORD (5, -4) | (5, -4) | 3 4.0 (3, 7) 23
+DETECTOR_COORD (5, -2) | (5, -2) | 3 4.0 (3, 7) 24
+DETECTOR_COORD (6, 1) | (6, 1) | 3 4.0 (0, 6) 25
+DETECTOR_COORD (6, 3) | (6, 3) | 3 4.0 (0, 6) 26
+DETECTOR_COORD (6, 5) | (6, 5) | 3 4.0 (0, 6) 27
+DETECTOR_COORD (7, -6) | (7, -6) | 3 4.0 (3, 7) 28
+DETECTOR_COORD (7, -4) | (7, -4) | 3 4.0 (3, 7) 29
+DETECTOR_COORD (7, -2) | (7, -2) | 3 4.0 (3, 7) 30
+DETECTOR_COORD (8, 1) | (8, 1) | 3 4.0 (0, 6) 31
+DETECTOR_COORD (8, 3) | (8, 3) | 3 4.0 (0, 6) 32
+DETECTOR_COORD (8, 5) | (8, 5) | 3 4.0 (0, 6) 33
+DETECTOR_COORD (8, 7) | (8, 7) | 3 4.0 (0, 6) 34
+DETECTOR_COORD (9, -8) | (9, -8) | 3 4.0 (3, 7) 35
+DETECTOR_COORD (9, -6) | (9, -6) | 3 4.0 (3, 7) 36
+DETECTOR_COORD (9, -4) | (9, -4) | 3 4.0 (3, 7) 37
+DETECTOR_COORD (9, -2) | (9, -2) | 3 4.0 (3, 7) 38
+DETECTOR_COORD (10, 1) | (10, 1) | 3 4.0 (0, 6) 39
+DETECTOR_COORD (10, 3) | (10, 3) | 3 4.0 (0, 6) 40
+DETECTOR_COORD (10, 5) | (10, 5) | 3 4.0 (0, 6) 41
+DETECTOR_COORD (10, 7) | (10, 7) | 3 4.0 (0, 6) 42
+DETECTOR_COORD (11, -6) | (11, -6) | 3 4.0 (3, 7) 43
+DETECTOR_COORD (11, -4) | (11, -4) | 3 4.0 (3, 7) 44
+DETECTOR_COORD (11, -2) | (11, -2) | 3 4.0 (3, 7) 45
+DETECTOR_COORD (12, 1) | (12, 1) | 3 4.0 (0, 6) 46
+DETECTOR_COORD (12, 3) | (12, 3) | 3 4.0 (0, 6) 47
+DETECTOR_COORD (12, 5) | (12, 5) | 3 4.0 (0, 6) 48
+DETECTOR_COORD (13, -4) | (13, -4) | 3 4.0 (3, 7) 49
+DETECTOR_COORD (13, -2) | (13, -2) | 3 4.0 (3, 7) 50
+DETECTOR_COORD (14, 1) | (14, 1) | 3 4.0 (0, 6) 51
+DETECTOR_COORD (14, 3) | (14, 3) | 3 4.0 (0, 6) 52
+DETECTOR_COORD (15, -2) | (15, -2) | 3 4.0 (3, 7) 53
+DETECTOR_COORD (16, 1) | (16, 1) | 3 4.0 (0, 6) 54
+DETECTOR_COORD (3, 5) | (3, 5) | 4 5.0 (0, 6) 55
+DETECTOR_COORD (0, -1) | (0, -1) | 4 5.0 (0, 6) 56
+DETECTOR_COORD (1, 0) | (1, 0) | 4 5.0 (0, 0) 57
+DETECTOR_COORD (1, 2) | (1, 2) | 4 5.0 (1, 1) 58
+DETECTOR_COORD (2, -3) | (2, -3) | 4 5.0 (0, 6) 59
+DETECTOR_COORD (2, -1) | (2, -1) | 4 5.0 (0, 6) 60
+DETECTOR_COORD (2, 0) | (2, 0) | 4 5.0 (3, 3) 61
+DETECTOR_COORD (2, 2) | (2, 2) | 4 5.0 (4, 4) 62
+DETECTOR_COORD (3, -2) | (3, -2) | 4 5.0 (3, 7) 63
+DETECTOR_COORD (3, 1) | (3, 1) | 4 5.0 (2, 2) 64
+DETECTOR_COORD (3, 3) | (3, 3) | 4 5.0 (0, 6) 65
+DETECTOR_COORD (4, -5) | (4, -5) | 4 5.0 (0, 6) 66
+DETECTOR_COORD (4, -3) | (4, -3) | 4 5.0 (0, 6) 67
+DETECTOR_COORD (4, -1) | (4, -1) | 4 5.0 (1, 1) 68
+DETECTOR_COORD (4, 1) | (4, 1) | 4 5.0 (5, 5) 69
+DETECTOR_COORD (4, 3) | (4, 3) | 4 5.0 (3, 3) 70
+DETECTOR_COORD (4, 5) | (4, 5) | 4 5.0 (3, 7) 71
+DETECTOR_COORD (5, -4) | (5, -4) | 4 5.0 (3, 7) 72
+DETECTOR_COORD (5, -2) | (5, -2) | 4 5.0 (3, 7) 73
+DETECTOR_COORD (5, 0) | (5, 0) | 4 5.0 (3, 7) 74
+DETECTOR_COORD (5, 2) | (5, 2) | 4 5.0 (3, 7) 75
+DETECTOR_COORD (5, 4) | (5, 4) | 4 5.0 (3, 7) 76
+DETECTOR_COORD (5, 6) | (5, 6) | 4 5.0 (3, 7) 77
+DETECTOR_COORD (6, -7) | (6, -7) | 4 5.0 (0, 6) 78
+DETECTOR_COORD (6, -5) | (6, -5) | 4 5.0 (0, 6) 79
+DETECTOR_COORD (6, -3) | (6, -3) | 4 5.0 (0, 6) 80
+DETECTOR_COORD (6, -1) | (6, -1) | 4 5.0 (0, 6) 81
+DETECTOR_COORD (6, 1) | (6, 1) | 4 5.0 (0, 6) 82
+DETECTOR_COORD (6, 3) | (6, 3) | 4 5.0 (0, 6) 83
+DETECTOR_COORD (6, 5) | (6, 5) | 4 5.0 (0, 6) 84
+DETECTOR_COORD (7, -6) | (7, -6) | 4 5.0 (3, 7) 85
+DETECTOR_COORD (7, -4) | (7, -4) | 4 5.0 (3, 7) 86
+DETECTOR_COORD (7, -2) | (7, -2) | 4 5.0 (3, 7) 87
+DETECTOR_COORD (7, 0) | (7, 0) | 4 5.0 (3, 7) 88
+DETECTOR_COORD (7, 2) | (7, 2) | 4 5.0 (3, 7) 89
+DETECTOR_COORD (7, 4) | (7, 4) | 4 5.0 (3, 7) 90
+DETECTOR_COORD (7, 6) | (7, 6) | 4 5.0 (3, 7) 91
+DETECTOR_COORD (7, 8) | (7, 8) | 4 5.0 (3, 7) 92
+DETECTOR_COORD (8, -7) | (8, -7) | 4 5.0 (0, 6) 93
+DETECTOR_COORD (8, -5) | (8, -5) | 4 5.0 (0, 6) 94
+DETECTOR_COORD (8, -3) | (8, -3) | 4 5.0 (0, 6) 95
+DETECTOR_COORD (8, -1) | (8, -1) | 4 5.0 (0, 6) 96
+DETECTOR_COORD (8, 1) | (8, 1) | 4 5.0 (0, 6) 97
+DETECTOR_COORD (8, 3) | (8, 3) | 4 5.0 (0, 6) 98
+DETECTOR_COORD (8, 5) | (8, 5) | 4 5.0 (0, 6) 99
+DETECTOR_COORD (8, 7) | (8, 7) | 4 5.0 (0, 6) 100
+DETECTOR_COORD (9, -8) | (9, -8) | 4 5.0 (3, 7) 101
+DETECTOR_COORD (9, -6) | (9, -6) | 4 5.0 (3, 7) 102
+DETECTOR_COORD (9, -4) | (9, -4) | 4 5.0 (3, 7) 103
+DETECTOR_COORD (9, -2) | (9, -2) | 4 5.0 (3, 7) 104
+DETECTOR_COORD (9, 0) | (9, 0) | 4 5.0 (3, 7) 105
+DETECTOR_COORD (9, 2) | (9, 2) | 4 5.0 (3, 7) 106
+DETECTOR_COORD (9, 4) | (9, 4) | 4 5.0 (3, 7) 107
+DETECTOR_COORD (9, 6) | (9, 6) | 4 5.0 (3, 7) 108
+DETECTOR_COORD (10, -5) | (10, -5) | 4 5.0 (0, 6) 109
+DETECTOR_COORD (10, -3) | (10, -3) | 4 5.0 (0, 6) 110
+DETECTOR_COORD (10, -1) | (10, -1) | 4 5.0 (0, 6) 111
+DETECTOR_COORD (10, 1) | (10, 1) | 4 5.0 (0, 6) 112
+DETECTOR_COORD (10, 3) | (10, 3) | 4 5.0 (0, 6) 113
+DETECTOR_COORD (10, 5) | (10, 5) | 4 5.0 (0, 6) 114
+DETECTOR_COORD (10, 7) | (10, 7) | 4 5.0 (0, 6) 115
+DETECTOR_COORD (11, -6) | (11, -6) | 4 5.0 (3, 7) 116
+DETECTOR_COORD (11, -4) | (11, -4) | 4 5.0 (3, 7) 117
+DETECTOR_COORD (11, -2) | (11, -2) | 4 5.0 (3, 7) 118
+DETECTOR_COORD (11, 0) | (11, 0) | 4 5.0 (3, 7) 119
+DETECTOR_COORD (11, 2) | (11, 2) | 4 5.0 (3, 7) 120
+DETECTOR_COORD (11, 4) | (11, 4) | 4 5.0 (3, 7) 121
+DETECTOR_COORD (12, -3) | (12, -3) | 4 5.0 (0, 6) 122
+DETECTOR_COORD (12, -1) | (12, -1) | 4 5.0 (0, 6) 123
+DETECTOR_COORD (12, 1) | (12, 1) | 4 5.0 (0, 6) 124
+DETECTOR_COORD (12, 3) | (12, 3) | 4 5.0 (0, 6) 125
+DETECTOR_COORD (12, 5) | (12, 5) | 4 5.0 (0, 6) 126
+DETECTOR_COORD (13, -4) | (13, -4) | 4 5.0 (3, 7) 127
+DETECTOR_COORD (13, -2) | (13, -2) | 4 5.0 (3, 7) 128
+DETECTOR_COORD (13, 0) | (13, 0) | 4 5.0 (3, 7) 129
+DETECTOR_COORD (13, 2) | (13, 2) | 4 5.0 (3, 7) 130
+DETECTOR_COORD (14, -1) | (14, -1) | 4 5.0 (0, 6) 131
+DETECTOR_COORD (14, 1) | (14, 1) | 4 5.0 (0, 6) 132
+DETECTOR_COORD (14, 3) | (14, 3) | 4 5.0 (0, 6) 133
+DETECTOR_COORD (15, -2) | (15, -2) | 4 5.0 (3, 7) 134
+DETECTOR_COORD (15, 0) | (15, 0) | 4 5.0 (3, 7) 135
+DETECTOR_COORD (16, 1) | (16, 1) | 4 5.0 (0, 6) 136
+DETECTOR_COORD (3, 5) | (3, 5) | 5 6.0 (0, 6) 137
+DETECTOR_COORD (0, -1) | (0, -1) | 5 6.0 (0, 6) 138
+DETECTOR_COORD (1, 0) | (1, 0) | 5 6.0 (0, 0) 139
+DETECTOR_COORD (1, 2) | (1, 2) | 5 6.0 (1, 1) 140
+DETECTOR_COORD (2, -3) | (2, -3) | 5 6.0 (0, 6) 141
+DETECTOR_COORD (2, -1) | (2, -1) | 5 6.0 (0, 6) 142
+DETECTOR_COORD (2, 0) | (2, 0) | 5 6.0 (3, 3) 143
+DETECTOR_COORD (2, 2) | (2, 2) | 5 6.0 (4, 4) 144
+DETECTOR_COORD (3, -2) | (3, -2) | 5 6.0 (3, 7) 145
+DETECTOR_COORD (3, 1) | (3, 1) | 5 6.0 (2, 2) 146
+DETECTOR_COORD (3, 3) | (3, 3) | 5 6.0 (0, 6) 147
+DETECTOR_COORD (4, -5) | (4, -5) | 5 6.0 (0, 6) 148
+DETECTOR_COORD (4, -3) | (4, -3) | 5 6.0 (0, 6) 149
+DETECTOR_COORD (4, -1) | (4, -1) | 5 6.0 (1, 1) 150
+DETECTOR_COORD (4, 1) | (4, 1) | 5 6.0 (5, 5) 151
+DETECTOR_COORD (4, 3) | (4, 3) | 5 6.0 (3, 3) 152
+DETECTOR_COORD (4, 5) | (4, 5) | 5 6.0 (3, 7) 153
+DETECTOR_COORD (5, -4) | (5, -4) | 5 6.0 (3, 7) 154
+DETECTOR_COORD (5, -2) | (5, -2) | 5 6.0 (3, 7) 155
+DETECTOR_COORD (5, 0) | (5, 0) | 5 6.0 (3, 7) 156
+DETECTOR_COORD (5, 2) | (5, 2) | 5 6.0 (3, 7) 157
+DETECTOR_COORD (5, 4) | (5, 4) | 5 6.0 (3, 7) 158
+DETECTOR_COORD (5, 6) | (5, 6) | 5 6.0 (3, 7) 159
+DETECTOR_COORD (6, -7) | (6, -7) | 5 6.0 (0, 6) 160
+DETECTOR_COORD (6, -5) | (6, -5) | 5 6.0 (0, 6) 161
+DETECTOR_COORD (6, -3) | (6, -3) | 5 6.0 (0, 6) 162
+DETECTOR_COORD (6, -1) | (6, -1) | 5 6.0 (0, 6) 163
+DETECTOR_COORD (6, 1) | (6, 1) | 5 6.0 (0, 6) 164
+DETECTOR_COORD (6, 3) | (6, 3) | 5 6.0 (0, 6) 165
+DETECTOR_COORD (6, 5) | (6, 5) | 5 6.0 (0, 6) 166
+DETECTOR_COORD (7, -6) | (7, -6) | 5 6.0 (3, 7) 167
+DETECTOR_COORD (7, -4) | (7, -4) | 5 6.0 (3, 7) 168
+DETECTOR_COORD (7, -2) | (7, -2) | 5 6.0 (3, 7) 169
+DETECTOR_COORD (7, 0) | (7, 0) | 5 6.0 (3, 7) 170
+DETECTOR_COORD (7, 2) | (7, 2) | 5 6.0 (3, 7) 171
+DETECTOR_COORD (7, 4) | (7, 4) | 5 6.0 (3, 7) 172
+DETECTOR_COORD (7, 6) | (7, 6) | 5 6.0 (3, 7) 173
+DETECTOR_COORD (7, 8) | (7, 8) | 5 6.0 (3, 7) 174
+DETECTOR_COORD (8, -7) | (8, -7) | 5 6.0 (0, 6) 175
+DETECTOR_COORD (8, -5) | (8, -5) | 5 6.0 (0, 6) 176
+DETECTOR_COORD (8, -3) | (8, -3) | 5 6.0 (0, 6) 177
+DETECTOR_COORD (8, -1) | (8, -1) | 5 6.0 (0, 6) 178
+DETECTOR_COORD (8, 1) | (8, 1) | 5 6.0 (0, 6) 179
+DETECTOR_COORD (8, 3) | (8, 3) | 5 6.0 (0, 6) 180
+DETECTOR_COORD (8, 5) | (8, 5) | 5 6.0 (0, 6) 181
+DETECTOR_COORD (8, 7) | (8, 7) | 5 6.0 (0, 6) 182
+DETECTOR_COORD (9, -8) | (9, -8) | 5 6.0 (3, 7) 183
+DETECTOR_COORD (9, -6) | (9, -6) | 5 6.0 (3, 7) 184
+DETECTOR_COORD (9, -4) | (9, -4) | 5 6.0 (3, 7) 185
+DETECTOR_COORD (9, -2) | (9, -2) | 5 6.0 (3, 7) 186
+DETECTOR_COORD (9, 0) | (9, 0) | 5 6.0 (3, 7) 187
+DETECTOR_COORD (9, 2) | (9, 2) | 5 6.0 (3, 7) 188
+DETECTOR_COORD (9, 4) | (9, 4) | 5 6.0 (3, 7) 189
+DETECTOR_COORD (9, 6) | (9, 6) | 5 6.0 (3, 7) 190
+DETECTOR_COORD (10, -5) | (10, -5) | 5 6.0 (0, 6) 191
+DETECTOR_COORD (10, -3) | (10, -3) | 5 6.0 (0, 6) 192
+DETECTOR_COORD (10, -1) | (10, -1) | 5 6.0 (0, 6) 193
+DETECTOR_COORD (10, 1) | (10, 1) | 5 6.0 (0, 6) 194
+DETECTOR_COORD (10, 3) | (10, 3) | 5 6.0 (0, 6) 195
+DETECTOR_COORD (10, 5) | (10, 5) | 5 6.0 (0, 6) 196
+DETECTOR_COORD (10, 7) | (10, 7) | 5 6.0 (0, 6) 197
+DETECTOR_COORD (11, -6) | (11, -6) | 5 6.0 (3, 7) 198
+DETECTOR_COORD (11, -4) | (11, -4) | 5 6.0 (3, 7) 199
+DETECTOR_COORD (11, -2) | (11, -2) | 5 6.0 (3, 7) 200
+DETECTOR_COORD (11, 0) | (11, 0) | 5 6.0 (3, 7) 201
+DETECTOR_COORD (11, 2) | (11, 2) | 5 6.0 (3, 7) 202
+DETECTOR_COORD (11, 4) | (11, 4) | 5 6.0 (3, 7) 203
+DETECTOR_COORD (12, -3) | (12, -3) | 5 6.0 (0, 6) 204
+DETECTOR_COORD (12, -1) | (12, -1) | 5 6.0 (0, 6) 205
+DETECTOR_COORD (12, 1) | (12, 1) | 5 6.0 (0, 6) 206
+DETECTOR_COORD (12, 3) | (12, 3) | 5 6.0 (0, 6) 207
+DETECTOR_COORD (12, 5) | (12, 5) | 5 6.0 (0, 6) 208
+DETECTOR_COORD (13, -4) | (13, -4) | 5 6.0 (3, 7) 209
+DETECTOR_COORD (13, -2) | (13, -2) | 5 6.0 (3, 7) 210
+DETECTOR_COORD (13, 0) | (13, 0) | 5 6.0 (3, 7) 211
+DETECTOR_COORD (13, 2) | (13, 2) | 5 6.0 (3, 7) 212
+DETECTOR_COORD (14, -1) | (14, -1) | 5 6.0 (0, 6) 213
+DETECTOR_COORD (14, 1) | (14, 1) | 5 6.0 (0, 6) 214
+DETECTOR_COORD (14, 3) | (14, 3) | 5 6.0 (0, 6) 215
+DETECTOR_COORD (15, -2) | (15, -2) | 5 6.0 (3, 7) 216
+DETECTOR_COORD (15, 0) | (15, 0) | 5 6.0 (3, 7) 217
+DETECTOR_COORD (16, 1) | (16, 1) | 5 6.0 (0, 6) 218
+DETECTOR_COORD (1, 0) | (1, 0) | 6 7.0 (0, 6) 219
+DETECTOR_COORD (3, 5) | (3, 5) | 6 7.0 (0, 6) 220
+DETECTOR_COORD (0, -1) | (0, -1) | 6 7.0 (0, 6) 221
+DETECTOR_COORD (1, 2) | (1, 2) | 6 7.0 (1, 1) 222
+DETECTOR_COORD (2, -3) | (2, -3) | 6 7.0 (0, 6) 223
+DETECTOR_COORD (2, -1) | (2, -1) | 6 7.0 (0, 6) 224
+DETECTOR_COORD (2, 0) | (2, 0) | 6 7.0 (3, 3) 225
+DETECTOR_COORD (2, 2) | (2, 2) | 6 7.0 (4, 4) 226
+DETECTOR_COORD (3, -2) | (3, -2) | 6 7.0 (3, 7) 227
+DETECTOR_COORD (3, 1) | (3, 1) | 6 7.0 (2, 2) 228
+DETECTOR_COORD (3, 3) | (3, 3) | 6 7.0 (0, 6) 229
+DETECTOR_COORD (4, -5) | (4, -5) | 6 7.0 (0, 6) 230
+DETECTOR_COORD (4, -3) | (4, -3) | 6 7.0 (0, 6) 231
+DETECTOR_COORD (4, -1) | (4, -1) | 6 7.0 (1, 1) 232
+DETECTOR_COORD (4, 1) | (4, 1) | 6 7.0 (5, 5) 233
+DETECTOR_COORD (4, 3) | (4, 3) | 6 7.0 (3, 3) 234
+DETECTOR_COORD (4, 5) | (4, 5) | 6 7.0 (3, 7) 235
+DETECTOR_COORD (5, -4) | (5, -4) | 6 7.0 (3, 7) 236
+DETECTOR_COORD (5, -2) | (5, -2) | 6 7.0 (3, 7) 237
+DETECTOR_COORD (5, 0) | (5, 0) | 6 7.0 (3, 7) 238
+DETECTOR_COORD (5, 2) | (5, 2) | 6 7.0 (3, 7) 239
+DETECTOR_COORD (5, 4) | (5, 4) | 6 7.0 (3, 7) 240
+DETECTOR_COORD (5, 6) | (5, 6) | 6 7.0 (3, 7) 241
+DETECTOR_COORD (6, -7) | (6, -7) | 6 7.0 (0, 6) 242
+DETECTOR_COORD (6, -5) | (6, -5) | 6 7.0 (0, 6) 243
+DETECTOR_COORD (6, -3) | (6, -3) | 6 7.0 (0, 6) 244
+DETECTOR_COORD (6, -1) | (6, -1) | 6 7.0 (0, 6) 245
+DETECTOR_COORD (6, 1) | (6, 1) | 6 7.0 (0, 6) 246
+DETECTOR_COORD (6, 3) | (6, 3) | 6 7.0 (0, 6) 247
+DETECTOR_COORD (6, 5) | (6, 5) | 6 7.0 (0, 6) 248
+DETECTOR_COORD (7, -6) | (7, -6) | 6 7.0 (3, 7) 249
+DETECTOR_COORD (7, -4) | (7, -4) | 6 7.0 (3, 7) 250
+DETECTOR_COORD (7, -2) | (7, -2) | 6 7.0 (3, 7) 251
+DETECTOR_COORD (7, 0) | (7, 0) | 6 7.0 (3, 7) 252
+DETECTOR_COORD (7, 2) | (7, 2) | 6 7.0 (3, 7) 253
+DETECTOR_COORD (7, 4) | (7, 4) | 6 7.0 (3, 7) 254
+DETECTOR_COORD (7, 6) | (7, 6) | 6 7.0 (3, 7) 255
+DETECTOR_COORD (7, 8) | (7, 8) | 6 7.0 (3, 7) 256
+DETECTOR_COORD (8, -7) | (8, -7) | 6 7.0 (0, 6) 257
+DETECTOR_COORD (8, -5) | (8, -5) | 6 7.0 (0, 6) 258
+DETECTOR_COORD (8, -3) | (8, -3) | 6 7.0 (0, 6) 259
+DETECTOR_COORD (8, -1) | (8, -1) | 6 7.0 (0, 6) 260
+DETECTOR_COORD (8, 1) | (8, 1) | 6 7.0 (0, 6) 261
+DETECTOR_COORD (8, 3) | (8, 3) | 6 7.0 (0, 6) 262
+DETECTOR_COORD (8, 5) | (8, 5) | 6 7.0 (0, 6) 263
+DETECTOR_COORD (8, 7) | (8, 7) | 6 7.0 (0, 6) 264
+DETECTOR_COORD (9, -8) | (9, -8) | 6 7.0 (3, 7) 265
+DETECTOR_COORD (9, -6) | (9, -6) | 6 7.0 (3, 7) 266
+DETECTOR_COORD (9, -4) | (9, -4) | 6 7.0 (3, 7) 267
+DETECTOR_COORD (9, -2) | (9, -2) | 6 7.0 (3, 7) 268
+DETECTOR_COORD (9, 0) | (9, 0) | 6 7.0 (3, 7) 269
+DETECTOR_COORD (9, 2) | (9, 2) | 6 7.0 (3, 7) 270
+DETECTOR_COORD (9, 4) | (9, 4) | 6 7.0 (3, 7) 271
+DETECTOR_COORD (9, 6) | (9, 6) | 6 7.0 (3, 7) 272
+DETECTOR_COORD (10, -5) | (10, -5) | 6 7.0 (0, 6) 273
+DETECTOR_COORD (10, -3) | (10, -3) | 6 7.0 (0, 6) 274
+DETECTOR_COORD (10, -1) | (10, -1) | 6 7.0 (0, 6) 275
+DETECTOR_COORD (10, 1) | (10, 1) | 6 7.0 (0, 6) 276
+DETECTOR_COORD (10, 3) | (10, 3) | 6 7.0 (0, 6) 277
+DETECTOR_COORD (10, 5) | (10, 5) | 6 7.0 (0, 6) 278
+DETECTOR_COORD (10, 7) | (10, 7) | 6 7.0 (0, 6) 279
+DETECTOR_COORD (11, -6) | (11, -6) | 6 7.0 (3, 7) 280
+DETECTOR_COORD (11, -4) | (11, -4) | 6 7.0 (3, 7) 281
+DETECTOR_COORD (11, -2) | (11, -2) | 6 7.0 (3, 7) 282
+DETECTOR_COORD (11, 0) | (11, 0) | 6 7.0 (3, 7) 283
+DETECTOR_COORD (11, 2) | (11, 2) | 6 7.0 (3, 7) 284
+DETECTOR_COORD (11, 4) | (11, 4) | 6 7.0 (3, 7) 285
+DETECTOR_COORD (12, -3) | (12, -3) | 6 7.0 (0, 6) 286
+DETECTOR_COORD (12, -1) | (12, -1) | 6 7.0 (0, 6) 287
+DETECTOR_COORD (12, 1) | (12, 1) | 6 7.0 (0, 6) 288
+DETECTOR_COORD (12, 3) | (12, 3) | 6 7.0 (0, 6) 289
+DETECTOR_COORD (12, 5) | (12, 5) | 6 7.0 (0, 6) 290
+DETECTOR_COORD (13, -4) | (13, -4) | 6 7.0 (3, 7) 291
+DETECTOR_COORD (13, -2) | (13, -2) | 6 7.0 (3, 7) 292
+DETECTOR_COORD (13, 0) | (13, 0) | 6 7.0 (3, 7) 293
+DETECTOR_COORD (13, 2) | (13, 2) | 6 7.0 (3, 7) 294
+DETECTOR_COORD (14, -1) | (14, -1) | 6 7.0 (0, 6) 295
+DETECTOR_COORD (14, 1) | (14, 1) | 6 7.0 (0, 6) 296
+DETECTOR_COORD (14, 3) | (14, 3) | 6 7.0 (0, 6) 297
+DETECTOR_COORD (15, -2) | (15, -2) | 6 7.0 (3, 7) 298
+DETECTOR_COORD (15, 0) | (15, 0) | 6 7.0 (3, 7) 299
+DETECTOR_COORD (16, 1) | (16, 1) | 6 7.0 (0, 6) 300
+DETECTOR_COORD (1, 0) | (1, 0) | 7 8.0 (0, 6) 301
+DETECTOR_COORD (3, 5) | (3, 5) | 7 8.0 (0, 6) 302
+DETECTOR_COORD (0, -1) | (0, -1) | 7 8.0 (0, 6) 303
+DETECTOR_COORD (1, 2) | (1, 2) | 7 8.0 (0, 6) 304
+DETECTOR_COORD (1, 3) | (1, 3) | 7 8.0 (3, 7) 305
+DETECTOR_COORD (2, -3) | (2, -3) | 7 8.0 (0, 6) 306
+DETECTOR_COORD (2, -1) | (2, -1) | 7 8.0 (0, 6) 307
+DETECTOR_COORD (2, 0) | (2, 0) | 7 8.0 (3, 7) 308
+DETECTOR_COORD (2, 2) | (2, 2) | 7 8.0 (3, 7) 309
+DETECTOR_COORD (3, -2) | (3, -2) | 7 8.0 (3, 7) 310
+DETECTOR_COORD (3, 1) | (3, 1) | 7 8.0 (0, 6) 311
+DETECTOR_COORD (3, 3) | (3, 3) | 7 8.0 (0, 6) 312
+DETECTOR_COORD (4, -5) | (4, -5) | 7 8.0 (0, 6) 313
+DETECTOR_COORD (4, -3) | (4, -3) | 7 8.0 (0, 6) 314
+DETECTOR_COORD (4, -1) | (4, -1) | 7 8.0 (0, 6) 315
+DETECTOR_COORD (4, 1) | (4, 1) | 7 8.0 (3, 7) 316
+DETECTOR_COORD (4, 3) | (4, 3) | 7 8.0 (3, 7) 317
+DETECTOR_COORD (4, 5) | (4, 5) | 7 8.0 (3, 7) 318
+DETECTOR_COORD (5, -4) | (5, -4) | 7 8.0 (3, 7) 319
+DETECTOR_COORD (5, -2) | (5, -2) | 7 8.0 (3, 7) 320
+DETECTOR_COORD (5, 0) | (5, 0) | 7 8.0 (3, 7) 321
+DETECTOR_COORD (5, 2) | (5, 2) | 7 8.0 (3, 7) 322
+DETECTOR_COORD (5, 4) | (5, 4) | 7 8.0 (3, 7) 323
+DETECTOR_COORD (5, 6) | (5, 6) | 7 8.0 (3, 7) 324
+DETECTOR_COORD (6, -7) | (6, -7) | 7 8.0 (0, 6) 325
+DETECTOR_COORD (6, -5) | (6, -5) | 7 8.0 (0, 6) 326
+DETECTOR_COORD (6, -3) | (6, -3) | 7 8.0 (0, 6) 327
+DETECTOR_COORD (6, -1) | (6, -1) | 7 8.0 (0, 6) 328
+DETECTOR_COORD (6, 1) | (6, 1) | 7 8.0 (0, 6) 329
+DETECTOR_COORD (6, 3) | (6, 3) | 7 8.0 (0, 6) 330
+DETECTOR_COORD (6, 5) | (6, 5) | 7 8.0 (0, 6) 331
+DETECTOR_COORD (7, -6) | (7, -6) | 7 8.0 (3, 7) 332
+DETECTOR_COORD (7, -4) | (7, -4) | 7 8.0 (3, 7) 333
+DETECTOR_COORD (7, -2) | (7, -2) | 7 8.0 (3, 7) 334
+DETECTOR_COORD (7, 0) | (7, 0) | 7 8.0 (3, 7) 335
+DETECTOR_COORD (7, 2) | (7, 2) | 7 8.0 (3, 7) 336
+DETECTOR_COORD (7, 4) | (7, 4) | 7 8.0 (3, 7) 337
+DETECTOR_COORD (7, 6) | (7, 6) | 7 8.0 (3, 7) 338
+DETECTOR_COORD (7, 8) | (7, 8) | 7 8.0 (3, 7) 339
+DETECTOR_COORD (8, -7) | (8, -7) | 7 8.0 (0, 6) 340
+DETECTOR_COORD (8, -5) | (8, -5) | 7 8.0 (0, 6) 341
+DETECTOR_COORD (8, -3) | (8, -3) | 7 8.0 (0, 6) 342
+DETECTOR_COORD (8, -1) | (8, -1) | 7 8.0 (0, 6) 343
+DETECTOR_COORD (8, 1) | (8, 1) | 7 8.0 (0, 6) 344
+DETECTOR_COORD (8, 3) | (8, 3) | 7 8.0 (0, 6) 345
+DETECTOR_COORD (8, 5) | (8, 5) | 7 8.0 (0, 6) 346
+DETECTOR_COORD (8, 7) | (8, 7) | 7 8.0 (0, 6) 347
+DETECTOR_COORD (9, -8) | (9, -8) | 7 8.0 (3, 7) 348
+DETECTOR_COORD (9, -6) | (9, -6) | 7 8.0 (3, 7) 349
+DETECTOR_COORD (9, -4) | (9, -4) | 7 8.0 (3, 7) 350
+DETECTOR_COORD (9, -2) | (9, -2) | 7 8.0 (3, 7) 351
+DETECTOR_COORD (9, 0) | (9, 0) | 7 8.0 (3, 7) 352
+DETECTOR_COORD (9, 2) | (9, 2) | 7 8.0 (3, 7) 353
+DETECTOR_COORD (9, 4) | (9, 4) | 7 8.0 (3, 7) 354
+DETECTOR_COORD (9, 6) | (9, 6) | 7 8.0 (3, 7) 355
+DETECTOR_COORD (10, -5) | (10, -5) | 7 8.0 (0, 6) 356
+DETECTOR_COORD (10, -3) | (10, -3) | 7 8.0 (0, 6) 357
+DETECTOR_COORD (10, -1) | (10, -1) | 7 8.0 (0, 6) 358
+DETECTOR_COORD (10, 1) | (10, 1) | 7 8.0 (0, 6) 359
+DETECTOR_COORD (10, 3) | (10, 3) | 7 8.0 (0, 6) 360
+DETECTOR_COORD (10, 5) | (10, 5) | 7 8.0 (0, 6) 361
+DETECTOR_COORD (10, 7) | (10, 7) | 7 8.0 (0, 6) 362
+DETECTOR_COORD (11, -6) | (11, -6) | 7 8.0 (3, 7) 363
+DETECTOR_COORD (11, -4) | (11, -4) | 7 8.0 (3, 7) 364
+DETECTOR_COORD (11, -2) | (11, -2) | 7 8.0 (3, 7) 365
+DETECTOR_COORD (11, 0) | (11, 0) | 7 8.0 (3, 7) 366
+DETECTOR_COORD (11, 2) | (11, 2) | 7 8.0 (3, 7) 367
+DETECTOR_COORD (11, 4) | (11, 4) | 7 8.0 (3, 7) 368
+DETECTOR_COORD (12, -3) | (12, -3) | 7 8.0 (0, 6) 369
+DETECTOR_COORD (12, -1) | (12, -1) | 7 8.0 (0, 6) 370
+DETECTOR_COORD (12, 1) | (12, 1) | 7 8.0 (0, 6) 371
+DETECTOR_COORD (12, 3) | (12, 3) | 7 8.0 (0, 6) 372
+DETECTOR_COORD (12, 5) | (12, 5) | 7 8.0 (0, 6) 373
+DETECTOR_COORD (13, -4) | (13, -4) | 7 8.0 (3, 7) 374
+DETECTOR_COORD (13, -2) | (13, -2) | 7 8.0 (3, 7) 375
+DETECTOR_COORD (13, 0) | (13, 0) | 7 8.0 (3, 7) 376
+DETECTOR_COORD (13, 2) | (13, 2) | 7 8.0 (3, 7) 377
+DETECTOR_COORD (14, -1) | (14, -1) | 7 8.0 (0, 6) 378
+DETECTOR_COORD (14, 1) | (14, 1) | 7 8.0 (0, 6) 379
+DETECTOR_COORD (14, 3) | (14, 3) | 7 8.0 (0, 6) 380
+DETECTOR_COORD (15, -2) | (15, -2) | 7 8.0 (3, 7) 381
+DETECTOR_COORD (15, 0) | (15, 0) | 7 8.0 (3, 7) 382
+DETECTOR_COORD (16, 1) | (16, 1) | 7 8.0 (0, 6) 383
+DETECTOR_COORD (1, 0) | (1, 0) | 8 9.0 (0, 6) 384
+DETECTOR_COORD (3, 5) | (3, 5) | 8 9.0 (0, 6) 385
+DETECTOR_COORD (0, -1) | (0, -1) | 8 9.0 (0, 6) 386
+DETECTOR_COORD (1, 2) | (1, 2) | 8 9.0 (0, 6) 387
+DETECTOR_COORD (1, 3) | (1, 3) | 8 9.0 (3, 7) 388
+DETECTOR_COORD (2, -3) | (2, -3) | 8 9.0 (0, 6) 389
+DETECTOR_COORD (2, -1) | (2, -1) | 8 9.0 (0, 6) 390
+DETECTOR_COORD (2, 0) | (2, 0) | 8 9.0 (3, 7) 391
+DETECTOR_COORD (2, 2) | (2, 2) | 8 9.0 (3, 7) 392
+DETECTOR_COORD (3, -2) | (3, -2) | 8 9.0 (3, 7) 393
+DETECTOR_COORD (3, 1) | (3, 1) | 8 9.0 (0, 6) 394
+DETECTOR_COORD (3, 3) | (3, 3) | 8 9.0 (0, 6) 395
+DETECTOR_COORD (4, -5) | (4, -5) | 8 9.0 (0, 6) 396
+DETECTOR_COORD (4, -3) | (4, -3) | 8 9.0 (0, 6) 397
+DETECTOR_COORD (4, -1) | (4, -1) | 8 9.0 (0, 6) 398
+DETECTOR_COORD (4, 1) | (4, 1) | 8 9.0 (3, 7) 399
+DETECTOR_COORD (4, 3) | (4, 3) | 8 9.0 (3, 7) 400
+DETECTOR_COORD (4, 5) | (4, 5) | 8 9.0 (3, 7) 401
+DETECTOR_COORD (5, -4) | (5, -4) | 8 9.0 (3, 7) 402
+DETECTOR_COORD (5, -2) | (5, -2) | 8 9.0 (3, 7) 403
+DETECTOR_COORD (5, 0) | (5, 0) | 8 9.0 (3, 7) 404
+DETECTOR_COORD (5, 2) | (5, 2) | 8 9.0 (3, 7) 405
+DETECTOR_COORD (5, 4) | (5, 4) | 8 9.0 (3, 7) 406
+DETECTOR_COORD (5, 6) | (5, 6) | 8 9.0 (3, 7) 407
+DETECTOR_COORD (6, -7) | (6, -7) | 8 9.0 (0, 6) 408
+DETECTOR_COORD (6, -5) | (6, -5) | 8 9.0 (0, 6) 409
+DETECTOR_COORD (6, -3) | (6, -3) | 8 9.0 (0, 6) 410
+DETECTOR_COORD (6, -1) | (6, -1) | 8 9.0 (0, 6) 411
+DETECTOR_COORD (6, 1) | (6, 1) | 8 9.0 (0, 6) 412
+DETECTOR_COORD (6, 3) | (6, 3) | 8 9.0 (0, 6) 413
+DETECTOR_COORD (6, 5) | (6, 5) | 8 9.0 (0, 6) 414
+DETECTOR_COORD (7, -6) | (7, -6) | 8 9.0 (3, 7) 415
+DETECTOR_COORD (7, -4) | (7, -4) | 8 9.0 (3, 7) 416
+DETECTOR_COORD (7, -2) | (7, -2) | 8 9.0 (3, 7) 417
+DETECTOR_COORD (7, 0) | (7, 0) | 8 9.0 (3, 7) 418
+DETECTOR_COORD (7, 2) | (7, 2) | 8 9.0 (3, 7) 419
+DETECTOR_COORD (7, 4) | (7, 4) | 8 9.0 (3, 7) 420
+DETECTOR_COORD (7, 6) | (7, 6) | 8 9.0 (3, 7) 421
+DETECTOR_COORD (7, 8) | (7, 8) | 8 9.0 (3, 7) 422
+DETECTOR_COORD (8, -7) | (8, -7) | 8 9.0 (0, 6) 423
+DETECTOR_COORD (8, -5) | (8, -5) | 8 9.0 (0, 6) 424
+DETECTOR_COORD (8, -3) | (8, -3) | 8 9.0 (0, 6) 425
+DETECTOR_COORD (8, -1) | (8, -1) | 8 9.0 (0, 6) 426
+DETECTOR_COORD (8, 1) | (8, 1) | 8 9.0 (0, 6) 427
+DETECTOR_COORD (8, 3) | (8, 3) | 8 9.0 (0, 6) 428
+DETECTOR_COORD (8, 5) | (8, 5) | 8 9.0 (0, 6) 429
+DETECTOR_COORD (8, 7) | (8, 7) | 8 9.0 (0, 6) 430
+DETECTOR_COORD (9, -8) | (9, -8) | 8 9.0 (3, 7) 431
+DETECTOR_COORD (9, -6) | (9, -6) | 8 9.0 (3, 7) 432
+DETECTOR_COORD (9, -4) | (9, -4) | 8 9.0 (3, 7) 433
+DETECTOR_COORD (9, -2) | (9, -2) | 8 9.0 (3, 7) 434
+DETECTOR_COORD (9, 0) | (9, 0) | 8 9.0 (3, 7) 435
+DETECTOR_COORD (9, 2) | (9, 2) | 8 9.0 (3, 7) 436
+DETECTOR_COORD (9, 4) | (9, 4) | 8 9.0 (3, 7) 437
+DETECTOR_COORD (9, 6) | (9, 6) | 8 9.0 (3, 7) 438
+DETECTOR_COORD (10, -5) | (10, -5) | 8 9.0 (0, 6) 439
+DETECTOR_COORD (10, -3) | (10, -3) | 8 9.0 (0, 6) 440
+DETECTOR_COORD (10, -1) | (10, -1) | 8 9.0 (0, 6) 441
+DETECTOR_COORD (10, 1) | (10, 1) | 8 9.0 (0, 6) 442
+DETECTOR_COORD (10, 3) | (10, 3) | 8 9.0 (0, 6) 443
+DETECTOR_COORD (10, 5) | (10, 5) | 8 9.0 (0, 6) 444
+DETECTOR_COORD (10, 7) | (10, 7) | 8 9.0 (0, 6) 445
+DETECTOR_COORD (11, -6) | (11, -6) | 8 9.0 (3, 7) 446
+DETECTOR_COORD (11, -4) | (11, -4) | 8 9.0 (3, 7) 447
+DETECTOR_COORD (11, -2) | (11, -2) | 8 9.0 (3, 7) 448
+DETECTOR_COORD (11, 0) | (11, 0) | 8 9.0 (3, 7) 449
+DETECTOR_COORD (11, 2) | (11, 2) | 8 9.0 (3, 7) 450
+DETECTOR_COORD (11, 4) | (11, 4) | 8 9.0 (3, 7) 451
+DETECTOR_COORD (12, -3) | (12, -3) | 8 9.0 (0, 6) 452
+DETECTOR_COORD (12, -1) | (12, -1) | 8 9.0 (0, 6) 453
+DETECTOR_COORD (12, 1) | (12, 1) | 8 9.0 (0, 6) 454
+DETECTOR_COORD (12, 3) | (12, 3) | 8 9.0 (0, 6) 455
+DETECTOR_COORD (12, 5) | (12, 5) | 8 9.0 (0, 6) 456
+DETECTOR_COORD (13, -4) | (13, -4) | 8 9.0 (3, 7) 457
+DETECTOR_COORD (13, -2) | (13, -2) | 8 9.0 (3, 7) 458
+DETECTOR_COORD (13, 0) | (13, 0) | 8 9.0 (3, 7) 459
+DETECTOR_COORD (13, 2) | (13, 2) | 8 9.0 (3, 7) 460
+DETECTOR_COORD (14, -1) | (14, -1) | 8 9.0 (0, 6) 461
+DETECTOR_COORD (14, 1) | (14, 1) | 8 9.0 (0, 6) 462
+DETECTOR_COORD (14, 3) | (14, 3) | 8 9.0 (0, 6) 463
+DETECTOR_COORD (15, -2) | (15, -2) | 8 9.0 (3, 7) 464
+DETECTOR_COORD (15, 0) | (15, 0) | 8 9.0 (3, 7) 465
+DETECTOR_COORD (16, 1) | (16, 1) | 8 9.0 (0, 6) 466
+DETECTOR_COORD (1, 0) | (1, 0) | 9 10.0 (0, 6) 467
+DETECTOR_COORD (3, 5) | (3, 5) | 9 10.0 (0, 6) 468
+DETECTOR_COORD (0, -1) | (0, -1) | 9 10.0 (0, 6) 469
+DETECTOR_COORD (1, 2) | (1, 2) | 9 10.0 (0, 6) 470
+DETECTOR_COORD (1, 3) | (1, 3) | 9 10.0 (3, 7) 471
+DETECTOR_COORD (2, -3) | (2, -3) | 9 10.0 (0, 6) 472
+DETECTOR_COORD (2, -1) | (2, -1) | 9 10.0 (0, 6) 473
+DETECTOR_COORD (2, 0) | (2, 0) | 9 10.0 (3, 7) 474
+DETECTOR_COORD (2, 2) | (2, 2) | 9 10.0 (3, 7) 475
+DETECTOR_COORD (3, -2) | (3, -2) | 9 10.0 (3, 7) 476
+DETECTOR_COORD (3, 1) | (3, 1) | 9 10.0 (0, 6) 477
+DETECTOR_COORD (3, 3) | (3, 3) | 9 10.0 (0, 6) 478
+DETECTOR_COORD (4, -5) | (4, -5) | 9 10.0 (0, 6) 479
+DETECTOR_COORD (4, -3) | (4, -3) | 9 10.0 (0, 6) 480
+DETECTOR_COORD (4, -1) | (4, -1) | 9 10.0 (0, 6) 481
+DETECTOR_COORD (4, 1) | (4, 1) | 9 10.0 (3, 7) 482
+DETECTOR_COORD (4, 3) | (4, 3) | 9 10.0 (3, 7) 483
+DETECTOR_COORD (4, 5) | (4, 5) | 9 10.0 (3, 7) 484
+DETECTOR_COORD (5, -4) | (5, -4) | 9 10.0 (3, 7) 485
+DETECTOR_COORD (5, -2) | (5, -2) | 9 10.0 (3, 7) 486
+DETECTOR_COORD (5, 0) | (5, 0) | 9 10.0 (3, 7) 487
+DETECTOR_COORD (5, 2) | (5, 2) | 9 10.0 (3, 7) 488
+DETECTOR_COORD (5, 4) | (5, 4) | 9 10.0 (3, 7) 489
+DETECTOR_COORD (5, 6) | (5, 6) | 9 10.0 (3, 7) 490
+DETECTOR_COORD (6, -7) | (6, -7) | 9 10.0 (0, 6) 491
+DETECTOR_COORD (6, -5) | (6, -5) | 9 10.0 (0, 6) 492
+DETECTOR_COORD (6, -3) | (6, -3) | 9 10.0 (0, 6) 493
+DETECTOR_COORD (6, -1) | (6, -1) | 9 10.0 (0, 6) 494
+DETECTOR_COORD (6, 1) | (6, 1) | 9 10.0 (0, 6) 495
+DETECTOR_COORD (6, 3) | (6, 3) | 9 10.0 (0, 6) 496
+DETECTOR_COORD (6, 5) | (6, 5) | 9 10.0 (0, 6) 497
+DETECTOR_COORD (7, -6) | (7, -6) | 9 10.0 (3, 7) 498
+DETECTOR_COORD (7, -4) | (7, -4) | 9 10.0 (3, 7) 499
+DETECTOR_COORD (7, -2) | (7, -2) | 9 10.0 (3, 7) 500
+DETECTOR_COORD (7, 0) | (7, 0) | 9 10.0 (3, 7) 501
+DETECTOR_COORD (7, 2) | (7, 2) | 9 10.0 (3, 7) 502
+DETECTOR_COORD (7, 4) | (7, 4) | 9 10.0 (3, 7) 503
+DETECTOR_COORD (7, 6) | (7, 6) | 9 10.0 (3, 7) 504
+DETECTOR_COORD (7, 8) | (7, 8) | 9 10.0 (3, 7) 505
+DETECTOR_COORD (8, -7) | (8, -7) | 9 10.0 (0, 6) 506
+DETECTOR_COORD (8, -5) | (8, -5) | 9 10.0 (0, 6) 507
+DETECTOR_COORD (8, -3) | (8, -3) | 9 10.0 (0, 6) 508
+DETECTOR_COORD (8, -1) | (8, -1) | 9 10.0 (0, 6) 509
+DETECTOR_COORD (8, 1) | (8, 1) | 9 10.0 (0, 6) 510
+DETECTOR_COORD (8, 3) | (8, 3) | 9 10.0 (0, 6) 511
+DETECTOR_COORD (8, 5) | (8, 5) | 9 10.0 (0, 6) 512
+DETECTOR_COORD (8, 7) | (8, 7) | 9 10.0 (0, 6) 513
+DETECTOR_COORD (9, -8) | (9, -8) | 9 10.0 (3, 7) 514
+DETECTOR_COORD (9, -6) | (9, -6) | 9 10.0 (3, 7) 515
+DETECTOR_COORD (9, -4) | (9, -4) | 9 10.0 (3, 7) 516
+DETECTOR_COORD (9, -2) | (9, -2) | 9 10.0 (3, 7) 517
+DETECTOR_COORD (9, 0) | (9, 0) | 9 10.0 (3, 7) 518
+DETECTOR_COORD (9, 2) | (9, 2) | 9 10.0 (3, 7) 519
+DETECTOR_COORD (9, 4) | (9, 4) | 9 10.0 (3, 7) 520
+DETECTOR_COORD (9, 6) | (9, 6) | 9 10.0 (3, 7) 521
+DETECTOR_COORD (10, -5) | (10, -5) | 9 10.0 (0, 6) 522
+DETECTOR_COORD (10, -3) | (10, -3) | 9 10.0 (0, 6) 523
+DETECTOR_COORD (10, -1) | (10, -1) | 9 10.0 (0, 6) 524
+DETECTOR_COORD (10, 1) | (10, 1) | 9 10.0 (0, 6) 525
+DETECTOR_COORD (10, 3) | (10, 3) | 9 10.0 (0, 6) 526
+DETECTOR_COORD (10, 5) | (10, 5) | 9 10.0 (0, 6) 527
+DETECTOR_COORD (10, 7) | (10, 7) | 9 10.0 (0, 6) 528
+DETECTOR_COORD (11, -6) | (11, -6) | 9 10.0 (3, 7) 529
+DETECTOR_COORD (11, -4) | (11, -4) | 9 10.0 (3, 7) 530
+DETECTOR_COORD (11, -2) | (11, -2) | 9 10.0 (3, 7) 531
+DETECTOR_COORD (11, 0) | (11, 0) | 9 10.0 (3, 7) 532
+DETECTOR_COORD (11, 2) | (11, 2) | 9 10.0 (3, 7) 533
+DETECTOR_COORD (11, 4) | (11, 4) | 9 10.0 (3, 7) 534
+DETECTOR_COORD (12, -3) | (12, -3) | 9 10.0 (0, 6) 535
+DETECTOR_COORD (12, -1) | (12, -1) | 9 10.0 (0, 6) 536
+DETECTOR_COORD (12, 1) | (12, 1) | 9 10.0 (0, 6) 537
+DETECTOR_COORD (12, 3) | (12, 3) | 9 10.0 (0, 6) 538
+DETECTOR_COORD (12, 5) | (12, 5) | 9 10.0 (0, 6) 539
+DETECTOR_COORD (13, -4) | (13, -4) | 9 10.0 (3, 7) 540
+DETECTOR_COORD (13, -2) | (13, -2) | 9 10.0 (3, 7) 541
+DETECTOR_COORD (13, 0) | (13, 0) | 9 10.0 (3, 7) 542
+DETECTOR_COORD (13, 2) | (13, 2) | 9 10.0 (3, 7) 543
+DETECTOR_COORD (14, -1) | (14, -1) | 9 10.0 (0, 6) 544
+DETECTOR_COORD (14, 1) | (14, 1) | 9 10.0 (0, 6) 545
+DETECTOR_COORD (14, 3) | (14, 3) | 9 10.0 (0, 6) 546
+DETECTOR_COORD (15, -2) | (15, -2) | 9 10.0 (3, 7) 547
+DETECTOR_COORD (15, 0) | (15, 0) | 9 10.0 (3, 7) 548
+DETECTOR_COORD (16, 1) | (16, 1) | 9 10.0 (0, 6) 549
+DETECTOR_COORD (0, -1) | (0, -0.5) | 10 11.0 (0, 6) 550   <-- remapped
+DETECTOR_COORD (2, 0) | (1, 0) | 10 11.0 (3, 7) 551   <-- remapped
+DETECTOR_COORD (2, -1) | (1.5, -1) | 10 11.0 (0, 6) 552   <-- remapped
+DETECTOR_COORD (1, 2) | (1, 1.5) | 10 11.0 (0, 6) 553   <-- remapped
+DETECTOR_COORD (1, 3) | (1, 2) | 10 11.0 (3, 7) 554   <-- remapped
+DETECTOR_COORD (2, -3) | (2, -2.5) | 10 11.0 (0, 6) 555   <-- remapped
+DETECTOR_COORD (3, -2) | (2.5, -2) | 10 11.0 (3, 7) 556   <-- remapped
+DETECTOR_COORD (3, 1) | (2.5, 1) | 10 11.0 (0, 6) 557   <-- remapped
+DETECTOR_COORD (2, 2) | (2, 1.5) | 10 11.0 (3, 7) 558   <-- remapped
+DETECTOR_COORD (4, 3) | (3, 3) | 10 11.0 (3, 7) 559   <-- remapped
+DETECTOR_COORD (4, -3) | (3.5, -3) | 10 11.0 (0, 6) 560   <-- remapped
+DETECTOR_COORD (4, -1) | (3.5, -1) | 10 11.0 (0, 6) 561   <-- remapped
+DETECTOR_COORD (4, 1) | (3.5, 0.5) | 10 11.0 (3, 7) 562   <-- remapped
+DETECTOR_COORD (3, 3) | (3, 3.5) | 10 11.0 (0, 6) 563   <-- remapped
+DETECTOR_COORD (4, 5) | (3.5, 4.5) | 10 11.0 (3, 7) 564   <-- remapped
+DETECTOR_COORD (4, -5) | (4, -4.5) | 10 11.0 (0, 6) 565   <-- remapped
+DETECTOR_COORD (5, -4) | (4.5, -4) | 10 11.0 (3, 7) 566   <-- remapped
+DETECTOR_COORD (5, -2) | (4.5, -2) | 10 11.0 (3, 7) 567   <-- remapped
+DETECTOR_COORD (5, 0) | (4.5, 0) | 10 11.0 (3, 7) 568   <-- remapped
+DETECTOR_COORD (5, 2) | (4.5, 2) | 10 11.0 (3, 7) 569   <-- remapped
+DETECTOR_COORD (5, 4) | (4.5, 4) | 10 11.0 (3, 7) 570   <-- remapped
+DETECTOR_COORD (6, -5) | (5.5, -5) | 10 11.0 (0, 6) 571   <-- remapped
+DETECTOR_COORD (6, -3) | (5.5, -3) | 10 11.0 (0, 6) 572   <-- remapped
+DETECTOR_COORD (6, -1) | (5.5, -1) | 10 11.0 (0, 6) 573   <-- remapped
+DETECTOR_COORD (6, 1) | (5.5, 1) | 10 11.0 (0, 6) 574   <-- remapped
+DETECTOR_COORD (6, 3) | (5.5, 3) | 10 11.0 (0, 6) 575   <-- remapped
+DETECTOR_COORD (6, 5) | (5.5, 5) | 10 11.0 (0, 6) 576   <-- remapped
+DETECTOR_COORD (5, 6) | (5, 5.5) | 10 11.0 (3, 7) 577   <-- remapped
+DETECTOR_COORD (6, -7) | (6, -6.5) | 10 11.0 (0, 6) 578   <-- remapped
+DETECTOR_COORD (7, -6) | (6.5, -6) | 10 11.0 (3, 7) 579   <-- remapped
+DETECTOR_COORD (7, -4) | (6.5, -4) | 10 11.0 (3, 7) 580   <-- remapped
+DETECTOR_COORD (7, -2) | (6.5, -2) | 10 11.0 (3, 7) 581   <-- remapped
+DETECTOR_COORD (7, 0) | (6.5, 0) | 10 11.0 (3, 7) 582   <-- remapped
+DETECTOR_COORD (7, 2) | (6.5, 2) | 10 11.0 (3, 7) 583   <-- remapped
+DETECTOR_COORD (7, 4) | (6.5, 4) | 10 11.0 (3, 7) 584   <-- remapped
+DETECTOR_COORD (7, 6) | (6.5, 6) | 10 11.0 (3, 7) 585   <-- remapped
+DETECTOR_COORD (8, -7) | (7.5, -7) | 10 11.0 (0, 6) 586   <-- remapped
+DETECTOR_COORD (8, -5) | (7.5, -5) | 10 11.0 (0, 6) 587   <-- remapped
+DETECTOR_COORD (8, -3) | (7.5, -3) | 10 11.0 (0, 6) 588   <-- remapped
+DETECTOR_COORD (8, -1) | (7.5, -1) | 10 11.0 (0, 6) 589   <-- remapped
+DETECTOR_COORD (8, 1) | (7.5, 1) | 10 11.0 (0, 6) 590   <-- remapped
+DETECTOR_COORD (8, 3) | (7.5, 3) | 10 11.0 (0, 6) 591   <-- remapped
+DETECTOR_COORD (8, 5) | (7.5, 5) | 10 11.0 (0, 6) 592   <-- remapped
+DETECTOR_COORD (8, 7) | (7.5, 7) | 10 11.0 (0, 6) 593   <-- remapped
+DETECTOR_COORD (7, 8) | (7, 7.5) | 10 11.0 (3, 7) 594   <-- remapped
+DETECTOR_COORD (9, -8) | (8.5, -8) | 10 11.0 (3, 7) 595   <-- remapped
+DETECTOR_COORD (9, -6) | (8.5, -6) | 10 11.0 (3, 7) 596   <-- remapped
+DETECTOR_COORD (9, -4) | (8.5, -4) | 10 11.0 (3, 7) 597   <-- remapped
+DETECTOR_COORD (9, -2) | (8.5, -2) | 10 11.0 (3, 7) 598   <-- remapped
+DETECTOR_COORD (9, 0) | (8.5, 0) | 10 11.0 (3, 7) 599   <-- remapped
+DETECTOR_COORD (9, 2) | (8.5, 2) | 10 11.0 (3, 7) 600   <-- remapped
+DETECTOR_COORD (9, 4) | (8.5, 4) | 10 11.0 (3, 7) 601   <-- remapped
+DETECTOR_COORD (9, 6) | (8.5, 6) | 10 11.0 (3, 7) 602   <-- remapped
+DETECTOR_COORD (10, -5) | (9.5, -5) | 10 11.0 (0, 6) 603   <-- remapped
+DETECTOR_COORD (10, -3) | (9.5, -3) | 10 11.0 (0, 6) 604   <-- remapped
+DETECTOR_COORD (10, -1) | (9.5, -1) | 10 11.0 (0, 6) 605   <-- remapped
+DETECTOR_COORD (10, 1) | (9.5, 1) | 10 11.0 (0, 6) 606   <-- remapped
+DETECTOR_COORD (10, 3) | (9.5, 3) | 10 11.0 (0, 6) 607   <-- remapped
+DETECTOR_COORD (10, 5) | (9.5, 5) | 10 11.0 (0, 6) 608   <-- remapped
+DETECTOR_COORD (10, 7) | (9.5, 7) | 10 11.0 (0, 6) 609   <-- remapped
+DETECTOR_COORD (11, -6) | (10.5, -6) | 10 11.0 (3, 7) 610   <-- remapped
+DETECTOR_COORD (11, -4) | (10.5, -4) | 10 11.0 (3, 7) 611   <-- remapped
+DETECTOR_COORD (11, -2) | (10.5, -2) | 10 11.0 (3, 7) 612   <-- remapped
+DETECTOR_COORD (11, 0) | (10.5, 0) | 10 11.0 (3, 7) 613   <-- remapped
+DETECTOR_COORD (11, 2) | (10.5, 2) | 10 11.0 (3, 7) 614   <-- remapped
+DETECTOR_COORD (11, 4) | (10.5, 4) | 10 11.0 (3, 7) 615   <-- remapped
+DETECTOR_COORD (12, -3) | (11.5, -3) | 10 11.0 (0, 6) 616   <-- remapped
+DETECTOR_COORD (12, -1) | (11.5, -1) | 10 11.0 (0, 6) 617   <-- remapped
+DETECTOR_COORD (12, 1) | (11.5, 1) | 10 11.0 (0, 6) 618   <-- remapped
+DETECTOR_COORD (12, 3) | (11.5, 3) | 10 11.0 (0, 6) 619   <-- remapped
+DETECTOR_COORD (12, 5) | (11.5, 5) | 10 11.0 (0, 6) 620   <-- remapped
+DETECTOR_COORD (13, -4) | (12.5, -4) | 10 11.0 (3, 7) 621   <-- remapped
+DETECTOR_COORD (13, -2) | (12.5, -2) | 10 11.0 (3, 7) 622   <-- remapped
+DETECTOR_COORD (13, 0) | (12.5, 0) | 10 11.0 (3, 7) 623   <-- remapped
+DETECTOR_COORD (13, 2) | (12.5, 2) | 10 11.0 (3, 7) 624   <-- remapped
+DETECTOR_COORD (14, -1) | (13.5, -1) | 10 11.0 (0, 6) 625   <-- remapped
+DETECTOR_COORD (14, 1) | (13.5, 1) | 10 11.0 (0, 6) 626   <-- remapped
+DETECTOR_COORD (14, 3) | (13.5, 3) | 10 11.0 (0, 6) 627   <-- remapped
+DETECTOR_COORD (15, -2) | (14.5, -2) | 10 11.0 (3, 7) 628   <-- remapped
+DETECTOR_COORD (15, 0) | (14.5, 0) | 10 11.0 (3, 7) 629   <-- remapped
+DETECTOR_COORD (16, 1) | (15.5, 1) | 10 11.0 (0, 6) 630   <-- remapped
+
+# CHANNEL  new_xy  support=[qubits]  detectors=[det_idx by time]
+CHANNEL (0, -1)  n=1  support=[0]
+        detectors=[56, 138, 221, 303, 386, 469, 550]
+CHANNEL (0, 1)  n=1  support=[2]
+        detectors=[13]
+CHANNEL (1, 0)  n=2  support=[4, 6]
+        detectors=[4, 11, 57, 139, 219, 301, 384, 467]
+CHANNEL (1, 2)  n=2  support=[4, 6]
+        detectors=[6, 58, 140, 222, 304, 387, 470, 553]
+CHANNEL (1, 3)  n=1  support=[7]
+        detectors=[3, 305, 388, 471, 554]
+CHANNEL (1.125, 0.125)  n=2  support=[4, 12]
+        detectors=[15]
+CHANNEL (1.25, 1.9375)  n=2  support=[6, 12]
+        detectors=[16]
+CHANNEL (1.875, 0.125)  n=1  support=[11]
+        detectors=[17]
+CHANNEL (2, -3)  n=1  support=[8]
+        detectors=[59, 141, 223, 306, 389, 472, 555]
+CHANNEL (2, -1)  n=2  support=[4, 10]
+        detectors=[60, 142, 224, 307, 390, 473, 552]
+CHANNEL (2, 0)  n=1  support=[11]
+        detectors=[0, 61, 143, 225, 308, 391, 474, 551]
+CHANNEL (2, 1)  n=2  support=[11, 12]
+        detectors=[10]
+CHANNEL (2, 1.9375)  n=1  support=[13]
+        detectors=[18]
+CHANNEL (2, 2)  n=2  support=[7, 13]
+        detectors=[2, 12, 62, 144, 226, 309, 392, 475, 558]
+CHANNEL (2.14286, 1)  n=3  support=[6, 12, 19]
+        detectors=[7]
+CHANNEL (3, -2)  n=1  support=[16]
+        detectors=[19, 63, 145, 227, 310, 393, 476, 556]
+CHANNEL (3, 0.9375)  n=2  support=[12, 19]
+        detectors=[20]
+CHANNEL (3, 1)  n=2  support=[19, 21]
+        detectors=[5, 9, 64, 146, 228, 311, 394, 477, 557]
+CHANNEL (3, 3)  n=1  support=[21]
+        detectors=[21, 65, 147, 229, 312, 395, 478, 563]
+CHANNEL (3, 5)  n=1  support=[23]
+        detectors=[14, 55, 137, 220, 302, 385, 468]
+CHANNEL (3.75, 0.9375)  n=1  support=[30]
+        detectors=[22]
+CHANNEL (4, -5)  n=1  support=[24]
+        detectors=[66, 148, 230, 313, 396, 479, 565]
+CHANNEL (4, -3)  n=1  support=[26]
+        detectors=[67, 149, 231, 314, 397, 480, 560]
+CHANNEL (4, -1)  n=2  support=[19, 28]
+        detectors=[68, 150, 232, 315, 398, 481, 561]
+CHANNEL (4, 1)  n=2  support=[13, 30]
+        detectors=[1, 8, 69, 151, 233, 316, 399, 482, 562]
+CHANNEL (4, 3)  n=1  support=[32]
+        detectors=[70, 152, 234, 317, 400, 483, 559]
+CHANNEL (4, 5)  n=1  support=[34]
+        detectors=[71, 153, 235, 318, 401, 484, 564]
+CHANNEL (5, -4)  n=1  support=[36]
+        detectors=[23, 72, 154, 236, 319, 402, 485, 566]
+CHANNEL (5, -2)  n=1  support=[38]
+        detectors=[24, 73, 155, 237, 320, 403, 486, 567]
+CHANNEL (5, 0)  n=1  support=[40]
+        detectors=[74, 156, 238, 321, 404, 487, 568]
+CHANNEL (5, 2)  n=1  support=[42]
+        detectors=[75, 157, 239, 322, 405, 488, 569]
+CHANNEL (5, 4)  n=1  support=[44]
+        detectors=[76, 158, 240, 323, 406, 489, 570]
+CHANNEL (5, 6)  n=1  support=[46]
+        detectors=[77, 159, 241, 324, 407, 490, 577]
+CHANNEL (6, -7)  n=1  support=[47]
+        detectors=[78, 160, 242, 325, 408, 491, 578]
+CHANNEL (6, -5)  n=1  support=[49]
+        detectors=[79, 161, 243, 326, 409, 492, 571]
+CHANNEL (6, -3)  n=1  support=[51]
+        detectors=[80, 162, 244, 327, 410, 493, 572]
+CHANNEL (6, -1)  n=1  support=[53]
+        detectors=[81, 163, 245, 328, 411, 494, 573]
+CHANNEL (6, 1)  n=1  support=[55]
+        detectors=[25, 82, 164, 246, 329, 412, 495, 574]
+CHANNEL (6, 3)  n=1  support=[57]
+        detectors=[26, 83, 165, 247, 330, 413, 496, 575]
+CHANNEL (6, 5)  n=1  support=[59]
+        detectors=[27, 84, 166, 248, 331, 414, 497, 576]
+CHANNEL (7, -6)  n=1  support=[62]
+        detectors=[28, 85, 167, 249, 332, 415, 498, 579]
+CHANNEL (7, -4)  n=1  support=[64]
+        detectors=[29, 86, 168, 250, 333, 416, 499, 580]
+CHANNEL (7, -2)  n=1  support=[66]
+        detectors=[30, 87, 169, 251, 334, 417, 500, 581]
+CHANNEL (7, 0)  n=1  support=[68]
+        detectors=[88, 170, 252, 335, 418, 501, 582]
+CHANNEL (7, 2)  n=1  support=[70]
+        detectors=[89, 171, 253, 336, 419, 502, 583]
+CHANNEL (7, 4)  n=1  support=[72]
+        detectors=[90, 172, 254, 337, 420, 503, 584]
+CHANNEL (7, 6)  n=1  support=[74]
+        detectors=[91, 173, 255, 338, 421, 504, 585]
+CHANNEL (7, 8)  n=1  support=[76]
+        detectors=[92, 174, 256, 339, 422, 505, 594]
+CHANNEL (8, -7)  n=1  support=[78]
+        detectors=[93, 175, 257, 340, 423, 506, 586]
+CHANNEL (8, -5)  n=1  support=[80]
+        detectors=[94, 176, 258, 341, 424, 507, 587]
+CHANNEL (8, -3)  n=1  support=[82]
+        detectors=[95, 177, 259, 342, 425, 508, 588]
+CHANNEL (8, -1)  n=1  support=[84]
+        detectors=[96, 178, 260, 343, 426, 509, 589]
+CHANNEL (8, 1)  n=1  support=[86]
+        detectors=[31, 97, 179, 261, 344, 427, 510, 590]
+CHANNEL (8, 3)  n=1  support=[88]
+        detectors=[32, 98, 180, 262, 345, 428, 511, 591]
+CHANNEL (8, 5)  n=1  support=[90]
+        detectors=[33, 99, 181, 263, 346, 429, 512, 592]
+CHANNEL (8, 7)  n=1  support=[92]
+        detectors=[34, 100, 182, 264, 347, 430, 513, 593]
+CHANNEL (9, -8)  n=1  support=[94]
+        detectors=[35, 101, 183, 265, 348, 431, 514, 595]
+CHANNEL (9, -6)  n=1  support=[96]
+        detectors=[36, 102, 184, 266, 349, 432, 515, 596]
+CHANNEL (9, -4)  n=1  support=[98]
+        detectors=[37, 103, 185, 267, 350, 433, 516, 597]
+CHANNEL (9, -2)  n=1  support=[100]
+        detectors=[38, 104, 186, 268, 351, 434, 517, 598]
+CHANNEL (9, 0)  n=1  support=[102]
+        detectors=[105, 187, 269, 352, 435, 518, 599]
+CHANNEL (9, 2)  n=1  support=[104]
+        detectors=[106, 188, 270, 353, 436, 519, 600]
+CHANNEL (9, 4)  n=1  support=[106]
+        detectors=[107, 189, 271, 354, 437, 520, 601]
+CHANNEL (9, 6)  n=1  support=[108]
+        detectors=[108, 190, 272, 355, 438, 521, 602]
+CHANNEL (10, -5)  n=1  support=[111]
+        detectors=[109, 191, 273, 356, 439, 522, 603]
+CHANNEL (10, -3)  n=1  support=[113]
+        detectors=[110, 192, 274, 357, 440, 523, 604]
+CHANNEL (10, -1)  n=1  support=[115]
+        detectors=[111, 193, 275, 358, 441, 524, 605]
+CHANNEL (10, 1)  n=1  support=[117]
+        detectors=[39, 112, 194, 276, 359, 442, 525, 606]
+CHANNEL (10, 3)  n=1  support=[119]
+        detectors=[40, 113, 195, 277, 360, 443, 526, 607]
+CHANNEL (10, 5)  n=1  support=[121]
+        detectors=[41, 114, 196, 278, 361, 444, 527, 608]
+CHANNEL (10, 7)  n=1  support=[123]
+        detectors=[42, 115, 197, 279, 362, 445, 528, 609]
+CHANNEL (11, -6)  n=1  support=[124]
+        detectors=[43, 116, 198, 280, 363, 446, 529, 610]
+CHANNEL (11, -4)  n=1  support=[126]
+        detectors=[44, 117, 199, 281, 364, 447, 530, 611]
+CHANNEL (11, -2)  n=1  support=[128]
+        detectors=[45, 118, 200, 282, 365, 448, 531, 612]
+CHANNEL (11, 0)  n=1  support=[130]
+        detectors=[119, 201, 283, 366, 449, 532, 613]
+CHANNEL (11, 2)  n=1  support=[132]
+        detectors=[120, 202, 284, 367, 450, 533, 614]
+CHANNEL (11, 4)  n=1  support=[134]
+        detectors=[121, 203, 285, 368, 451, 534, 615]
+CHANNEL (12, -3)  n=1  support=[137]
+        detectors=[122, 204, 286, 369, 452, 535, 616]
+CHANNEL (12, -1)  n=1  support=[139]
+        detectors=[123, 205, 287, 370, 453, 536, 617]
+CHANNEL (12, 1)  n=1  support=[141]
+        detectors=[46, 124, 206, 288, 371, 454, 537, 618]
+CHANNEL (12, 3)  n=1  support=[143]
+        detectors=[47, 125, 207, 289, 372, 455, 538, 619]
+CHANNEL (12, 5)  n=1  support=[145]
+        detectors=[48, 126, 208, 290, 373, 456, 539, 620]
+CHANNEL (13, -4)  n=1  support=[146]
+        detectors=[49, 127, 209, 291, 374, 457, 540, 621]
+CHANNEL (13, -2)  n=1  support=[148]
+        detectors=[50, 128, 210, 292, 375, 458, 541, 622]
+CHANNEL (13, 0)  n=1  support=[150]
+        detectors=[129, 211, 293, 376, 459, 542, 623]
+CHANNEL (13, 2)  n=1  support=[152]
+        detectors=[130, 212, 294, 377, 460, 543, 624]
+CHANNEL (14, -1)  n=1  support=[155]
+        detectors=[131, 213, 295, 378, 461, 544, 625]
+CHANNEL (14, 1)  n=1  support=[157]
+        detectors=[51, 132, 214, 296, 379, 462, 545, 626]
+CHANNEL (14, 3)  n=1  support=[159]
+        detectors=[52, 133, 215, 297, 380, 463, 546, 627]
+CHANNEL (15, -2)  n=1  support=[160]
+        detectors=[53, 134, 216, 298, 381, 464, 547, 628]
+CHANNEL (15, 0)  n=1  support=[162]
+        detectors=[135, 217, 299, 382, 465, 548, 629]
+CHANNEL (16, 1)  n=1  support=[165]
+        detectors=[54, 136, 218, 300, 383, 466, 549, 630]
+
+# DETECTOR_WINDOW  det_idx: (min_meas_time, max_meas_time)  span
+DETECTOR_WINDOW 0: (0, 0)  span=1
+DETECTOR_WINDOW 1: (0, 0)  span=1
+DETECTOR_WINDOW 2: (0, 0)  span=1
+DETECTOR_WINDOW 3: (0, 0)  span=1
+DETECTOR_WINDOW 4: (0, 0)  span=1
+DETECTOR_WINDOW 5: (0, 0)  span=1
+DETECTOR_WINDOW 6: (0, 0)  span=1
+DETECTOR_WINDOW 7: (0, 1)  span=2
+DETECTOR_WINDOW 8: (2, 2)  span=1
+DETECTOR_WINDOW 9: (2, 2)  span=1
+DETECTOR_WINDOW 10: (1, 2)  span=2
+DETECTOR_WINDOW 11: (2, 2)  span=1
+DETECTOR_WINDOW 12: (2, 2)  span=1
+DETECTOR_WINDOW 13: (2, 2)  span=1
+DETECTOR_WINDOW 14: (3, 3)  span=1
+DETECTOR_WINDOW 15: (1, 3)  span=3
+DETECTOR_WINDOW 16: (1, 3)  span=3
+DETECTOR_WINDOW 17: (3, 3)  span=1
+DETECTOR_WINDOW 18: (3, 3)  span=1
+DETECTOR_WINDOW 19: (3, 3)  span=1
+DETECTOR_WINDOW 20: (1, 3)  span=3
+DETECTOR_WINDOW 21: (3, 3)  span=1
+DETECTOR_WINDOW 22: (3, 3)  span=1
+DETECTOR_WINDOW 23: (3, 3)  span=1
+DETECTOR_WINDOW 24: (3, 3)  span=1
+DETECTOR_WINDOW 25: (3, 3)  span=1
+DETECTOR_WINDOW 26: (3, 3)  span=1
+DETECTOR_WINDOW 27: (3, 3)  span=1
+DETECTOR_WINDOW 28: (3, 3)  span=1
+DETECTOR_WINDOW 29: (3, 3)  span=1
+DETECTOR_WINDOW 30: (3, 3)  span=1
+DETECTOR_WINDOW 31: (3, 3)  span=1
+DETECTOR_WINDOW 32: (3, 3)  span=1
+DETECTOR_WINDOW 33: (3, 3)  span=1
+DETECTOR_WINDOW 34: (3, 3)  span=1
+DETECTOR_WINDOW 35: (3, 3)  span=1
+DETECTOR_WINDOW 36: (3, 3)  span=1
+DETECTOR_WINDOW 37: (3, 3)  span=1
+DETECTOR_WINDOW 38: (3, 3)  span=1
+DETECTOR_WINDOW 39: (3, 3)  span=1
+DETECTOR_WINDOW 40: (3, 3)  span=1
+DETECTOR_WINDOW 41: (3, 3)  span=1
+DETECTOR_WINDOW 42: (3, 3)  span=1
+DETECTOR_WINDOW 43: (3, 3)  span=1
+DETECTOR_WINDOW 44: (3, 3)  span=1
+DETECTOR_WINDOW 45: (3, 3)  span=1
+DETECTOR_WINDOW 46: (3, 3)  span=1
+DETECTOR_WINDOW 47: (3, 3)  span=1
+DETECTOR_WINDOW 48: (3, 3)  span=1
+DETECTOR_WINDOW 49: (3, 3)  span=1
+DETECTOR_WINDOW 50: (3, 3)  span=1
+DETECTOR_WINDOW 51: (3, 3)  span=1
+DETECTOR_WINDOW 52: (3, 3)  span=1
+DETECTOR_WINDOW 53: (3, 3)  span=1
+DETECTOR_WINDOW 54: (3, 3)  span=1
+DETECTOR_WINDOW 55: (4, 4)  span=1
+DETECTOR_WINDOW 56: (3, 4)  span=2
+DETECTOR_WINDOW 57: (3, 4)  span=2
+DETECTOR_WINDOW 58: (3, 4)  span=2
+DETECTOR_WINDOW 59: (3, 4)  span=2
+DETECTOR_WINDOW 60: (3, 4)  span=2
+DETECTOR_WINDOW 61: (3, 4)  span=2
+DETECTOR_WINDOW 62: (3, 4)  span=2
+DETECTOR_WINDOW 63: (3, 4)  span=2
+DETECTOR_WINDOW 64: (3, 4)  span=2
+DETECTOR_WINDOW 65: (4, 4)  span=1
+DETECTOR_WINDOW 66: (3, 4)  span=2
+DETECTOR_WINDOW 67: (3, 4)  span=2
+DETECTOR_WINDOW 68: (3, 4)  span=2
+DETECTOR_WINDOW 69: (3, 4)  span=2
+DETECTOR_WINDOW 70: (3, 4)  span=2
+DETECTOR_WINDOW 71: (3, 4)  span=2
+DETECTOR_WINDOW 72: (3, 4)  span=2
+DETECTOR_WINDOW 73: (3, 4)  span=2
+DETECTOR_WINDOW 74: (3, 4)  span=2
+DETECTOR_WINDOW 75: (3, 4)  span=2
+DETECTOR_WINDOW 76: (3, 4)  span=2
+DETECTOR_WINDOW 77: (3, 4)  span=2
+DETECTOR_WINDOW 78: (3, 4)  span=2
+DETECTOR_WINDOW 79: (3, 4)  span=2
+DETECTOR_WINDOW 80: (3, 4)  span=2
+DETECTOR_WINDOW 81: (3, 4)  span=2
+DETECTOR_WINDOW 82: (3, 4)  span=2
+DETECTOR_WINDOW 83: (3, 4)  span=2
+DETECTOR_WINDOW 84: (3, 4)  span=2
+DETECTOR_WINDOW 85: (3, 4)  span=2
+DETECTOR_WINDOW 86: (3, 4)  span=2
+DETECTOR_WINDOW 87: (3, 4)  span=2
+DETECTOR_WINDOW 88: (3, 4)  span=2
+DETECTOR_WINDOW 89: (3, 4)  span=2
+DETECTOR_WINDOW 90: (3, 4)  span=2
+DETECTOR_WINDOW 91: (3, 4)  span=2
+DETECTOR_WINDOW 92: (3, 4)  span=2
+DETECTOR_WINDOW 93: (3, 4)  span=2
+DETECTOR_WINDOW 94: (3, 4)  span=2
+DETECTOR_WINDOW 95: (3, 4)  span=2
+DETECTOR_WINDOW 96: (3, 4)  span=2
+DETECTOR_WINDOW 97: (3, 4)  span=2
+DETECTOR_WINDOW 98: (3, 4)  span=2
+DETECTOR_WINDOW 99: (3, 4)  span=2
+DETECTOR_WINDOW 100: (3, 4)  span=2
+DETECTOR_WINDOW 101: (3, 4)  span=2
+DETECTOR_WINDOW 102: (3, 4)  span=2
+DETECTOR_WINDOW 103: (3, 4)  span=2
+DETECTOR_WINDOW 104: (3, 4)  span=2
+DETECTOR_WINDOW 105: (3, 4)  span=2
+DETECTOR_WINDOW 106: (3, 4)  span=2
+DETECTOR_WINDOW 107: (3, 4)  span=2
+DETECTOR_WINDOW 108: (3, 4)  span=2
+DETECTOR_WINDOW 109: (3, 4)  span=2
+DETECTOR_WINDOW 110: (3, 4)  span=2
+DETECTOR_WINDOW 111: (3, 4)  span=2
+DETECTOR_WINDOW 112: (3, 4)  span=2
+DETECTOR_WINDOW 113: (3, 4)  span=2
+DETECTOR_WINDOW 114: (3, 4)  span=2
+DETECTOR_WINDOW 115: (3, 4)  span=2
+DETECTOR_WINDOW 116: (3, 4)  span=2
+DETECTOR_WINDOW 117: (3, 4)  span=2
+DETECTOR_WINDOW 118: (3, 4)  span=2
+DETECTOR_WINDOW 119: (3, 4)  span=2
+DETECTOR_WINDOW 120: (3, 4)  span=2
+DETECTOR_WINDOW 121: (3, 4)  span=2
+DETECTOR_WINDOW 122: (3, 4)  span=2
+DETECTOR_WINDOW 123: (3, 4)  span=2
+DETECTOR_WINDOW 124: (3, 4)  span=2
+DETECTOR_WINDOW 125: (3, 4)  span=2
+DETECTOR_WINDOW 126: (3, 4)  span=2
+DETECTOR_WINDOW 127: (3, 4)  span=2
+DETECTOR_WINDOW 128: (3, 4)  span=2
+DETECTOR_WINDOW 129: (3, 4)  span=2
+DETECTOR_WINDOW 130: (3, 4)  span=2
+DETECTOR_WINDOW 131: (3, 4)  span=2
+DETECTOR_WINDOW 132: (3, 4)  span=2
+DETECTOR_WINDOW 133: (3, 4)  span=2
+DETECTOR_WINDOW 134: (3, 4)  span=2
+DETECTOR_WINDOW 135: (3, 4)  span=2
+DETECTOR_WINDOW 136: (3, 4)  span=2
+DETECTOR_WINDOW 137: (5, 5)  span=1
+DETECTOR_WINDOW 138: (4, 5)  span=2
+DETECTOR_WINDOW 139: (4, 5)  span=2
+DETECTOR_WINDOW 140: (4, 5)  span=2
+DETECTOR_WINDOW 141: (4, 5)  span=2
+DETECTOR_WINDOW 142: (4, 5)  span=2
+DETECTOR_WINDOW 143: (4, 5)  span=2
+DETECTOR_WINDOW 144: (4, 5)  span=2
+DETECTOR_WINDOW 145: (4, 5)  span=2
+DETECTOR_WINDOW 146: (4, 5)  span=2
+DETECTOR_WINDOW 147: (5, 5)  span=1
+DETECTOR_WINDOW 148: (4, 5)  span=2
+DETECTOR_WINDOW 149: (4, 5)  span=2
+DETECTOR_WINDOW 150: (4, 5)  span=2
+DETECTOR_WINDOW 151: (4, 5)  span=2
+DETECTOR_WINDOW 152: (4, 5)  span=2
+DETECTOR_WINDOW 153: (4, 5)  span=2
+DETECTOR_WINDOW 154: (4, 5)  span=2
+DETECTOR_WINDOW 155: (4, 5)  span=2
+DETECTOR_WINDOW 156: (4, 5)  span=2
+DETECTOR_WINDOW 157: (4, 5)  span=2
+DETECTOR_WINDOW 158: (4, 5)  span=2
+DETECTOR_WINDOW 159: (4, 5)  span=2
+DETECTOR_WINDOW 160: (4, 5)  span=2
+DETECTOR_WINDOW 161: (4, 5)  span=2
+DETECTOR_WINDOW 162: (4, 5)  span=2
+DETECTOR_WINDOW 163: (4, 5)  span=2
+DETECTOR_WINDOW 164: (4, 5)  span=2
+DETECTOR_WINDOW 165: (4, 5)  span=2
+DETECTOR_WINDOW 166: (4, 5)  span=2
+DETECTOR_WINDOW 167: (4, 5)  span=2
+DETECTOR_WINDOW 168: (4, 5)  span=2
+DETECTOR_WINDOW 169: (4, 5)  span=2
+DETECTOR_WINDOW 170: (4, 5)  span=2
+DETECTOR_WINDOW 171: (4, 5)  span=2
+DETECTOR_WINDOW 172: (4, 5)  span=2
+DETECTOR_WINDOW 173: (4, 5)  span=2
+DETECTOR_WINDOW 174: (4, 5)  span=2
+DETECTOR_WINDOW 175: (4, 5)  span=2
+DETECTOR_WINDOW 176: (4, 5)  span=2
+DETECTOR_WINDOW 177: (4, 5)  span=2
+DETECTOR_WINDOW 178: (4, 5)  span=2
+DETECTOR_WINDOW 179: (4, 5)  span=2
+DETECTOR_WINDOW 180: (4, 5)  span=2
+DETECTOR_WINDOW 181: (4, 5)  span=2
+DETECTOR_WINDOW 182: (4, 5)  span=2
+DETECTOR_WINDOW 183: (4, 5)  span=2
+DETECTOR_WINDOW 184: (4, 5)  span=2
+DETECTOR_WINDOW 185: (4, 5)  span=2
+DETECTOR_WINDOW 186: (4, 5)  span=2
+DETECTOR_WINDOW 187: (4, 5)  span=2
+DETECTOR_WINDOW 188: (4, 5)  span=2
+DETECTOR_WINDOW 189: (4, 5)  span=2
+DETECTOR_WINDOW 190: (4, 5)  span=2
+DETECTOR_WINDOW 191: (4, 5)  span=2
+DETECTOR_WINDOW 192: (4, 5)  span=2
+DETECTOR_WINDOW 193: (4, 5)  span=2
+DETECTOR_WINDOW 194: (4, 5)  span=2
+DETECTOR_WINDOW 195: (4, 5)  span=2
+DETECTOR_WINDOW 196: (4, 5)  span=2
+DETECTOR_WINDOW 197: (4, 5)  span=2
+DETECTOR_WINDOW 198: (4, 5)  span=2
+DETECTOR_WINDOW 199: (4, 5)  span=2
+DETECTOR_WINDOW 200: (4, 5)  span=2
+DETECTOR_WINDOW 201: (4, 5)  span=2
+DETECTOR_WINDOW 202: (4, 5)  span=2
+DETECTOR_WINDOW 203: (4, 5)  span=2
+DETECTOR_WINDOW 204: (4, 5)  span=2
+DETECTOR_WINDOW 205: (4, 5)  span=2
+DETECTOR_WINDOW 206: (4, 5)  span=2
+DETECTOR_WINDOW 207: (4, 5)  span=2
+DETECTOR_WINDOW 208: (4, 5)  span=2
+DETECTOR_WINDOW 209: (4, 5)  span=2
+DETECTOR_WINDOW 210: (4, 5)  span=2
+DETECTOR_WINDOW 211: (4, 5)  span=2
+DETECTOR_WINDOW 212: (4, 5)  span=2
+DETECTOR_WINDOW 213: (4, 5)  span=2
+DETECTOR_WINDOW 214: (4, 5)  span=2
+DETECTOR_WINDOW 215: (4, 5)  span=2
+DETECTOR_WINDOW 216: (4, 5)  span=2
+DETECTOR_WINDOW 217: (4, 5)  span=2
+DETECTOR_WINDOW 218: (4, 5)  span=2
+DETECTOR_WINDOW 219: (6, 6)  span=1
+DETECTOR_WINDOW 220: (6, 6)  span=1
+DETECTOR_WINDOW 221: (5, 6)  span=2
+DETECTOR_WINDOW 222: (5, 6)  span=2
+DETECTOR_WINDOW 223: (5, 6)  span=2
+DETECTOR_WINDOW 224: (5, 6)  span=2
+DETECTOR_WINDOW 225: (5, 6)  span=2
+DETECTOR_WINDOW 226: (5, 6)  span=2
+DETECTOR_WINDOW 227: (5, 6)  span=2
+DETECTOR_WINDOW 228: (5, 6)  span=2
+DETECTOR_WINDOW 229: (6, 6)  span=1
+DETECTOR_WINDOW 230: (5, 6)  span=2
+DETECTOR_WINDOW 231: (5, 6)  span=2
+DETECTOR_WINDOW 232: (5, 6)  span=2
+DETECTOR_WINDOW 233: (5, 6)  span=2
+DETECTOR_WINDOW 234: (5, 6)  span=2
+DETECTOR_WINDOW 235: (5, 6)  span=2
+DETECTOR_WINDOW 236: (5, 6)  span=2
+DETECTOR_WINDOW 237: (5, 6)  span=2
+DETECTOR_WINDOW 238: (5, 6)  span=2
+DETECTOR_WINDOW 239: (5, 6)  span=2
+DETECTOR_WINDOW 240: (5, 6)  span=2
+DETECTOR_WINDOW 241: (5, 6)  span=2
+DETECTOR_WINDOW 242: (5, 6)  span=2
+DETECTOR_WINDOW 243: (5, 6)  span=2
+DETECTOR_WINDOW 244: (5, 6)  span=2
+DETECTOR_WINDOW 245: (5, 6)  span=2
+DETECTOR_WINDOW 246: (5, 6)  span=2
+DETECTOR_WINDOW 247: (5, 6)  span=2
+DETECTOR_WINDOW 248: (5, 6)  span=2
+DETECTOR_WINDOW 249: (5, 6)  span=2
+DETECTOR_WINDOW 250: (5, 6)  span=2
+DETECTOR_WINDOW 251: (5, 6)  span=2
+DETECTOR_WINDOW 252: (5, 6)  span=2
+DETECTOR_WINDOW 253: (5, 6)  span=2
+DETECTOR_WINDOW 254: (5, 6)  span=2
+DETECTOR_WINDOW 255: (5, 6)  span=2
+DETECTOR_WINDOW 256: (5, 6)  span=2
+DETECTOR_WINDOW 257: (5, 6)  span=2
+DETECTOR_WINDOW 258: (5, 6)  span=2
+DETECTOR_WINDOW 259: (5, 6)  span=2
+DETECTOR_WINDOW 260: (5, 6)  span=2
+DETECTOR_WINDOW 261: (5, 6)  span=2
+DETECTOR_WINDOW 262: (5, 6)  span=2
+DETECTOR_WINDOW 263: (5, 6)  span=2
+DETECTOR_WINDOW 264: (5, 6)  span=2
+DETECTOR_WINDOW 265: (5, 6)  span=2
+DETECTOR_WINDOW 266: (5, 6)  span=2
+DETECTOR_WINDOW 267: (5, 6)  span=2
+DETECTOR_WINDOW 268: (5, 6)  span=2
+DETECTOR_WINDOW 269: (5, 6)  span=2
+DETECTOR_WINDOW 270: (5, 6)  span=2
+DETECTOR_WINDOW 271: (5, 6)  span=2
+DETECTOR_WINDOW 272: (5, 6)  span=2
+DETECTOR_WINDOW 273: (5, 6)  span=2
+DETECTOR_WINDOW 274: (5, 6)  span=2
+DETECTOR_WINDOW 275: (5, 6)  span=2
+DETECTOR_WINDOW 276: (5, 6)  span=2
+DETECTOR_WINDOW 277: (5, 6)  span=2
+DETECTOR_WINDOW 278: (5, 6)  span=2
+DETECTOR_WINDOW 279: (5, 6)  span=2
+DETECTOR_WINDOW 280: (5, 6)  span=2
+DETECTOR_WINDOW 281: (5, 6)  span=2
+DETECTOR_WINDOW 282: (5, 6)  span=2
+DETECTOR_WINDOW 283: (5, 6)  span=2
+DETECTOR_WINDOW 284: (5, 6)  span=2
+DETECTOR_WINDOW 285: (5, 6)  span=2
+DETECTOR_WINDOW 286: (5, 6)  span=2
+DETECTOR_WINDOW 287: (5, 6)  span=2
+DETECTOR_WINDOW 288: (5, 6)  span=2
+DETECTOR_WINDOW 289: (5, 6)  span=2
+DETECTOR_WINDOW 290: (5, 6)  span=2
+DETECTOR_WINDOW 291: (5, 6)  span=2
+DETECTOR_WINDOW 292: (5, 6)  span=2
+DETECTOR_WINDOW 293: (5, 6)  span=2
+DETECTOR_WINDOW 294: (5, 6)  span=2
+DETECTOR_WINDOW 295: (5, 6)  span=2
+DETECTOR_WINDOW 296: (5, 6)  span=2
+DETECTOR_WINDOW 297: (5, 6)  span=2
+DETECTOR_WINDOW 298: (5, 6)  span=2
+DETECTOR_WINDOW 299: (5, 6)  span=2
+DETECTOR_WINDOW 300: (5, 6)  span=2
+DETECTOR_WINDOW 301: (7, 7)  span=1
+DETECTOR_WINDOW 302: (7, 7)  span=1
+DETECTOR_WINDOW 303: (6, 7)  span=2
+DETECTOR_WINDOW 304: (6, 7)  span=2
+DETECTOR_WINDOW 305: (6, 7)  span=2
+DETECTOR_WINDOW 306: (6, 7)  span=2
+DETECTOR_WINDOW 307: (6, 7)  span=2
+DETECTOR_WINDOW 308: (6, 7)  span=2
+DETECTOR_WINDOW 309: (6, 7)  span=2
+DETECTOR_WINDOW 310: (6, 7)  span=2
+DETECTOR_WINDOW 311: (6, 7)  span=2
+DETECTOR_WINDOW 312: (7, 7)  span=1
+DETECTOR_WINDOW 313: (6, 7)  span=2
+DETECTOR_WINDOW 314: (6, 7)  span=2
+DETECTOR_WINDOW 315: (6, 7)  span=2
+DETECTOR_WINDOW 316: (6, 7)  span=2
+DETECTOR_WINDOW 317: (6, 7)  span=2
+DETECTOR_WINDOW 318: (6, 7)  span=2
+DETECTOR_WINDOW 319: (6, 7)  span=2
+DETECTOR_WINDOW 320: (6, 7)  span=2
+DETECTOR_WINDOW 321: (6, 7)  span=2
+DETECTOR_WINDOW 322: (6, 7)  span=2
+DETECTOR_WINDOW 323: (6, 7)  span=2
+DETECTOR_WINDOW 324: (6, 7)  span=2
+DETECTOR_WINDOW 325: (6, 7)  span=2
+DETECTOR_WINDOW 326: (6, 7)  span=2
+DETECTOR_WINDOW 327: (6, 7)  span=2
+DETECTOR_WINDOW 328: (6, 7)  span=2
+DETECTOR_WINDOW 329: (6, 7)  span=2
+DETECTOR_WINDOW 330: (6, 7)  span=2
+DETECTOR_WINDOW 331: (6, 7)  span=2
+DETECTOR_WINDOW 332: (6, 7)  span=2
+DETECTOR_WINDOW 333: (6, 7)  span=2
+DETECTOR_WINDOW 334: (6, 7)  span=2
+DETECTOR_WINDOW 335: (6, 7)  span=2
+DETECTOR_WINDOW 336: (6, 7)  span=2
+DETECTOR_WINDOW 337: (6, 7)  span=2
+DETECTOR_WINDOW 338: (6, 7)  span=2
+DETECTOR_WINDOW 339: (6, 7)  span=2
+DETECTOR_WINDOW 340: (6, 7)  span=2
+DETECTOR_WINDOW 341: (6, 7)  span=2
+DETECTOR_WINDOW 342: (6, 7)  span=2
+DETECTOR_WINDOW 343: (6, 7)  span=2
+DETECTOR_WINDOW 344: (6, 7)  span=2
+DETECTOR_WINDOW 345: (6, 7)  span=2
+DETECTOR_WINDOW 346: (6, 7)  span=2
+DETECTOR_WINDOW 347: (6, 7)  span=2
+DETECTOR_WINDOW 348: (6, 7)  span=2
+DETECTOR_WINDOW 349: (6, 7)  span=2
+DETECTOR_WINDOW 350: (6, 7)  span=2
+DETECTOR_WINDOW 351: (6, 7)  span=2
+DETECTOR_WINDOW 352: (6, 7)  span=2
+DETECTOR_WINDOW 353: (6, 7)  span=2
+DETECTOR_WINDOW 354: (6, 7)  span=2
+DETECTOR_WINDOW 355: (6, 7)  span=2
+DETECTOR_WINDOW 356: (6, 7)  span=2
+DETECTOR_WINDOW 357: (6, 7)  span=2
+DETECTOR_WINDOW 358: (6, 7)  span=2
+DETECTOR_WINDOW 359: (6, 7)  span=2
+DETECTOR_WINDOW 360: (6, 7)  span=2
+DETECTOR_WINDOW 361: (6, 7)  span=2
+DETECTOR_WINDOW 362: (6, 7)  span=2
+DETECTOR_WINDOW 363: (6, 7)  span=2
+DETECTOR_WINDOW 364: (6, 7)  span=2
+DETECTOR_WINDOW 365: (6, 7)  span=2
+DETECTOR_WINDOW 366: (6, 7)  span=2
+DETECTOR_WINDOW 367: (6, 7)  span=2
+DETECTOR_WINDOW 368: (6, 7)  span=2
+DETECTOR_WINDOW 369: (6, 7)  span=2
+DETECTOR_WINDOW 370: (6, 7)  span=2
+DETECTOR_WINDOW 371: (6, 7)  span=2
+DETECTOR_WINDOW 372: (6, 7)  span=2
+DETECTOR_WINDOW 373: (6, 7)  span=2
+DETECTOR_WINDOW 374: (6, 7)  span=2
+DETECTOR_WINDOW 375: (6, 7)  span=2
+DETECTOR_WINDOW 376: (6, 7)  span=2
+DETECTOR_WINDOW 377: (6, 7)  span=2
+DETECTOR_WINDOW 378: (6, 7)  span=2
+DETECTOR_WINDOW 379: (6, 7)  span=2
+DETECTOR_WINDOW 380: (6, 7)  span=2
+DETECTOR_WINDOW 381: (6, 7)  span=2
+DETECTOR_WINDOW 382: (6, 7)  span=2
+DETECTOR_WINDOW 383: (6, 7)  span=2
+DETECTOR_WINDOW 384: (8, 8)  span=1
+DETECTOR_WINDOW 385: (8, 8)  span=1
+DETECTOR_WINDOW 386: (7, 8)  span=2
+DETECTOR_WINDOW 387: (7, 8)  span=2
+DETECTOR_WINDOW 388: (7, 8)  span=2
+DETECTOR_WINDOW 389: (7, 8)  span=2
+DETECTOR_WINDOW 390: (7, 8)  span=2
+DETECTOR_WINDOW 391: (7, 8)  span=2
+DETECTOR_WINDOW 392: (7, 8)  span=2
+DETECTOR_WINDOW 393: (7, 8)  span=2
+DETECTOR_WINDOW 394: (7, 8)  span=2
+DETECTOR_WINDOW 395: (8, 8)  span=1
+DETECTOR_WINDOW 396: (7, 8)  span=2
+DETECTOR_WINDOW 397: (7, 8)  span=2
+DETECTOR_WINDOW 398: (7, 8)  span=2
+DETECTOR_WINDOW 399: (7, 8)  span=2
+DETECTOR_WINDOW 400: (7, 8)  span=2
+DETECTOR_WINDOW 401: (7, 8)  span=2
+DETECTOR_WINDOW 402: (7, 8)  span=2
+DETECTOR_WINDOW 403: (7, 8)  span=2
+DETECTOR_WINDOW 404: (7, 8)  span=2
+DETECTOR_WINDOW 405: (7, 8)  span=2
+DETECTOR_WINDOW 406: (7, 8)  span=2
+DETECTOR_WINDOW 407: (7, 8)  span=2
+DETECTOR_WINDOW 408: (7, 8)  span=2
+DETECTOR_WINDOW 409: (7, 8)  span=2
+DETECTOR_WINDOW 410: (7, 8)  span=2
+DETECTOR_WINDOW 411: (7, 8)  span=2
+DETECTOR_WINDOW 412: (7, 8)  span=2
+DETECTOR_WINDOW 413: (7, 8)  span=2
+DETECTOR_WINDOW 414: (7, 8)  span=2
+DETECTOR_WINDOW 415: (7, 8)  span=2
+DETECTOR_WINDOW 416: (7, 8)  span=2
+DETECTOR_WINDOW 417: (7, 8)  span=2
+DETECTOR_WINDOW 418: (7, 8)  span=2
+DETECTOR_WINDOW 419: (7, 8)  span=2
+DETECTOR_WINDOW 420: (7, 8)  span=2
+DETECTOR_WINDOW 421: (7, 8)  span=2
+DETECTOR_WINDOW 422: (7, 8)  span=2
+DETECTOR_WINDOW 423: (7, 8)  span=2
+DETECTOR_WINDOW 424: (7, 8)  span=2
+DETECTOR_WINDOW 425: (7, 8)  span=2
+DETECTOR_WINDOW 426: (7, 8)  span=2
+DETECTOR_WINDOW 427: (7, 8)  span=2
+DETECTOR_WINDOW 428: (7, 8)  span=2
+DETECTOR_WINDOW 429: (7, 8)  span=2
+DETECTOR_WINDOW 430: (7, 8)  span=2
+DETECTOR_WINDOW 431: (7, 8)  span=2
+DETECTOR_WINDOW 432: (7, 8)  span=2
+DETECTOR_WINDOW 433: (7, 8)  span=2
+DETECTOR_WINDOW 434: (7, 8)  span=2
+DETECTOR_WINDOW 435: (7, 8)  span=2
+DETECTOR_WINDOW 436: (7, 8)  span=2
+DETECTOR_WINDOW 437: (7, 8)  span=2
+DETECTOR_WINDOW 438: (7, 8)  span=2
+DETECTOR_WINDOW 439: (7, 8)  span=2
+DETECTOR_WINDOW 440: (7, 8)  span=2
+DETECTOR_WINDOW 441: (7, 8)  span=2
+DETECTOR_WINDOW 442: (7, 8)  span=2
+DETECTOR_WINDOW 443: (7, 8)  span=2
+DETECTOR_WINDOW 444: (7, 8)  span=2
+DETECTOR_WINDOW 445: (7, 8)  span=2
+DETECTOR_WINDOW 446: (7, 8)  span=2
+DETECTOR_WINDOW 447: (7, 8)  span=2
+DETECTOR_WINDOW 448: (7, 8)  span=2
+DETECTOR_WINDOW 449: (7, 8)  span=2
+DETECTOR_WINDOW 450: (7, 8)  span=2
+DETECTOR_WINDOW 451: (7, 8)  span=2
+DETECTOR_WINDOW 452: (7, 8)  span=2
+DETECTOR_WINDOW 453: (7, 8)  span=2
+DETECTOR_WINDOW 454: (7, 8)  span=2
+DETECTOR_WINDOW 455: (7, 8)  span=2
+DETECTOR_WINDOW 456: (7, 8)  span=2
+DETECTOR_WINDOW 457: (7, 8)  span=2
+DETECTOR_WINDOW 458: (7, 8)  span=2
+DETECTOR_WINDOW 459: (7, 8)  span=2
+DETECTOR_WINDOW 460: (7, 8)  span=2
+DETECTOR_WINDOW 461: (7, 8)  span=2
+DETECTOR_WINDOW 462: (7, 8)  span=2
+DETECTOR_WINDOW 463: (7, 8)  span=2
+DETECTOR_WINDOW 464: (7, 8)  span=2
+DETECTOR_WINDOW 465: (7, 8)  span=2
+DETECTOR_WINDOW 466: (7, 8)  span=2
+DETECTOR_WINDOW 467: (9, 9)  span=1
+DETECTOR_WINDOW 468: (9, 9)  span=1
+DETECTOR_WINDOW 469: (8, 9)  span=2
+DETECTOR_WINDOW 470: (8, 9)  span=2
+DETECTOR_WINDOW 471: (8, 9)  span=2
+DETECTOR_WINDOW 472: (8, 9)  span=2
+DETECTOR_WINDOW 473: (8, 9)  span=2
+DETECTOR_WINDOW 474: (8, 9)  span=2
+DETECTOR_WINDOW 475: (8, 9)  span=2
+DETECTOR_WINDOW 476: (8, 9)  span=2
+DETECTOR_WINDOW 477: (8, 9)  span=2
+DETECTOR_WINDOW 478: (9, 9)  span=1
+DETECTOR_WINDOW 479: (8, 9)  span=2
+DETECTOR_WINDOW 480: (8, 9)  span=2
+DETECTOR_WINDOW 481: (8, 9)  span=2
+DETECTOR_WINDOW 482: (8, 9)  span=2
+DETECTOR_WINDOW 483: (8, 9)  span=2
+DETECTOR_WINDOW 484: (8, 9)  span=2
+DETECTOR_WINDOW 485: (8, 9)  span=2
+DETECTOR_WINDOW 486: (8, 9)  span=2
+DETECTOR_WINDOW 487: (8, 9)  span=2
+DETECTOR_WINDOW 488: (8, 9)  span=2
+DETECTOR_WINDOW 489: (8, 9)  span=2
+DETECTOR_WINDOW 490: (8, 9)  span=2
+DETECTOR_WINDOW 491: (8, 9)  span=2
+DETECTOR_WINDOW 492: (8, 9)  span=2
+DETECTOR_WINDOW 493: (8, 9)  span=2
+DETECTOR_WINDOW 494: (8, 9)  span=2
+DETECTOR_WINDOW 495: (8, 9)  span=2
+DETECTOR_WINDOW 496: (8, 9)  span=2
+DETECTOR_WINDOW 497: (8, 9)  span=2
+DETECTOR_WINDOW 498: (8, 9)  span=2
+DETECTOR_WINDOW 499: (8, 9)  span=2
+DETECTOR_WINDOW 500: (8, 9)  span=2
+DETECTOR_WINDOW 501: (8, 9)  span=2
+DETECTOR_WINDOW 502: (8, 9)  span=2
+DETECTOR_WINDOW 503: (8, 9)  span=2
+DETECTOR_WINDOW 504: (8, 9)  span=2
+DETECTOR_WINDOW 505: (8, 9)  span=2
+DETECTOR_WINDOW 506: (8, 9)  span=2
+DETECTOR_WINDOW 507: (8, 9)  span=2
+DETECTOR_WINDOW 508: (8, 9)  span=2
+DETECTOR_WINDOW 509: (8, 9)  span=2
+DETECTOR_WINDOW 510: (8, 9)  span=2
+DETECTOR_WINDOW 511: (8, 9)  span=2
+DETECTOR_WINDOW 512: (8, 9)  span=2
+DETECTOR_WINDOW 513: (8, 9)  span=2
+DETECTOR_WINDOW 514: (8, 9)  span=2
+DETECTOR_WINDOW 515: (8, 9)  span=2
+DETECTOR_WINDOW 516: (8, 9)  span=2
+DETECTOR_WINDOW 517: (8, 9)  span=2
+DETECTOR_WINDOW 518: (8, 9)  span=2
+DETECTOR_WINDOW 519: (8, 9)  span=2
+DETECTOR_WINDOW 520: (8, 9)  span=2
+DETECTOR_WINDOW 521: (8, 9)  span=2
+DETECTOR_WINDOW 522: (8, 9)  span=2
+DETECTOR_WINDOW 523: (8, 9)  span=2
+DETECTOR_WINDOW 524: (8, 9)  span=2
+DETECTOR_WINDOW 525: (8, 9)  span=2
+DETECTOR_WINDOW 526: (8, 9)  span=2
+DETECTOR_WINDOW 527: (8, 9)  span=2
+DETECTOR_WINDOW 528: (8, 9)  span=2
+DETECTOR_WINDOW 529: (8, 9)  span=2
+DETECTOR_WINDOW 530: (8, 9)  span=2
+DETECTOR_WINDOW 531: (8, 9)  span=2
+DETECTOR_WINDOW 532: (8, 9)  span=2
+DETECTOR_WINDOW 533: (8, 9)  span=2
+DETECTOR_WINDOW 534: (8, 9)  span=2
+DETECTOR_WINDOW 535: (8, 9)  span=2
+DETECTOR_WINDOW 536: (8, 9)  span=2
+DETECTOR_WINDOW 537: (8, 9)  span=2
+DETECTOR_WINDOW 538: (8, 9)  span=2
+DETECTOR_WINDOW 539: (8, 9)  span=2
+DETECTOR_WINDOW 540: (8, 9)  span=2
+DETECTOR_WINDOW 541: (8, 9)  span=2
+DETECTOR_WINDOW 542: (8, 9)  span=2
+DETECTOR_WINDOW 543: (8, 9)  span=2
+DETECTOR_WINDOW 544: (8, 9)  span=2
+DETECTOR_WINDOW 545: (8, 9)  span=2
+DETECTOR_WINDOW 546: (8, 9)  span=2
+DETECTOR_WINDOW 547: (8, 9)  span=2
+DETECTOR_WINDOW 548: (8, 9)  span=2
+DETECTOR_WINDOW 549: (8, 9)  span=2
+DETECTOR_WINDOW 550: (9, 10)  span=2
+DETECTOR_WINDOW 551: (9, 10)  span=2
+DETECTOR_WINDOW 552: (9, 10)  span=2
+DETECTOR_WINDOW 553: (9, 10)  span=2
+DETECTOR_WINDOW 554: (9, 10)  span=2
+DETECTOR_WINDOW 555: (9, 10)  span=2
+DETECTOR_WINDOW 556: (9, 10)  span=2
+DETECTOR_WINDOW 557: (9, 10)  span=2
+DETECTOR_WINDOW 558: (9, 10)  span=2
+DETECTOR_WINDOW 559: (9, 10)  span=2
+DETECTOR_WINDOW 560: (9, 10)  span=2
+DETECTOR_WINDOW 561: (9, 10)  span=2
+DETECTOR_WINDOW 562: (9, 10)  span=2
+DETECTOR_WINDOW 563: (10, 10)  span=1
+DETECTOR_WINDOW 564: (9, 10)  span=2
+DETECTOR_WINDOW 565: (9, 10)  span=2
+DETECTOR_WINDOW 566: (9, 10)  span=2
+DETECTOR_WINDOW 567: (9, 10)  span=2
+DETECTOR_WINDOW 568: (9, 10)  span=2
+DETECTOR_WINDOW 569: (9, 10)  span=2
+DETECTOR_WINDOW 570: (9, 10)  span=2
+DETECTOR_WINDOW 571: (9, 10)  span=2
+DETECTOR_WINDOW 572: (9, 10)  span=2
+DETECTOR_WINDOW 573: (9, 10)  span=2
+DETECTOR_WINDOW 574: (9, 10)  span=2
+DETECTOR_WINDOW 575: (9, 10)  span=2
+DETECTOR_WINDOW 576: (9, 10)  span=2
+DETECTOR_WINDOW 577: (9, 10)  span=2
+DETECTOR_WINDOW 578: (9, 10)  span=2
+DETECTOR_WINDOW 579: (9, 10)  span=2
+DETECTOR_WINDOW 580: (9, 10)  span=2
+DETECTOR_WINDOW 581: (9, 10)  span=2
+DETECTOR_WINDOW 582: (9, 10)  span=2
+DETECTOR_WINDOW 583: (9, 10)  span=2
+DETECTOR_WINDOW 584: (9, 10)  span=2
+DETECTOR_WINDOW 585: (9, 10)  span=2
+DETECTOR_WINDOW 586: (9, 10)  span=2
+DETECTOR_WINDOW 587: (9, 10)  span=2
+DETECTOR_WINDOW 588: (9, 10)  span=2
+DETECTOR_WINDOW 589: (9, 10)  span=2
+DETECTOR_WINDOW 590: (9, 10)  span=2
+DETECTOR_WINDOW 591: (9, 10)  span=2
+DETECTOR_WINDOW 592: (9, 10)  span=2
+DETECTOR_WINDOW 593: (9, 10)  span=2
+DETECTOR_WINDOW 594: (9, 10)  span=2
+DETECTOR_WINDOW 595: (9, 10)  span=2
+DETECTOR_WINDOW 596: (9, 10)  span=2
+DETECTOR_WINDOW 597: (9, 10)  span=2
+DETECTOR_WINDOW 598: (9, 10)  span=2
+DETECTOR_WINDOW 599: (9, 10)  span=2
+DETECTOR_WINDOW 600: (9, 10)  span=2
+DETECTOR_WINDOW 601: (9, 10)  span=2
+DETECTOR_WINDOW 602: (9, 10)  span=2
+DETECTOR_WINDOW 603: (9, 10)  span=2
+DETECTOR_WINDOW 604: (9, 10)  span=2
+DETECTOR_WINDOW 605: (9, 10)  span=2
+DETECTOR_WINDOW 606: (9, 10)  span=2
+DETECTOR_WINDOW 607: (9, 10)  span=2
+DETECTOR_WINDOW 608: (9, 10)  span=2
+DETECTOR_WINDOW 609: (9, 10)  span=2
+DETECTOR_WINDOW 610: (9, 10)  span=2
+DETECTOR_WINDOW 611: (9, 10)  span=2
+DETECTOR_WINDOW 612: (9, 10)  span=2
+DETECTOR_WINDOW 613: (9, 10)  span=2
+DETECTOR_WINDOW 614: (9, 10)  span=2
+DETECTOR_WINDOW 615: (9, 10)  span=2
+DETECTOR_WINDOW 616: (9, 10)  span=2
+DETECTOR_WINDOW 617: (9, 10)  span=2
+DETECTOR_WINDOW 618: (9, 10)  span=2
+DETECTOR_WINDOW 619: (9, 10)  span=2
+DETECTOR_WINDOW 620: (9, 10)  span=2
+DETECTOR_WINDOW 621: (9, 10)  span=2
+DETECTOR_WINDOW 622: (9, 10)  span=2
+DETECTOR_WINDOW 623: (9, 10)  span=2
+DETECTOR_WINDOW 624: (9, 10)  span=2
+DETECTOR_WINDOW 625: (9, 10)  span=2
+DETECTOR_WINDOW 626: (9, 10)  span=2
+DETECTOR_WINDOW 627: (9, 10)  span=2
+DETECTOR_WINDOW 628: (9, 10)  span=2
+DETECTOR_WINDOW 629: (9, 10)  span=2
+DETECTOR_WINDOW 630: (9, 10)  span=2
+
+# MEASUREMENT_REC(t)  qubits (observable slots removed)
+MEASUREMENT_REC(0) 11 30 13 7 4 19 6
+MEASUREMENT_REC(1) 12
+MEASUREMENT_REC(2) 30 19 11 4 13 2
+MEASUREMENT_REC(3) 0 4 6 8 10 19 21 23 24 26 28 47 49 51 53 55 57 59 78 80 82 84 86 88 90 92 111 113 115 117 119 121 123 137 139 141 143 145 155 157 159 165 11 13 16 30 32 34 36 38 40 42 44 46 62 64 66 68 70 72 74 76 94 96 98 100 102 104 106 108 124 126 128 130 132 134 146 148 150 152 160 162
+MEASUREMENT_REC(4) 0 4 6 8 10 19 21 23 24 26 28 47 49 51 53 55 57 59 78 80 82 84 86 88 90 92 111 113 115 117 119 121 123 137 139 141 143 145 155 157 159 165 11 13 16 30 32 34 36 38 40 42 44 46 62 64 66 68 70 72 74 76 94 96 98 100 102 104 106 108 124 126 128 130 132 134 146 148 150 152 160 162
+MEASUREMENT_REC(5) 0 4 6 8 10 19 21 23 24 26 28 47 49 51 53 55 57 59 78 80 82 84 86 88 90 92 111 113 115 117 119 121 123 137 139 141 143 145 155 157 159 165 11 13 16 30 32 34 36 38 40 42 44 46 62 64 66 68 70 72 74 76 94 96 98 100 102 104 106 108 124 126 128 130 132 134 146 148 150 152 160 162
+MEASUREMENT_REC(6) 0 4 6 8 10 19 21 23 24 26 28 47 49 51 53 55 57 59 78 80 82 84 86 88 90 92 111 113 115 117 119 121 123 137 139 141 143 145 155 157 159 165 7 11 13 16 30 32 34 36 38 40 42 44 46 62 64 66 68 70 72 74 76 94 96 98 100 102 104 106 108 124 126 128 130 132 134 146 148 150 152 160 162
+MEASUREMENT_REC(7) 0 4 6 8 10 19 21 23 24 26 28 47 49 51 53 55 57 59 78 80 82 84 86 88 90 92 111 113 115 117 119 121 123 137 139 141 143 145 155 157 159 165 7 11 13 16 30 32 34 36 38 40 42 44 46 62 64 66 68 70 72 74 76 94 96 98 100 102 104 106 108 124 126 128 130 132 134 146 148 150 152 160 162
+MEASUREMENT_REC(8) 0 4 6 8 10 19 21 23 24 26 28 47 49 51 53 55 57 59 78 80 82 84 86 88 90 92 111 113 115 117 119 121 123 137 139 141 143 145 155 157 159 165 7 11 13 16 30 32 34 36 38 40 42 44 46 62 64 66 68 70 72 74 76 94 96 98 100 102 104 106 108 124 126 128 130 132 134 146 148 150 152 160 162
+MEASUREMENT_REC(9) 0 4 6 8 10 19 21 23 24 26 28 47 49 51 53 55 57 59 78 80 82 84 86 88 90 92 111 113 115 117 119 121 123 137 139 141 143 145 155 157 159 165 7 11 13 16 30 32 34 36 38 40 42 44 46 62 64 66 68 70 72 74 76 94 96 98 100 102 104 106 108 124 126 128 130 132 134 146 148 150 152 160 162
+MEASUREMENT_REC(10) 0 6 8 28 21 24 51 55 59 47 80 84 88 113 117 139 11 32 26 40 44 49 66 70 74 78 98 102 106 123 124 128 132 145 146 150 159 160 165 10 7 19 34 36 53 57 46 62 82 86 90 76 94 111 115 119 137 141 155 16 13 30 42 64 68 72 92 96 100 104 121 126 130 143 148 157 38 108 134 152 162

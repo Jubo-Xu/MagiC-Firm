@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="1000" viewBox="0 0 1660 1000">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<defs>
+<marker id="ah-data" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-bus" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-ctrl" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#C62828"/></marker>
+<marker id="ah-ps" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#E65100"/></marker>
+<marker id="ah-mem" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#8A6D00"/></marker>
+<marker id="ah-rst" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#6A1B9A"/></marker>
+<marker id="ah-plain" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#444444"/></marker>
+<marker id="ah-fsm" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#2E7D32"/></marker>
+</defs>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#111111" text-anchor="start"><tspan x="38.0" y="29.2" font-weight="bold">DetectorConstructBlock — the per-board detector datapath (DetectorConstructBlock.sv)</tspan><tspan x="38.0" y="49.2">which sub-blocks exist is chosen by `generate` from the parameters; every regfile is a RegFileROM loaded from this board's .mem files</tspan></text>
+<rect x="220" y="70" width="1180" height="890" rx="12.0" fill="#FAFAFA" stroke="#7A7A7A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111111" text-anchor="start"><tspan x="228.0" y="86.3" font-weight="bold">DetectorConstructBlock  #(M, D_IN, K, N, H, RAW_OUT, T, NDT, IDX_W, HW_WIDTH, STRIDE, SENTINEL, IS_ROOT, HAS_PS, HAS_OSYNC, COPY_LAST, MEM_DIR)</tspan></text>
+<rect x="20" y="150" width="180" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="165.3">in_meas / in_valid /</tspan><tspan x="110.0" y="176.6">in_meas_finish [M]</tspan></text>
+<rect x="20" y="560" width="180" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="575.3">in_det / in_det_valid /</tspan><tspan x="110.0" y="586.5">in_det_finish [D_IN]</tspan></text>
+<rect x="20" y="900" width="180" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="110.0" y="914.9">clk / rst (= board_reset)</tspan></text>
+<rect x="260" y="100" width="220" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="370.0" y="120.8" font-weight="bold">raw_selector.mem  (static)</tspan><tspan x="370.0" y="133.2">RAW_OUT × ⌈log2 M⌉ indices</tspan><tspan x="370.0" y="145.8">$readmemb → packed constant</tspan></text>
+<rect x="540" y="100" width="250" height="80" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="665.0" y="123.0" font-weight="bold">RawSelector  (RAW_OUT &gt; 0)</tspan><tspan x="665.0" y="136.7">forward R of M raw lines up the tree</tspan><tspan x="665.0" y="150.4">1-cycle register; out_finish = OR of</tspan><tspan x="665.0" y="164.2">forwarded (valid &amp; finish)</tspan></text>
+<rect x="260" y="230" width="220" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="370.0" y="250.8" font-weight="bold">sync regfile  (RegFileROM)</tspan><tspan x="370.0" y="263.2">T × M  ·  sync.mem</tspan><tspan x="370.0" y="275.8">row = meas-time, bit = line needed</tspan></text>
+<rect x="540" y="210" width="250" height="100" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="665.0" y="236.1" font-weight="bold">MeasurementSync  (K &gt; 0)</tspan><tspan x="665.0" y="249.8">per-line FIFO (value + finish tag)</tspan><tspan x="665.0" y="263.6">bypass; emit when every needed</tspan><tspan x="665.0" y="277.3">line is available; all-0 mask →</tspan><tspan x="665.0" y="291.1">fast-forward; pc saturates (copy-last)</tspan></text>
+<rect x="900" y="190" width="220" height="80" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="1010.0" y="212.9" font-weight="bold">Kernel 0</tspan><tspan x="1010.0" y="226.7">selector (N of M) → H cores:</tspan><tspan x="1010.0" y="240.4">masked XOR-accumulate,</tspan><tspan x="1010.0" y="254.2">emit-and-clear (one-hot)</tspan></text>
+<rect x="900" y="290" width="220" height="40" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="1010.0" y="313.6" font-weight="bold">Kernel 1</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1008.0" y="351.5">…</tspan></text>
+<rect x="900" y="365" width="220" height="40" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="1010.0" y="388.6" font-weight="bold">Kernel K−1</tspan></text>
+<rect x="1150" y="190" width="220" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="1260.0" y="210.8" font-weight="bold">k0 core regfile  (RegFileROM)</tspan><tspan x="1260.0" y="223.2">T × H(N+1)  ·  k0_core.mem</tspan><tspan x="1260.0" y="235.8">+ k0_selector.mem (static N idx)</tspan></text>
+<rect x="1150" y="290" width="220" height="40" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="1260.0" y="313.2" font-weight="bold">k1 core regfile  +  k1 selector</tspan></text>
+<rect x="1150" y="365" width="220" height="40" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="1260.0" y="388.2" font-weight="bold">k(K−1) core regfile  +  selector</tspan></text>
+<rect x="540" y="540" width="250" height="70" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="665.0" y="564.8" font-weight="bold">DetectorPass  (D_IN &gt; 0)</tspan><tspan x="665.0" y="578.6">1-cycle register of the whole</tspan><tspan x="665.0" y="592.3">child-detector bus (det, valid, finish)</tspan></text>
+<rect x="900" y="470" width="220" height="90" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="6,4"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="1010.0" y="499.5" font-weight="bold">d_out bus  (D_OUT = D_IN + K)</tspan><tspan x="1010.0" y="512.0">line i &lt; D_IN : pass_det[i]</tspan><tspan x="1010.0" y="524.5">line D_IN + j : kern_det[j]</tspan><tspan x="1010.0" y="537.0">(det, valid, finish per line)</tspan></text>
+<rect x="260" y="660" width="220" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="370.0" y="680.8" font-weight="bold">output_sync regfile</tspan><tspan x="370.0" y="693.2">NDT × D_OUT  ·  output_sync.mem</tspan><tspan x="370.0" y="705.8">row = det-time</tspan></text>
+<rect x="260" y="740" width="220" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="370.0" y="760.8" font-weight="bold">global_index regfile  (root)</tspan><tspan x="370.0" y="773.2">NDT × D_OUT·IDX_W  ·  global_index.mem</tspan><tspan x="370.0" y="785.8">stim detector index per line, SENTINEL = idle</tspan></text>
+<rect x="260" y="820" width="220" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="370.0" y="840.8" font-weight="bold">round_marker regfile  (root)</tspan><tspan x="370.0" y="853.2">NDT × 3  ·  round_marker.mem</tspan><tspan x="370.0" y="865.8">{is_first_normal, is_last_normal, is_wait}</tspan></text>
+<rect x="540" y="660" width="260" height="150" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="670.0" y="697.3" font-weight="bold">RootOutputSync  (IS_ROOT)</tspan><tspan x="670.0" y="711.1">= OutputSync + global indices,</tspan><tspan x="670.0" y="724.8">   round markers, copy-last offset</tspan><tspan x="670.0" y="738.6">———</tspan><tspan x="670.0" y="752.3">OutputSync  (non-root, HAS_PS | HAS_OSYNC)</tspan><tspan x="670.0" y="766.1">per-line FIFOs · shared osync_pc</tspan><tspan x="670.0" y="779.8">synced word = one det-time</tspan></text>
+<rect x="900" y="640" width="240" height="60" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="1020.0" y="660.8" font-weight="bold">postselect regfile  (HAS_PS)</tspan><tspan x="1020.0" y="673.2">NDT × D_OUT  ·  postselect.mem</tspan><tspan x="1020.0" y="685.8">addr = SHARED osync_pc (aligned rows)</tspan></text>
+<rect x="900" y="760" width="240" height="70" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="1020.0" y="784.8" font-weight="bold">Postselect  (HAS_PS)</tspan><tspan x="1020.0" y="798.6">mask_reg ← mask (1-cycle align)</tspan><tspan x="1020.0" y="812.3">post_select = valid &amp; |(mask_reg &amp; det)</tspan></text>
+<rect x="1430" y="110" width="190" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1525.0" y="125.3">fwd_raw / fwd_raw_valid [RAW_OUT]</tspan><tspan x="1525.0" y="136.6">fwd_raw_finish → parent</tspan></text>
+<rect x="1430" y="680" width="190" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1525.0" y="695.3">fwd_det / fwd_det_valid [D_OUT]</tspan><tspan x="1525.0" y="706.5">fwd_det_finish → parent (non-root)</tspan></text>
+<rect x="1430" y="730" width="190" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1525.0" y="745.3">out_det / out_used [D_OUT]</tspan><tspan x="1525.0" y="756.5">out_valid / out_finish (root)</tspan></text>
+<rect x="1430" y="780" width="190" height="36" rx="18.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1525.0" y="795.3">out_global_indexes [D_OUT × HW_WIDTH]</tspan><tspan x="1525.0" y="806.5">first/last_normal, first/last_wait</tspan></text>
+<rect x="1430" y="840" width="190" height="24" rx="12.0" fill="#FFFFFF" stroke="#555555" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#111111" text-anchor="middle"><tspan x="1525.0" y="854.9">post_select (stage)</tspan></text>
+<rect x="1150" y="845" width="230" height="100" rx="12.0" fill="#FAFAFA" stroke="#7A7A7A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111111" text-anchor="start"><tspan x="1158.0" y="861.4" font-weight="bold">Legend</tspan></text>
+<rect x="1160" y="878" width="28" height="3" rx="0.0" fill="#1F3A93" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1202.0" y="880.5">measurement / detector data (+valid, finish)</tspan></text>
+<rect x="1160" y="896" width="28" height="3" rx="0.0" fill="#8A6D00" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1202.0" y="898.5">regfile address (pc) / word</tspan></text>
+<rect x="1160" y="914" width="28" height="3" rx="0.0" fill="#E65100" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1202.0" y="916.5">post-select</tspan></text>
+<rect x="1160" y="932" width="28" height="3" rx="0.0" fill="#6A1B9A" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1202.0" y="934.5">reset</tspan></text>
+<polyline points="200.0,168.0 510.0,168.0 510.0,148.0 540.0,148.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<polyline points="200.0,168.0 510.0,168.0 510.0,260.0 540.0,260.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<polyline points="480.0,130.0 510.0,130.0 510.0,124.0 540.0,124.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="462.8" y="119.0" width="94.4" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="510.0" y="129.5">selector_indexes</tspan></text>
+<polyline points="790.0,140.0 1110.0,140.0 1110.0,128.0 1430.0,128.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<polyline points="540.0,290.0 510.0,290.0 510.0,275.0 480.0,275.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="465.5" y="274.5" width="89.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="510.0" y="285.0">sync_regfile_pc</tspan></text>
+<polyline points="480.0,248.0 510.0,248.0 510.0,235.0 540.0,235.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="470.9" y="233.5" width="78.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="510.0" y="244.0">sync_mask [M]</tspan></text>
+<polyline points="790.0,260.0 845.0,260.0 845.0,222.0 900.0,222.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="784.3" y="227.0" width="121.4" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="845.0" y="237.5">ms_meas / ms_used [M]</tspan><tspan x="845.0" y="250.0">ms_valid, ms_finish</tspan></text>
+<polyline points="790.0,260.0 850.0,260.0 850.0,302.0 900.0,302.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<polyline points="790.0,260.0 850.0,260.0 850.0,385.0 900.0,385.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<polyline points="1120.0,246.0 1135.0,246.0 1135.0,232.0 1150.0,232.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="1112.1" y="231.0" width="45.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="1135.0" y="241.5">core_pc</tspan></text>
+<polyline points="1150.0,208.0 1135.0,208.0 1135.0,214.0 1120.0,214.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="1106.7" y="203.0" width="56.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="1135.0" y="213.5">core_mask</tspan></text>
+<polyline points="1120.0,318.0 1135.0,318.0 1150.0,318.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="1112.1" y="310.0" width="45.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="1135.0" y="320.5">core_pc</tspan></text>
+<polyline points="1150.0,302.0 1135.0,302.0 1120.0,302.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="1106.7" y="294.0" width="56.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="1135.0" y="304.5">core_mask</tspan></text>
+<polyline points="1120.0,393.0 1135.0,393.0 1150.0,393.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="1112.1" y="385.0" width="45.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="1135.0" y="395.5">core_pc</tspan></text>
+<polyline points="1150.0,377.0 1135.0,377.0 1120.0,377.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="1106.7" y="369.0" width="56.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="1135.0" y="379.5">core_mask</tspan></text>
+<polyline points="1120.0,262.0 1135.0,262.0 1135.0,515.0 1120.0,515.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<polyline points="1120.0,324.0 1135.0,324.0 1135.0,515.0 1120.0,515.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<polyline points="1120.0,399.0 1135.0,399.0 1135.0,515.0 1120.0,515.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<rect x="1052.7" y="449.0" width="164.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="1135.0" y="459.5">kern_det / valid / finish [K]</tspan></text>
+<polyline points="200.0,578.0 370.0,578.0 370.0,575.0 540.0,575.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<polyline points="790.0,575.0 845.0,575.0 845.0,524.0 900.0,524.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="754.6" y="541.5" width="180.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="845.0" y="552.0">pass_det / valid / finish [D_IN]</tspan></text>
+<polyline points="1010.0,560.0 1010.0,620.0 670.0,620.0 670.0,660.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="756.9" y="612.0" width="186.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="850.0" y="622.5">dbus_det / valid / finish [D_OUT]</tspan></text>
+<polyline points="540.0,690.0 510.0,690.0 480.0,690.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="460.1" y="682.0" width="99.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="510.0" y="692.5">osync_pc (shared)</tspan></text>
+<polyline points="480.0,672.0 510.0,672.0 540.0,672.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="479.0" y="664.0" width="62.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="510.0" y="674.5">osync_mask</tspan></text>
+<polyline points="480.0,770.0 510.0,770.0 510.0,735.0 540.0,735.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="481.7" y="744.5" width="56.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="510.0" y="755.0">gidx_word</tspan></text>
+<polyline points="480.0,850.0 510.0,850.0 510.0,780.0 540.0,780.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="487.1" y="807.0" width="45.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="510.0" y="817.5">rm_word</tspan></text>
+<polyline points="800.0,682.5 850.0,682.5 850.0,670.0 900.0,670.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="824.4" y="668.2" width="51.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="850.0" y="678.8">osync_pc</tspan></text>
+<polyline points="1020.0,700.0 1020.0,730.0 1020.0,760.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="997.1" y="722.0" width="45.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="1020.0" y="732.5">ps_mask</tspan></text>
+<polyline points="800.0,772.5 850.0,772.5 850.0,795.0 900.0,795.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<rect x="786.6" y="775.8" width="126.8" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="850.0" y="786.2">osync_det, osync_valid</tspan></text>
+<polyline points="1140.0,795.0 1285.0,795.0 1285.0,852.0 1430.0,852.0" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ps)"/>
+<polyline points="800.0,712.5 1200.0,712.5 1200.0,712.0 1200.0,698.0 1430.0,698.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="1026.5" y="698.5" width="191.6" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="1122.2" y="709.0">non-root: fwd_det = synced det,</tspan><tspan x="1122.2" y="721.5">fwd_det_valid[i] = valid &amp; used[i]</tspan></text>
+<polyline points="800.0,735.0 1180.0,735.0 1180.0,748.0 1430.0,748.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="1106.7" y="727.0" width="29.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="1121.5" y="737.5">root</tspan></text>
+<polyline points="800.0,750.0 1160.0,750.0 1160.0,798.0 1430.0,798.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="1124.2" y="742.0" width="29.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="1139.0" y="752.5">root</tspan></text>
+<polyline points="200.0,912.0 670.0,912.0 670.0,810.0" fill="none" stroke="#6A1B9A" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#ah-rst)"/>
+<rect x="425.3" y="904.0" width="121.4" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6A1B9A" text-anchor="middle"><tspan x="486.0" y="914.5">rst → every sub-block</tspan></text>
+</svg>

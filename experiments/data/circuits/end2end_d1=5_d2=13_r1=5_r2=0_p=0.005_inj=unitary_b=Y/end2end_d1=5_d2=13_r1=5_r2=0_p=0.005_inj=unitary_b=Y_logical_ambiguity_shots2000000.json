@@ -1,0 +1,17 @@
+{
+  "type": "logical_ambiguity",
+  "num_detectors": 1221,
+  "order": [
+    0
+  ],
+  "meta": {
+    "shots": 2000000,
+    "kept_shots": 0,
+    "n_scored": 0,
+    "q_type": "all",
+    "score_values": 0.0,
+    "score_all": 0.0,
+    "score_exp": 0.0,
+    "warning": "no shots survived postselect; ordering is degenerate"
+  }
+}

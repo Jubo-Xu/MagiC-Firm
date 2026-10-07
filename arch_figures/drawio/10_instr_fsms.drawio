@@ -1,0 +1,140 @@
+<mxfile host="MagiC-Firm/gen_arch_figures.py" version="24.7.0" type="device">
+  <diagram id="page10" name="10_instr_fsms">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1330" pageHeight="840" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="ttl" value="&lt;b&gt;PhysicalMMIO state machines — InstrSequencer.sv (instruction pointer + event FSM) and InstrDecode.sv (one instruction → CW read stream)&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=16;fillColor=none;strokeColor=none;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="1250" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sq" value="&lt;b&gt;InstrSequencer  (all state registered; outputs: instr_en = en_q, instr_addr = en_q ? ptr : 0, rst_out = rst | is_abort | rst_fin, cw_gen_finish = rst_fin)&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fillColor=#FAFAFA;strokeColor=#7A7A7A;rounded=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="70" width="1260" height="370" as="geometry"/>
+        </mxCell>
+        <mxCell id="q_idle" value="&lt;b&gt;IDLE&lt;/b&gt;&lt;br&gt;ptr = 0, en = 0" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="130" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="q_exec" value="&lt;b&gt;EXEC&lt;/b&gt;&lt;br&gt;fetch / run" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="560" y="200" width="130" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="q_drain" value="&lt;b&gt;DRAIN&lt;/b&gt;&lt;br&gt;no new fetch" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="200" width="130" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="sq_n" value="WAIT behaviour: ptr saturates at DEPTH−1, so the last (compiled 'wait' = one syndrome-extraction round) instruction repeats until FINISH." style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=none;strokeColor=none;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="80" y="405" width="1100" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="dc" value="&lt;b&gt;InstrDecode  (Mealy: r_en / r_addr / one_instr_end combinational so CW reads stay contiguous: end_i at T, start_{i+1} at T+1; state registered, async rst = rst_out)&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fillColor=#FAFAFA;strokeColor=#7A7A7A;rounded=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="470" width="1260" height="330" as="geometry"/>
+        </mxCell>
+        <mxCell id="d_idle" value="&lt;b&gt;IDLE&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="130" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="d_wait" value="&lt;b&gt;WAITC&lt;/b&gt;&lt;br&gt;wcnt idle cycles" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="560" y="600" width="130" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="d_str" value="&lt;b&gt;STREAM&lt;/b&gt;&lt;br&gt;r_addr walks" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="600" width="130" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e0" value="is_start: ptr ← 0, en ← 1&lt;br&gt;(fetch instruction 0 next cycle)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="q_idle" target="q_exec">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="385" y="185"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" value="one_instr_end: ptr ← min(ptr+1, DEPTH−1), en ← 1   (no-stall: next instr fetched next cycle)&lt;br&gt;else: en ← 0, ptr holds" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="q_exec" target="q_exec">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="120"/>
+              <mxPoint x="675" y="120"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="is_abort: ptr ← 0, en ← 1, rst_out high THIS cycle&lt;br&gt;(InstrDecode cleared before the refetch)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="q_exec" target="q_exec">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="365"/>
+              <mxPoint x="675" y="365"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="is_finish &amp;amp; ~one_instr_end:&lt;br&gt;instruction mid-flight → let it finish" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="q_exec" target="q_drain">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="185"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="one_instr_end: rst_fin ← 1  (= cw_gen_finish pulse)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="q_drain" target="q_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1115" y="300"/>
+              <mxPoint x="145" y="300"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="is_finish &amp;amp; one_instr_end (same cycle): rst_fin ← 1" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.85;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="q_exec" target="q_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="290"/>
+              <mxPoint x="190" y="290"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="en &amp;amp; wt ≠ 0: latch start/end,&lt;br&gt;wcnt ← wt − 1" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d_idle" target="d_wait">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="385" y="585"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="en &amp;amp; wt == 0 &amp;amp; start ≠ end:  r_en = 1, r_addr = start THIS cycle (fast path); addr ← start + 1" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d_idle" target="d_str">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="145" y="520"/>
+              <mxPoint x="1115" y="520"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="en &amp;amp; wt == 0 &amp;amp; start == end:&lt;br&gt;single read, one_instr_end = 1" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="d_idle" target="d_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="95" y="740"/>
+              <mxPoint x="195" y="740"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="wcnt ≠ 0: wcnt ← wcnt − 1" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="d_wait" target="d_wait">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="740"/>
+              <mxPoint x="675" y="740"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" value="wcnt == 0: r_en = 1, r_addr = start;&lt;br&gt;addr ← start + 1  (or IDLE if start == end)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d_wait" target="d_str">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="585"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="addr ≠ end: r_en = 1, r_addr = addr, addr ← addr + 1" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="d_str" target="d_str">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1065" y="740"/>
+              <mxPoint x="1165" y="740"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" value="addr == end: r_en = 1, r_addr = end, one_instr_end = 1  (→ sequencer registers the next instruction)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="d_str" target="d_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1115" y="780"/>
+              <mxPoint x="145" y="780"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

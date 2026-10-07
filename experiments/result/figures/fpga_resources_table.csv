@@ -1,0 +1,4 @@
+role,lut,ff,bram,dsp,fmax_mhz,configs
+leaf,846,658,0.5,0,>= 500,6
+router,3888,3667,0,0,404,6
+root,11624,8051,0,0,331,6

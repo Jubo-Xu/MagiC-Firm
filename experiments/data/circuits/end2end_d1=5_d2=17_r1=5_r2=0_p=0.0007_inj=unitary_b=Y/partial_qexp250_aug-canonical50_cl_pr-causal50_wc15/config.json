@@ -1,0 +1,52 @@
+{
+  "circuit_file": "end2end_d1=5_d2=17_r1=5_r2=0_p=0.0007_inj=unitary_b=Y.stim",
+  "circuit_stem": "end2end_d1=5_d2=17_r1=5_r2=0_p=0.0007_inj=unitary_b=Y",
+  "n_circuit_dets": 1999,
+  "base": {
+    "type": "logical_ambiguity",
+    "K_Q": 250,
+    "q_type": "exp",
+    "essentials_file": "end2end_d1=5_d2=17_r1=5_r2=0_p=0.0007_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+    "essentials_shots": 2000000
+  },
+  "region": {
+    "left_len": null,
+    "top_len": null,
+    "t": null,
+    "mode": "rectangle",
+    "triangle_half": "left",
+    "stage_name": "escape"
+  },
+  "ops": [
+    {
+      "op": "augment",
+      "type": "canonical",
+      "K": 50,
+      "applied": 50,
+      "mask_sum_after": 300
+    },
+    {
+      "op": "closure",
+      "tau": 0.0,
+      "applied": 156,
+      "iterations": 9,
+      "S_before": 2.1320024592063693,
+      "S_after": 1.1391001906774187,
+      "converged": true,
+      "mask_sum_after": 456
+    },
+    {
+      "op": "prune",
+      "type": "causal",
+      "K": 50,
+      "applied": 50,
+      "mask_sum_after": 406
+    }
+  ],
+  "blending_alpha": null,
+  "essentials_dir": "experiments/data/circuits/end2end_d1=5_d2=17_r1=5_r2=0_p=0.0007_inj=unitary_b=Y",
+  "contract": true,
+  "weight_cutoff": 15.0,
+  "connectivity_fix_type": "per_detector",
+  "param_tag": "qexp250_aug-canonical50_cl_pr-causal50_wc15"
+}

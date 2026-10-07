@@ -1,0 +1,38 @@
+{
+ "circuit": "end2end_d1=5_d2=11_r1=5_r2=0_p=0.0005_inj=unitary_b=Y",
+ "partial": "partial_qexp250_cl_wc15",
+ "seed": 0,
+ "shots": 200000,
+ "postselect_acceptance": 0.22682421875,
+ "tol_db": 0.5,
+ "mask_detectors": 466,
+ "num_detectors": 910,
+ "contracted_detectors": 939,
+ "complete_ler": 7e-05,
+ "gap_cap_complete": 131.23101806640625,
+ "mask_sha": "a71f4a3b26d014c8",
+ "masked_on_complete_dem_vs_complete": {
+  "p_equal": 0.698875,
+  "p_below": 0.277925,
+  "p_above": 0.0232,
+  "mean_abs_diff": 18.333030700683594,
+  "mean_diff": -17.729095458984375,
+  "pearson": 0.4122944350701705
+ },
+ "contracted_vs_complete": {
+  "p_equal": 0.69726,
+  "p_below": 0.279345,
+  "p_above": 0.023395,
+  "mean_abs_diff": 18.458209991455078,
+  "mean_diff": -17.85315704345703,
+  "pearson": 0.40964356820986153
+ },
+ "contracted_vs_masked_on_complete_dem": {
+  "p_equal": 0.957445,
+  "p_below": 0.033025,
+  "p_above": 0.00953,
+  "mean_abs_diff": 0.24679329991340637,
+  "mean_diff": -0.12406285852193832,
+  "pearson": 0.9990360008340768
+ }
+}

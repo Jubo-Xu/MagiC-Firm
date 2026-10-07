@@ -1,0 +1,203 @@
+<mxfile host="MagiC-Firm/gen_arch_figures.py" version="24.7.0" type="device">
+  <diagram id="page8" name="08_board_control">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1540" pageHeight="870" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="ttl" value="&lt;b&gt;BoardControl — per-board control / attempt state machine (BoardControl.sv)&lt;/b&gt;&lt;br&gt;two independent axes: EVENT_MODE {ORIGINATE, FORWARD} × DATA_SRC {EXTERNAL, INTERNAL}; a 1-bit attempt tag makes stale data drop-only (no purge window)" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=16;fillColor=none;strokeColor=none;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="1250" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="bc" value="&lt;b&gt;BoardControl  #(EVENT_MODE, DATA_SRC, M, PAYLOAD_W)&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fillColor=#FAFAFA;strokeColor=#7A7A7A;rounded=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="70" width="1100" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_ev" value="ev_valid / ev_type / ev_payload /&lt;br&gt;ev_attempt   (parent | host start/finish)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="110" width="180" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_ps" value="post_select [M] /&lt;br&gt;post_select_attempt [M]" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="250" width="180" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_iv" value="in_valid, data_attempt" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="420" width="180" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_dd" value="drain_done  (DCB det finish)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="560" width="180" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_dvo" value="data_valid_output" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="620" width="180" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="dec" value="event decode&lt;br&gt;is_start  = valid &amp;amp; type==START (00)&lt;br&gt;is_abort_ev = valid &amp;amp; type==ABORT (01)&lt;br&gt;is_finish = valid &amp;amp; type==FINISH (10)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#F0EAFA;strokeColor=#5E35B1;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="260" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="abd" value="abort detect (ORIGINATE only)&lt;br&gt;abort_detected = |( post_select &amp;amp;&lt;br&gt;   (post_select_attempt XNOR {M{attempt}}) )&lt;br&gt;abort_det_q ← abort_detected &amp;amp; ~abort_det_q  (one-shot)&lt;br&gt;abort_now = abort_det_q | is_abort_ev" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#F0EAFA;strokeColor=#5E35B1;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="250" y="220" width="300" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="fsmbox" value="&lt;b&gt;FSM (all boards)&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#F1F1F1;strokeColor=#9A9A9A;rounded=1;dashed=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;container=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="100" width="660" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="s_idle" value="&lt;b&gt;IDLE&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="660" y="210" width="110" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="s_exec" value="&lt;b&gt;EXEC&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="890" y="210" width="110" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="s_drain" value="&lt;b&gt;DRAIN&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fillColor=#E6F4EA;strokeColor=#2E7D32;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="210" width="110" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="att" value="attempt register (1 bit)&lt;br&gt;START → 0 · abort flips (ORIGINATE) /&lt;br&gt;adopts ev_attempt (FORWARD) · FINISH → 0" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#EDEDED;strokeColor=#1A1A1A;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="620" y="430" width="300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="outs" value="combinational outputs&lt;br&gt;reset = rst | abort_now | rst_for_finish      (LOCAL, never propagated)&lt;br&gt;data_att_eff = INTERNAL ? attempt : data_attempt&lt;br&gt;set_in_data_to_zero = in_valid &amp;amp; ((data_att_eff != attempt) | abort_now)&lt;br&gt;out_attempt = data_valid_output ? attempt : 0&lt;br&gt;cur_attempt = attempt   (stamps the post-select fast path)&lt;br&gt;discard = abort_now      (root → host: reset decoder / gap estimator)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#F0EAFA;strokeColor=#5E35B1;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="620" y="530" width="420" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="oev" value="out_ev register (+1 cycle)&lt;br&gt;default = FORWARD relay of ev_*&lt;br&gt;ORIGINATE overrides: START (att 0),&lt;br&gt;ABORT (~attempt), FINISH (attempt)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=#EDEDED;strokeColor=#1A1A1A;rounded=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="430" width="230" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="tbl" value="&lt;b&gt;board             EVENT_MODE  DATA_SRC&lt;/b&gt;&lt;br&gt;distributed root  ORIGINATE   EXTERNAL&lt;br&gt;distributed mid   FORWARD     EXTERNAL&lt;br&gt;distributed leaf  FORWARD     INTERNAL&lt;br&gt;monolithic        ORIGINATE   INTERNAL" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10;fillColor=#FFFFFF;strokeColor=#1A1A1A;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="250" y="360" width="300" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="nt" value="A parent always changes attempt one cycle before its children can, so incoming data whose attempt tag&lt;br&gt;mismatches is simply stale and is dropped (set_in_data_to_zero) — no flush / purge window is needed.&lt;br&gt;The board-generated abort is registered (abort_det_q) to break the reset → clears-post_select → abort loop." style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fillColor=none;strokeColor=none;rounded=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="250" y="690" width="620" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_rst" value="reset → DCB rst" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="540" width="150" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_gate" value="set_in_data_to_zero" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="580" width="150" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_att" value="out_attempt / cur_attempt" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="620" width="150" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_disc" value="discard" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="660" width="150" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_ev" value="out_ev_valid / type /&lt;br&gt;payload / attempt" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=9;fillColor=#FFFFFF;strokeColor=#555555;rounded=1;arcSize=50;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="450" width="150" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="e0" value="is_start:&lt;br&gt;attempt ← ORIGIN ? 0 : ev_attempt&lt;br&gt;(ORIGIN: emit EV_START)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s_idle" target="s_exec">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" value="abort_now: attempt ← ORIGIN ? ~attempt : ev_attempt&lt;br&gt;(ORIGIN: emit EV_ABORT with the NEW attempt)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.3;exitY=0;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s_exec" target="s_exec">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="140"/>
+              <mxPoint x="990" y="140"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="is_finish &amp;amp; ~drain_done:&lt;br&gt;ride FINISH down once&lt;br&gt;(ORIGIN: emit EV_FINISH)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s_exec" target="s_drain">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="drain_done:&lt;br&gt;attempt ← 0, rst_for_finish ← 1" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="s_drain" target="s_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1175" y="330"/>
+              <mxPoint x="715" y="330"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="is_finish &amp;amp; drain_done&lt;br&gt;(children already idle)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=1.4;edgeStyle=none;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="s_exec" target="s_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="945" y="300"/>
+              <mxPoint x="737" y="300"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_ev" target="dec">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="is_start / is_finish" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="dec" target="fsmbox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="is_abort_ev" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dec" target="abd">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#E65100;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_ps" target="abd">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="abort_now" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#E65100;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;" edge="1" parent="1" source="abd" target="fsmbox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="drain_done" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.9;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_dd" target="fsmbox">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="572"/>
+              <mxPoint x="590" y="370"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="state, rst_for_finish" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fsmbox" target="att">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="attempt" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="att" target="abd">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="465"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" value="attempt" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="att" target="outs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14" value="abort_now" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#E65100;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="abd" target="outs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="595"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_iv" target="outs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="432"/>
+              <mxPoint x="230" y="608"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_dvo" target="outs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="632"/>
+              <mxPoint x="240" y="634"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" value="ORIGINATE events" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fsmbox" target="oev">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e18" value="FORWARD relay (ev_* delayed one cycle)" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_ev" target="oev">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="60"/>
+              <mxPoint x="1310" y="60"/>
+              <mxPoint x="1310" y="457"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="oev" target="o_ev">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e20" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#6A1B9A;strokeWidth=1.3;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.15;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="outs" target="o_rst">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e21" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#6A1B9A;strokeWidth=1.3;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="outs" target="o_gate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e22" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#444444;strokeWidth=1.2;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.65;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="outs" target="o_att">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e23" value="" style="html=1;fontFamily=Helvetica;fontSize=10;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C62828;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="outs" target="o_disc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

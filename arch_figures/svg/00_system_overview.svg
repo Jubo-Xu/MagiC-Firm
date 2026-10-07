@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1470" height="920" viewBox="0 0 1470 920">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<defs>
+<marker id="ah-data" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-bus" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1F3A93"/></marker>
+<marker id="ah-ctrl" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#C62828"/></marker>
+<marker id="ah-ps" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#E65100"/></marker>
+<marker id="ah-mem" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#8A6D00"/></marker>
+<marker id="ah-rst" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#6A1B9A"/></marker>
+<marker id="ah-plain" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#444444"/></marker>
+<marker id="ah-fsm" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#2E7D32"/></marker>
+</defs>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#111111" text-anchor="start"><tspan x="38.0" y="29.2" font-weight="bold">Control system — overall architecture</tspan><tspan x="38.0" y="49.2">Distributed tree of ControlBoards: events ripple DOWN, data / attempt / finish / post-select ripple UP</tspan></text>
+<rect x="440" y="70" width="250" height="60" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="6,4"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="565.0" y="96.7" font-weight="bold">Host controller</tspan><tspan x="565.0" y="110.5">start / finish · sees out_finish, discard</tspan></text>
+<rect x="760" y="70" width="300" height="60" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="6,4"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="910.0" y="96.7" font-weight="bold">Decoder + gap estimator</tspan><tspan x="910.0" y="110.5">software MWPM / micro-blossom → gap_post_select</tspan></text>
+<rect x="470" y="220" width="470" height="100" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="705.0" y="252.9" font-weight="bold">Root ControlBoard  (e.g. board 200)</tspan><tspan x="705.0" y="266.7">EVENT_MODE = ORIGINATE · DATA_SRC = EXTERNAL</tspan><tspan x="705.0" y="280.4">BoardControl (attempt / event FSM)  +  DetectorConstructBlock</tspan><tspan x="705.0" y="294.2">RootOutputSync → detector stream with global indices &amp; round markers</tspan></text>
+<rect x="200" y="420" width="340" height="90" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="370.0" y="454.8" font-weight="bold">Router ControlBoard  (100)</tspan><tspan x="370.0" y="468.6">FORWARD · EXTERNAL</tspan><tspan x="370.0" y="482.3">RawSelector · DetectorPass · K kernels · OutputSync</tspan></text>
+<rect x="870" y="420" width="340" height="90" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="1040.0" y="454.8" font-weight="bold">Router = STAGE ControlBoard  (101)</tspan><tspan x="1040.0" y="468.6">FORWARD · EXTERNAL · HAS_PS</tspan><tspan x="1040.0" y="482.3">+ Postselect → ps_out fast path to root</tspan></text>
+<rect x="60" y="620" width="280" height="100" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="200.0" y="653.0" font-weight="bold">Leaf ControlBoard  (0)</tspan><tspan x="200.0" y="666.7">FORWARD · INTERNAL</tspan><tspan x="200.0" y="680.5">DCB: K kernels · RawSelector</tspan><tspan x="200.0" y="694.2">P × PhysicalMMIO (command words)</tspan></text>
+<rect x="360" y="620" width="280" height="100" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="500.0" y="653.0" font-weight="bold">Leaf ControlBoard  (1)</tspan><tspan x="500.0" y="666.7">FORWARD · INTERNAL</tspan><tspan x="500.0" y="680.5">DCB: K kernels · RawSelector</tspan><tspan x="500.0" y="694.2">P × PhysicalMMIO (command words)</tspan></text>
+<rect x="730" y="620" width="280" height="100" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="870.0" y="653.0" font-weight="bold">Leaf ControlBoard  (2)</tspan><tspan x="870.0" y="666.7">FORWARD · INTERNAL</tspan><tspan x="870.0" y="680.5">DCB: K kernels · RawSelector</tspan><tspan x="870.0" y="694.2">P × PhysicalMMIO (command words)</tspan></text>
+<rect x="1030" y="620" width="280" height="100" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="1170.0" y="653.0" font-weight="bold">Leaf ControlBoard  (3)</tspan><tspan x="1170.0" y="666.7">FORWARD · INTERNAL</tspan><tspan x="1170.0" y="680.5">DCB: K kernels · RawSelector</tspan><tspan x="1170.0" y="694.2">P × PhysicalMMIO (command words)</tspan></text>
+<rect x="60" y="820" width="1250" height="60" rx="12.0" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="6,4"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#111111" text-anchor="middle"><tspan x="685.0" y="846.7" font-weight="bold">Physical layer: control cores / AWGs → qubits → readout</tspan><tspan x="685.0" y="860.5">(in simulation: one StimReadout per leaf replays recorded measurements — see 11_stim_readout_loop)</tspan></text>
+<rect x="30" y="180" width="330" height="120" rx="0.0" fill="#FFF4D6" stroke="#B07D00" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="middle"><tspan x="195.0" y="218.2" font-weight="bold">Compiler toolchain (hardware/compiler/control_system)</tspan><tspan x="195.0" y="230.8">stim circuit + hardware config.json  →</tspan><tspan x="195.0" y="243.2">per-board regfiles (.mem): sync, k&lt;i&gt;_selector,</tspan><tspan x="195.0" y="255.8">k&lt;i&gt;_core, raw_selector, output_sync, global_index,</tspan><tspan x="195.0" y="268.2">round_marker, postselect, MMIO_instr_&lt;p&gt;, MMIO_cw_&lt;p&gt;</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="38.0" y="333.5">Monolithic variant: ONE board = root + leaf fused</tspan><tspan x="38.0" y="346.0">(ORIGINATE · INTERNAL), no children, no raw_out;</tspan><tspan x="38.0" y="358.5">same ControlBoard module, different parameters.</tspan></text>
+<rect x="1090" y="60" width="340" height="100" rx="12.0" fill="#FAFAFA" stroke="#7A7A7A" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111111" text-anchor="start"><tspan x="1098.0" y="76.3" font-weight="bold">Legend</tspan></text>
+<rect x="1100" y="93" width="28" height="3" rx="0.0" fill="#1F3A93" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1142.0" y="95.5">data plane, UP: det / raw + valid + finish + attempt</tspan></text>
+<rect x="1100" y="111" width="28" height="3" rx="0.0" fill="#C62828" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1142.0" y="113.5">control plane, DOWN: event bus {START, ABORT, FINISH} + attempt</tspan></text>
+<rect x="1100" y="129" width="28" height="3" rx="0.0" fill="#E65100" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1142.0" y="131.5">post-select fast path, UP (stage boards) / gap reject</tspan></text>
+<rect x="1100" y="147" width="28" height="3" rx="0.0" fill="#8A6D00" stroke="none" stroke-width="1"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#111111" text-anchor="start"><tspan x="1142.0" y="149.5">compiled programs (.mem, $readmemb at elaboration)</tspan></text>
+<polyline points="515.0,130.0 515.0,175.0 554.6,175.0 554.6,220.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="493.0" y="167.0" width="83.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="534.8" y="177.5">start / finish</tspan></text>
+<polyline points="658.0,220.0 658.0,175.0 627.5,175.0 627.5,130.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="584.8" y="167.0" width="116.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="642.8" y="177.5">out_finish · discard</tspan></text>
+<polyline points="775.5,220.0 775.5,175.0 850.0,175.0 850.0,130.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="717.0" y="161.0" width="191.6" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="812.8" y="171.5">out_det / out_used / out_valid</tspan><tspan x="812.8" y="184.0">out_global_indexes · round markers</tspan></text>
+<polyline points="985.0,130.0 985.0,175.0 902.4,175.0 902.4,220.0" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ps)"/>
+<rect x="899.2" y="167.0" width="89.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#E65100" text-anchor="middle"><tspan x="943.7" y="177.5">gap_post_select</tspan></text>
+<polyline points="564.0,320.0 564.0,370.0 455.0,370.0 455.0,420.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="470.4" y="362.0" width="78.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="509.5" y="372.5">out_ev → ev_*</tspan></text>
+<polyline points="353.0,420.0 353.0,370.0 493.5,370.0 493.5,320.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="327.4" y="356.0" width="191.6" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="423.2" y="366.5">fwd_det / fwd_raw (+valid, finish)</tspan><tspan x="423.2" y="379.0">out_attempt</tspan></text>
+<polyline points="846.0,320.0 846.0,370.0 955.0,370.0 955.0,420.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="861.4" y="362.0" width="78.2" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="900.5" y="372.5">out_ev → ev_*</tspan></text>
+<polyline points="1057.0,420.0 1057.0,370.0 916.5,370.0 916.5,320.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="891.0" y="356.0" width="191.6" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="986.8" y="366.5">fwd_det / fwd_raw (+valid, finish)</tspan><tspan x="986.8" y="379.0">out_attempt</tspan></text>
+<polyline points="1176.0,420.0 1176.0,280.0 940.0,280.0" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ps)"/>
+<rect x="1040.3" y="272.0" width="175.4" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#E65100" text-anchor="middle"><tspan x="1128.0" y="282.5">ps_out / ps_out_attempt → ps_in</tspan></text>
+<polyline points="268.0,510.0 268.0,565.0 256.0,565.0 256.0,620.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="247.2" y="557.0" width="29.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="262.0" y="567.5">ev_*</tspan></text>
+<polyline points="144.0,620.0 144.0,565.0 227.2,565.0 227.2,510.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="135.7" y="551.0" width="99.8" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="185.6" y="561.5">fwd_det / fwd_raw</tspan><tspan x="185.6" y="574.0">finish · attempt</tspan></text>
+<polyline points="472.0,510.0 472.0,565.0 556.0,565.0 556.0,620.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="499.2" y="557.0" width="29.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="514.0" y="567.5">ev_*</tspan></text>
+<polyline points="444.0,620.0 444.0,565.0 431.2,565.0 431.2,510.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="387.7" y="551.0" width="99.8" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="437.6" y="561.5">fwd_det / fwd_raw</tspan><tspan x="437.6" y="574.0">finish · attempt</tspan></text>
+<polyline points="938.0,510.0 938.0,565.0 926.0,565.0 926.0,620.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="917.2" y="557.0" width="29.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="932.0" y="567.5">ev_*</tspan></text>
+<polyline points="814.0,620.0 814.0,565.0 897.2,565.0 897.2,510.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="805.7" y="551.0" width="99.8" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="855.6" y="561.5">fwd_det / fwd_raw</tspan><tspan x="855.6" y="574.0">finish · attempt</tspan></text>
+<polyline points="1142.0,510.0 1142.0,565.0 1226.0,565.0 1226.0,620.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="1169.2" y="557.0" width="29.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="1184.0" y="567.5">ev_*</tspan></text>
+<polyline points="1114.0,620.0 1114.0,565.0 1101.2,565.0 1101.2,510.0" fill="none" stroke="#1F3A93" stroke-width="2.5" marker-end="url(#ah-bus)"/>
+<rect x="1057.7" y="551.0" width="99.8" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="1107.6" y="561.5">fwd_det / fwd_raw</tspan><tspan x="1107.6" y="574.0">finish · attempt</tspan></text>
+<polyline points="256.0,720.0 256.0,770.0 256.0,820.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="195.3" y="756.0" width="121.4" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="256.0" y="766.5">mmio_out_data / valid</tspan><tspan x="256.0" y="779.0">(command words)</tspan></text>
+<polyline points="144.0,820.0 144.0,770.0 144.0,720.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<rect x="75.2" y="762.0" width="137.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="144.0" y="772.5">in_meas / valid / finish</tspan></text>
+<polyline points="556.0,720.0 556.0,770.0 556.0,820.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="495.3" y="756.0" width="121.4" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="556.0" y="766.5">mmio_out_data / valid</tspan><tspan x="556.0" y="779.0">(command words)</tspan></text>
+<polyline points="444.0,820.0 444.0,770.0 444.0,720.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<rect x="375.2" y="762.0" width="137.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="444.0" y="772.5">in_meas / valid / finish</tspan></text>
+<polyline points="926.0,720.0 926.0,770.0 926.0,820.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="865.3" y="756.0" width="121.4" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="926.0" y="766.5">mmio_out_data / valid</tspan><tspan x="926.0" y="779.0">(command words)</tspan></text>
+<polyline points="814.0,820.0 814.0,770.0 814.0,720.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<rect x="745.2" y="762.0" width="137.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="814.0" y="772.5">in_meas / valid / finish</tspan></text>
+<polyline points="1226.0,720.0 1226.0,770.0 1226.0,820.0" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#ah-ctrl)"/>
+<rect x="1165.3" y="756.0" width="121.4" height="28.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#C62828" text-anchor="middle"><tspan x="1226.0" y="766.5">mmio_out_data / valid</tspan><tspan x="1226.0" y="779.0">(command words)</tspan></text>
+<polyline points="1114.0,820.0 1114.0,770.0 1114.0,720.0" fill="none" stroke="#1F3A93" stroke-width="1.5" marker-end="url(#ah-data)"/>
+<rect x="1045.2" y="762.0" width="137.6" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1F3A93" text-anchor="middle"><tspan x="1114.0" y="772.5">in_meas / valid / finish</tspan></text>
+<polyline points="360.0,228.0 415.0,228.0 415.0,270.0 470.0,270.0" fill="none" stroke="#8A6D00" stroke-width="1.3" marker-end="url(#ah-mem)"/>
+<rect x="357.0" y="241.0" width="116.0" height="16.0" fill="#FFFFFF" fill-opacity="0.92"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#8A6D00" text-anchor="middle"><tspan x="415.0" y="251.5">per-board .mem files</tspan></text>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "name": "MagiC-Firm Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "initializeCommand": "docker build -t micro-blossom ./micro-blossom",
+  "remoteUser": "root",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind"
+  ]
+}

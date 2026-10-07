@@ -1,0 +1,119 @@
+{
+  "mask": {
+    "num_detectors": 1584,
+    "mask_sum": 724,
+    "mask_ratio": 0.45707070707070707,
+    "base": {
+      "type": "list",
+      "detectors_file": "experiments/data/circuits/end2end_d1=5_d2=15_r1=5_r2=0_p=0.001_inj=unitary_b=Y/gap_impact_top724.json",
+      "n": 724,
+      "ids_sha": "2ae1b8"
+    },
+    "ops": [],
+    "S_crossing_mass": 6.146403446839632
+  },
+  "original": {
+    "detector_degree": {
+      "min": 3.0,
+      "mean": 79.01136363636364,
+      "median": 78.0,
+      "max": 1270.0,
+      "p95": 189.0,
+      "p99": 273.0
+    },
+    "fault_node_degree": {
+      "min": 1.0,
+      "mean": 3.5593538479039872,
+      "median": 4.0,
+      "max": 12.0,
+      "p95": 6.0,
+      "p99": 8.0
+    },
+    "num_detectors": 1584,
+    "num_observables": 1,
+    "num_fault_nodes": 35162,
+    "num_components": 35162,
+    "n_zero_det": 0,
+    "n_boundary_edges": 505,
+    "n_edges": 8819,
+    "n_hyperedges": 25838,
+    "n_obs_flipping": 3262,
+    "max_detector_degree": 1270,
+    "avg_detector_degree": 79.01136363636364,
+    "max_fault_node_degree": 12
+  },
+  "desaturated_with_obs": {
+    "detector_degree": {
+      "min": 0.0,
+      "mean": 47.810889645114244,
+      "median": 44.0,
+      "max": 2702.0,
+      "p95": 88.0,
+      "p99": 98.0
+    },
+    "fault_node_degree": {
+      "min": 1.0,
+      "mean": 1.9660749270321058,
+      "median": 2.0,
+      "max": 2.0,
+      "p95": 2.0,
+      "p99": 2.0
+    },
+    "num_detectors": 2057,
+    "num_observables": 1,
+    "num_fault_nodes": 30151,
+    "num_components": 50022,
+    "n_zero_det": 0,
+    "n_boundary_edges": 1697,
+    "n_edges": 48325,
+    "n_hyperedges": 0,
+    "n_obs_flipping": 2645,
+    "max_detector_degree": 2702,
+    "avg_detector_degree": 47.810889645114244,
+    "max_fault_node_degree": 2
+  },
+  "contracted": {
+    "detector_degree": {
+      "min": 1.0,
+      "mean": 34.07268170426065,
+      "median": 21.0,
+      "max": 1117.0,
+      "p95": 88.0,
+      "p99": 102.0
+    },
+    "fault_node_degree": {
+      "min": 1.0,
+      "mean": 1.9286423606185275,
+      "median": 2.0,
+      "max": 2.0,
+      "p95": 2.0,
+      "p99": 2.0
+    },
+    "num_detectors": 1197,
+    "num_observables": 1,
+    "num_fault_nodes": 21147,
+    "num_components": 21147,
+    "n_zero_det": 0,
+    "n_boundary_edges": 1509,
+    "n_edges": 19638,
+    "n_hyperedges": 0,
+    "n_obs_flipping": 1117,
+    "max_detector_degree": 1117,
+    "avg_detector_degree": 34.07268170426065,
+    "max_fault_node_degree": 2
+  },
+  "contraction": {
+    "weight_cutoff": 15.0,
+    "connectivity_fix_type": "per_detector",
+    "n_kept": 1197,
+    "n_clipped": 860,
+    "needed_rounds": {
+      "num_circuit_rounds": 15,
+      "first_needed_round": 8,
+      "last_needed_round": 14,
+      "rounds_saved_at_end": 0,
+      "obs_detector_excluded": true
+    },
+    "obs_detector_new_index": 1196
+  }
+}

@@ -1,0 +1,59 @@
+{
+ "circuit": "end2end_d1=3_d2=19_r1=3_r2=0_p=0.0007_inj=unitary_b=Y",
+ "q": 14,
+ "fanout": 29,
+ "layers": 3,
+ "boards_per_layer": [
+  64,
+  4,
+  1
+ ],
+ "link": {
+  "gbps": 10.0,
+  "frame": 66,
+  "payload": 64,
+  "l_fixed_ns": 157.0,
+  "t_word_ns": 6.6
+ },
+ "f_board_mhz": 100.0,
+ "cycles": {
+  "leaf": 3,
+  "router": 2,
+  "root": 2,
+  "stage_verdict": 3,
+  "root_fastpath": 2,
+  "root_own": 1,
+  "relay": 1
+ },
+ "deliver_ns": 423.6,
+ "verdict_down_ns": 347.2,
+ "gap_feedback_ns": 357.2,
+ "ps_feedback_ns": {
+  "0": 790.8,
+  "1": 790.8
+ },
+ "stage_boards": {
+  "0": 2000,
+  "1": 2000
+ },
+ "meas_times": 8,
+ "stages": [
+  {
+   "stage": 0,
+   "det_time_range": [
+    0,
+    2
+   ],
+   "detectors": 14
+  },
+  {
+   "stage": 1,
+   "det_time_range": [
+    3,
+    7
+   ],
+   "detectors": 1623
+  }
+ ],
+ "max_uplink_words": 5
+}

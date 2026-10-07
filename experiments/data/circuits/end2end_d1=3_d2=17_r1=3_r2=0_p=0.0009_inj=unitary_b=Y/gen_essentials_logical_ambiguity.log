@@ -1,0 +1,4 @@
+circuit: experiments/data/circuits/end2end_d1=3_d2=17_r1=3_r2=0_p=0.0009_inj=unitary_b=Y/end2end_d1=3_d2=17_r1=3_r2=0_p=0.0009_inj=unitary_b=Y.stim  (1314 detectors)
+[logical_ambiguity] computing (shots=2000000, q_type=all, workers=48) ...
+[logical_ambiguity] kept 1146115/2000000 shots, scored 1146115
+[logical_ambiguity] wrote experiments/data/circuits/end2end_d1=3_d2=17_r1=3_r2=0_p=0.0009_inj=unitary_b=Y/end2end_d1=3_d2=17_r1=3_r2=0_p=0.0009_inj=unitary_b=Y_logical_ambiguity_shots2000000.json

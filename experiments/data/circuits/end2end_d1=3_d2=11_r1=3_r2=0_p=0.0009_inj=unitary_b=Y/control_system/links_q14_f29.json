@@ -1,0 +1,595 @@
+{
+ "circuit": "end2end_d1=3_d2=11_r1=3_r2=0_p=0.0009_inj=unitary_b=Y",
+ "q": 14,
+ "fanout": 29,
+ "layers": 3,
+ "boards_per_layer": [
+  32,
+  2,
+  1
+ ],
+ "compiled": "experiments/data/circuits/end2end_d1=3_d2=11_r1=3_r2=0_p=0.0009_inj=unitary_b=Y/control_system/compiled/tree_q14_f29__end2end_d1=3_d2=11_r1=3_r2=0_p=0.0009_inj=unitary_b=Y__osync=all,wr=0,wrow=normal,ps=flat",
+ "stage_boards": {
+  "0": 1000,
+  "1": 2000
+ },
+ "meas_times": 8,
+ "stages": [
+  {
+   "stage": 0,
+   "det_time_range": [
+    0,
+    2
+   ],
+   "detectors": 14
+  },
+  {
+   "stage": 1,
+   "det_time_range": [
+    3,
+    7
+   ],
+   "detectors": 547
+  }
+ ],
+ "B_ps": 2,
+ "B_down": 6,
+ "boards": [
+  {
+   "board_id": 0,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 1,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 4,
+    "B_up": 21,
+    "B_up_used": 19
+   }
+  },
+  {
+   "board_id": 2,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 3,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 4,
+    "D_used": 3,
+    "RAW": 2,
+    "B_up": 15,
+    "B_up_used": 13
+   }
+  },
+  {
+   "board_id": 4,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 4,
+    "D_used": 3,
+    "RAW": 1,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 5,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 6,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 7,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 8,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 8,
+    "D_used": 7,
+    "RAW": 8,
+    "B_up": 35,
+    "B_up_used": 33
+   }
+  },
+  {
+   "board_id": 9,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 4,
+    "B_up": 21,
+    "B_up_used": 19
+   }
+  },
+  {
+   "board_id": 10,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 11,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 12,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 13,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 14,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 15,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1000,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 16,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 2,
+    "B_up": 17,
+    "B_up_used": 15
+   }
+  },
+  {
+   "board_id": 17,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 2,
+    "B_up": 17,
+    "B_up_used": 15
+   }
+  },
+  {
+   "board_id": 18,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 4,
+    "D_used": 3,
+    "RAW": 0,
+    "B_up": 11,
+    "B_up_used": 9
+   }
+  },
+  {
+   "board_id": 19,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 2,
+    "B_up": 17,
+    "B_up_used": 15
+   }
+  },
+  {
+   "board_id": 20,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 4,
+    "D_used": 3,
+    "RAW": 0,
+    "B_up": 11,
+    "B_up_used": 9
+   }
+  },
+  {
+   "board_id": 21,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 22,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 1,
+    "B_up": 15,
+    "B_up_used": 13
+   }
+  },
+  {
+   "board_id": 23,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 2,
+    "B_up": 17,
+    "B_up_used": 15
+   }
+  },
+  {
+   "board_id": 24,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 4,
+    "D_used": 3,
+    "RAW": 0,
+    "B_up": 11,
+    "B_up_used": 9
+   }
+  },
+  {
+   "board_id": 25,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 26,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 27,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 3,
+    "B_up": 19,
+    "B_up_used": 17
+   }
+  },
+  {
+   "board_id": 28,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 0,
+    "B_up": 13,
+    "B_up_used": 11
+   }
+  },
+  {
+   "board_id": 29,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 2,
+    "B_up": 17,
+    "B_up_used": 15
+   }
+  },
+  {
+   "board_id": 30,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 2,
+    "B_up": 17,
+    "B_up_used": 15
+   }
+  },
+  {
+   "board_id": 31,
+   "type": "leaf",
+   "level": 0,
+   "parent": 1001,
+   "children": [],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 5,
+    "D_used": 4,
+    "RAW": 4,
+    "B_up": 21,
+    "B_up_used": 19
+   }
+  },
+  {
+   "board_id": 1000,
+   "type": "router",
+   "level": 1,
+   "parent": 2000,
+   "children": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "stage_board": true,
+   "up": {
+    "D_OUT": 90,
+    "D_used": 73,
+    "RAW": 1,
+    "B_up": 185,
+    "B_up_used": 151
+   }
+  },
+  {
+   "board_id": 1001,
+   "type": "router",
+   "level": 1,
+   "parent": 2000,
+   "children": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ],
+   "stage_board": false,
+   "up": {
+    "D_OUT": 78,
+    "D_used": 61,
+    "RAW": 20,
+    "B_up": 199,
+    "B_up_used": 165
+   }
+  },
+  {
+   "board_id": 2000,
+   "type": "root",
+   "level": 2,
+   "parent": null,
+   "children": [
+    1000,
+    1001
+   ],
+   "stage_board": true,
+   "up": null
+  }
+ ]
+}

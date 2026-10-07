@@ -1,0 +1,60 @@
+{
+ "tag": "q20f29g25L300c100",
+ "circuit": "end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y",
+ "q": 20,
+ "fanout": 29,
+ "layers": 3,
+ "boards_per_layer": [
+  32,
+  2,
+  1
+ ],
+ "link": {
+  "gbps": 25,
+  "frame": 66,
+  "payload": 64,
+  "l_fixed_ns": 300,
+  "t_word_ns": 2.64
+ },
+ "f_board_mhz": 100,
+ "cycles": {
+  "leaf": 3,
+  "router": 2,
+  "root": 2,
+  "stage_verdict": 3,
+  "root_fastpath": 2,
+  "root_own": 1,
+  "relay": 1
+ },
+ "deliver_ns": 685.8399999999999,
+ "verdict_down_ns": 625.28,
+ "gap_feedback_ns": 635.28,
+ "ps_feedback_ns": {
+  "0": 1310.56,
+  "1": 1331.12
+ },
+ "stage_boards": {
+  "0": 1000,
+  "1": 2000
+ },
+ "meas_times": 8,
+ "stages": [
+  {
+   "stage": 0,
+   "det_time_range": [
+    0,
+    2
+   ],
+   "detectors": 14
+  },
+  {
+   "stage": 1,
+   "det_time_range": [
+    3,
+    7
+   ],
+   "detectors": 1013
+  }
+ ],
+ "max_uplink_words": 5
+}

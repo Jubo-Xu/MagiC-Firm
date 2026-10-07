@@ -1,0 +1,47 @@
+{
+  "circuit_file": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y.stim",
+  "circuit_stem": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y",
+  "n_circuit_dets": 776,
+  "base": {
+    "type": "region",
+    "left_len": [
+      1,
+      16
+    ],
+    "top_len": [
+      1,
+      14
+    ],
+    "t": [
+      1,
+      5
+    ],
+    "mode": "rectangle",
+    "triangle_half": "left",
+    "stage_name": "escape"
+  },
+  "region": {
+    "left_len": [
+      1,
+      16
+    ],
+    "top_len": [
+      1,
+      14
+    ],
+    "t": [
+      1,
+      5
+    ],
+    "mode": "rectangle",
+    "triangle_half": "left",
+    "stage_name": "escape"
+  },
+  "ops": [],
+  "blending_alpha": null,
+  "essentials_dir": "experiments/data/circuits/end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y",
+  "contract": true,
+  "weight_cutoff": 15.0,
+  "connectivity_fix_type": "per_detector",
+  "param_tag": "l1-16_t1-14_ts1-5_wc15"
+}

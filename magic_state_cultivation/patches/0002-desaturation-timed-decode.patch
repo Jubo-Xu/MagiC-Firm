@@ -1,0 +1,74 @@
+--- a/src/cultiv/_decoding/_desaturation_sampler.py
++++ b/src/cultiv/_decoding/_desaturation_sampler.py
+@@ -1,3 +1,4 @@
++# Modified from the original magic-state-cultivation project (Apache 2.0): https://github.com/quantumlib/magic-state-cultivation
+ import collections
+ import dataclasses
+ import heapq
+@@ -262,9 +263,9 @@
+         t1 = time.monotonic()
+ 
+         return sinter.AnonTaskStats(
+-            shots=shots,
+-            errors=np.count_nonzero(errors),
+-            discards=shots - np.count_nonzero(keep_mask),
++            shots=int(shots),
++            errors=int(np.count_nonzero(errors)),
++            discards=int(shots - np.count_nonzero(keep_mask)),
+             seconds=t1 - t0,
+             custom_counts=counter,
+         )
+@@ -278,6 +279,34 @@
+         predictions: np.ndarray = on_weights < off_weights
+         return predictions, gaps
+ 
++    def _decode_batch_overwrite_last_byte_with_time(
++        self,
++        bit_packed_dets: np.ndarray,
++        measure_mode: str = "serial",
++    ) -> tuple[np.ndarray, np.ndarray, float]:
++        bit_packed_dets[:, -1] |= self._obs_det_byte
++        t0_on = time.perf_counter_ns()
++        _, on_weights = self.gap_decoder.decode_batch(bit_packed_dets, return_weights=True, bit_packed_shots=True, bit_packed_predictions=True)
++        t1_on = time.perf_counter_ns()
++        measured_ns_on = float(max(t1_on - t0_on, 0))
++
++        bit_packed_dets[:, -1] ^= self._obs_det_byte
++        t0_off = time.perf_counter_ns()
++        _, off_weights = self.gap_decoder.decode_batch(bit_packed_dets, return_weights=True, bit_packed_shots=True, bit_packed_predictions=True)
++        t1_off = time.perf_counter_ns()
++        measured_ns_off = float(max(t1_off - t0_off, 0))
++
++        gaps: np.ndarray = np.abs((on_weights - off_weights) * self.decibels_per_w)
++        predictions: np.ndarray = on_weights < off_weights
++
++        if measure_mode == "serial":
++            measured_ns = measured_ns_on + measured_ns_off
++        elif measure_mode == "parallel":
++            measured_ns = max(measured_ns_on, measured_ns_off)
++        else:
++            raise NotImplementedError("This measure mode is not supported!")
++        return predictions, gaps, measured_ns
++
+     def decode_det_set(self, det_set: set[int]) -> tuple[bool, float]:
+         dets = np.zeros(shape=(1, self.num_dets), dtype=np.bool_)
+         for d in det_set:
+@@ -287,6 +316,18 @@
+         predictions, gaps = self._decode_batch_overwrite_last_byte(np.packbits(dets, bitorder='little', axis=1))
+         return predictions[0], math.ceil(gaps[0])
+ 
++    def decode_det_set_with_time(self, det_set: set[int], measure_mode: str = "serial") -> tuple[bool, float, float]:
++        dets = np.zeros(shape=(1, self.num_dets), dtype=np.bool_)
++        for d in det_set:
++            if d in self.postselected_detectors:
++                return False, 0, 0.0
++            dets[0][d] = 1
++        predictions, gaps, measured_ns = self._decode_batch_overwrite_last_byte_with_time(
++            np.packbits(dets, bitorder='little', axis=1),
++            measure_mode=measure_mode
++        )
++        return predictions[0], math.ceil(gaps[0]), measured_ns
++
+ 
+ def clipped_matchable_dem(flat_dem: stim.DetectorErrorModel, clip: AbstractSet[int]) -> stim.DetectorErrorModel:
+     neighbors = collections.defaultdict(dict)

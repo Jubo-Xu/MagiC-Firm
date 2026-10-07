@@ -1,0 +1,188 @@
+{
+ "circuit": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y",
+ "size_target": 336,
+ "ref": "partial_qexp250_cl_wc15",
+ "shots": 200000,
+ "variants": {
+  "qexp_cl": {
+   "circuit": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y",
+   "partial": "partial_qexp234_cl_wc15",
+   "seed": 0,
+   "shots": 200000,
+   "postselect_acceptance": 0.5378125,
+   "tol_db": 0.5,
+   "mask_detectors": 328,
+   "num_detectors": 776,
+   "contracted_detectors": 385,
+   "complete_ler": 0.003065,
+   "gap_cap_complete": 68.75709533691406,
+   "mask_sha": "01b24514f2a06b7d",
+   "masked_on_complete_dem_vs_complete": {
+    "p_equal": 0.739005,
+    "p_below": 0.25503,
+    "p_above": 0.005965,
+    "mean_abs_diff": 7.6775336265563965,
+    "mean_diff": -7.561001777648926,
+    "pearson": 0.59646198824987
+   },
+   "contracted_vs_complete": {
+    "p_equal": 0.73821,
+    "p_below": 0.255795,
+    "p_above": 0.005995,
+    "mean_abs_diff": 7.694634437561035,
+    "mean_diff": -7.577717304229736,
+    "pearson": 0.5955708661130172
+   },
+   "contracted_vs_masked_on_complete_dem": {
+    "p_equal": 0.98443,
+    "p_below": 0.01109,
+    "p_above": 0.00448,
+    "mean_abs_diff": 0.041760750114917755,
+    "mean_diff": -0.016714992001652718,
+    "pearson": 0.9998279080005341
+   },
+   "S_crossing_mass": 1.165161544070645,
+   "mask_spec": {
+    "type": "logical_ambiguity",
+    "K_Q": 234,
+    "q_type": "exp",
+    "essentials_file": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+    "essentials_shots": 2000000
+   },
+   "ops": [
+    {
+     "op": "closure",
+     "tau": 0.0,
+     "applied": 94,
+     "iterations": 9,
+     "S_before": 1.6230939153822364,
+     "S_after": 1.165161544070645,
+     "converged": true,
+     "mask_sum_after": 328
+    }
+   ],
+   "profiling_shots": 2000000
+  },
+  "qexp": {
+   "circuit": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y",
+   "partial": "partial_qexp336_wc15",
+   "seed": 0,
+   "shots": 200000,
+   "postselect_acceptance": 0.5378125,
+   "tol_db": 0.5,
+   "mask_detectors": 336,
+   "num_detectors": 776,
+   "contracted_detectors": 393,
+   "complete_ler": 0.003065,
+   "gap_cap_complete": 68.75709533691406,
+   "mask_sha": "52fb65d2d5b8bd25",
+   "masked_on_complete_dem_vs_complete": {
+    "p_equal": 0.597515,
+    "p_below": 0.396345,
+    "p_above": 0.00614,
+    "mean_abs_diff": 12.461730003356934,
+    "mean_diff": -12.340450286865234,
+    "pearson": 0.47062004725760925
+   },
+   "contracted_vs_complete": {
+    "p_equal": 0.597285,
+    "p_below": 0.39655,
+    "p_above": 0.006165,
+    "mean_abs_diff": 12.464712142944336,
+    "mean_diff": -12.34280776977539,
+    "pearson": 0.47052772365570866
+   },
+   "contracted_vs_masked_on_complete_dem": {
+    "p_equal": 0.973505,
+    "p_below": 0.011135,
+    "p_above": 0.01536,
+    "mean_abs_diff": 0.10245264321565628,
+    "mean_diff": -0.0023586091119796038,
+    "pearson": 0.9989043681732144
+   },
+   "S_crossing_mass": 2.00902952537512,
+   "mask_spec": {
+    "type": "logical_ambiguity",
+    "K_Q": 336,
+    "q_type": "exp",
+    "essentials_file": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+    "essentials_shots": 2000000
+   },
+   "ops": [],
+   "profiling_shots": 2000000
+  },
+  "handmade": {
+   "circuit": "end2end_d1=3_d2=13_r1=3_r2=0_p=0.001_inj=unitary_b=Y",
+   "partial": "partial_l1-16_t1-14_ts1-5_wc15",
+   "seed": 0,
+   "shots": 200000,
+   "postselect_acceptance": 0.5378125,
+   "tol_db": 0.5,
+   "mask_detectors": 335,
+   "num_detectors": 776,
+   "contracted_detectors": 392,
+   "complete_ler": 0.003065,
+   "gap_cap_complete": 68.75709533691406,
+   "mask_sha": "3558dd68ebabfdaa",
+   "masked_on_complete_dem_vs_complete": {
+    "p_equal": 0.567145,
+    "p_below": 0.37031,
+    "p_above": 0.062545,
+    "mean_abs_diff": 12.056112289428711,
+    "mean_diff": -10.517741203308105,
+    "pearson": 0.4846676055952189
+   },
+   "contracted_vs_complete": {
+    "p_equal": 0.551885,
+    "p_below": 0.36965,
+    "p_above": 0.078465,
+    "mean_abs_diff": 12.024194717407227,
+    "mean_diff": -10.380559921264648,
+    "pearson": 0.4842259766708149
+   },
+   "contracted_vs_masked_on_complete_dem": {
+    "p_equal": 0.959365,
+    "p_below": 0.00323,
+    "p_above": 0.037405,
+    "mean_abs_diff": 0.15785013139247894,
+    "mean_diff": 0.1371813714504242,
+    "pearson": 0.9991332590537292
+   },
+   "S_crossing_mass": 1.7014632807884142,
+   "mask_spec": {
+    "type": "region",
+    "left_len": [
+     1,
+     16
+    ],
+    "top_len": [
+     1,
+     14
+    ],
+    "t": [
+     1,
+     5
+    ],
+    "mode": "rectangle",
+    "triangle_half": "left",
+    "stage_name": "escape"
+   },
+   "ops": [],
+   "profiling_shots": null
+  }
+ },
+ "handmade": {
+  "left_len": [
+   1,
+   16
+  ],
+  "top_len": [
+   1,
+   14
+  ],
+  "t": [
+   1,
+   5
+  ]
+ }
+}

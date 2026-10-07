@@ -1,0 +1,23 @@
+# conda environment for MagiC-Firm: conda env create -f environment.yml && conda activate magicfirm
+# Versions are the ones the paper's results were produced with.
+name: magicfirm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - verilator=5.050          # RTL simulation only; remove if not needed
+  - pip
+  - pip:
+      - stim==1.15.0
+      - sinter==1.15.0
+      - pymatching==2.3.1
+      - numpy==2.4.4
+      - scipy==1.17.1
+      - matplotlib==3.10.8
+      - networkx==3.6.1
+      - cairosvg==2.9.0        # figures: rasterizes the pipeline drawing
+      - pillow==12.2.0
+      - chromobius==1.1.1      # cultivation circuits (colour-code decoder used by the upstream package)
+      - pygltflib==1.16.5       # imported by the upstream cultivation package
+      - pytest==9.0.3
+      - hypothesis==6.152.3

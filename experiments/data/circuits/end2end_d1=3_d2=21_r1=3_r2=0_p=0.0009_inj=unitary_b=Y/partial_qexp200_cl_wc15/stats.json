@@ -1,0 +1,135 @@
+{
+  "mask": {
+    "num_detectors": 1996,
+    "mask_sum": 279,
+    "mask_ratio": 0.13977955911823647,
+    "base": {
+      "type": "logical_ambiguity",
+      "K_Q": 200,
+      "q_type": "exp",
+      "essentials_file": "end2end_d1=3_d2=21_r1=3_r2=0_p=0.0009_inj=unitary_b=Y_logical_ambiguity_shots2000000.json",
+      "essentials_shots": 2000000
+    },
+    "ops": [
+      {
+        "op": "closure",
+        "tau": 0.0,
+        "applied": 79,
+        "iterations": 7,
+        "S_before": 1.3035183308281928,
+        "S_after": 0.9327437272158301,
+        "converged": true,
+        "mask_sum_after": 279
+      }
+    ],
+    "S_crossing_mass": 0.9327437272158301,
+    "q_coverage": {
+      "all": 0.9314809720211275,
+      "exp": 0.9840652043477809
+    }
+  },
+  "original": {
+    "detector_degree": {
+      "min": 3.0,
+      "mean": 59.44639278557114,
+      "median": 70.0,
+      "max": 257.0,
+      "p95": 80.0,
+      "p99": 137.0
+    },
+    "fault_node_degree": {
+      "min": 1.0,
+      "mean": 3.3294517088501037,
+      "median": 4.0,
+      "max": 10.0,
+      "p95": 4.0,
+      "p99": 5.0
+    },
+    "num_detectors": 1996,
+    "num_observables": 1,
+    "num_fault_nodes": 35638,
+    "num_components": 35638,
+    "n_zero_det": 0,
+    "n_boundary_edges": 478,
+    "n_edges": 9501,
+    "n_hyperedges": 25659,
+    "n_obs_flipping": 3981,
+    "max_detector_degree": 257,
+    "avg_detector_degree": 59.44639278557114,
+    "max_fault_node_degree": 10
+  },
+  "desaturated_with_obs": {
+    "detector_degree": {
+      "min": 0.0,
+      "mean": 57.656113005358016,
+      "median": 68.0,
+      "max": 3897.0,
+      "p95": 80.0,
+      "p99": 80.0
+    },
+    "fault_node_degree": {
+      "min": 1.0,
+      "mean": 1.9786700544950018,
+      "median": 2.0,
+      "max": 2.0,
+      "p95": 2.0,
+      "p99": 2.0
+    },
+    "num_detectors": 2053,
+    "num_observables": 1,
+    "num_fault_nodes": 34828,
+    "num_components": 59822,
+    "n_zero_det": 0,
+    "n_boundary_edges": 1276,
+    "n_edges": 58546,
+    "n_hyperedges": 0,
+    "n_obs_flipping": 3828,
+    "max_detector_degree": 3897,
+    "avg_detector_degree": 57.656113005358016,
+    "max_fault_node_degree": 2
+  },
+  "contracted": {
+    "detector_degree": {
+      "min": 1.0,
+      "mean": 44.55952380952381,
+      "median": 44.0,
+      "max": 413.0,
+      "p95": 80.0,
+      "p99": 91.0
+    },
+    "fault_node_degree": {
+      "min": 1.0,
+      "mean": 1.9194871794871795,
+      "median": 2.0,
+      "max": 2.0,
+      "p95": 2.0,
+      "p99": 2.0
+    },
+    "num_detectors": 336,
+    "num_observables": 1,
+    "num_fault_nodes": 7800,
+    "num_components": 7800,
+    "n_zero_det": 0,
+    "n_boundary_edges": 628,
+    "n_edges": 7172,
+    "n_hyperedges": 0,
+    "n_obs_flipping": 413,
+    "max_detector_degree": 413,
+    "avg_detector_degree": 44.55952380952381,
+    "max_fault_node_degree": 2
+  },
+  "contraction": {
+    "weight_cutoff": 15.0,
+    "connectivity_fix_type": "per_detector",
+    "n_kept": 336,
+    "n_clipped": 1717,
+    "needed_rounds": {
+      "num_circuit_rounds": 8,
+      "first_needed_round": 3,
+      "last_needed_round": 7,
+      "rounds_saved_at_end": 0,
+      "obs_detector_excluded": true
+    },
+    "obs_detector_new_index": 335
+  }
+}

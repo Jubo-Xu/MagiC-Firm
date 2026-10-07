@@ -1,0 +1,7 @@
+circuit: experiments/data/circuits/end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y/end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y.stim  (1027 detectors)
+[canonical] computing (shots=10000000, gap_threshold=35.0) ...
+[canonical] kept 5387991/10000000 shots, accept/reject = 4875160/512831
+[canonical] wrote experiments/data/circuits/end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y/end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y_canonical_th35_shots10000000.json
+[causal] computing (shots=10000000, subsample=None, workers=64) ...
+[causal] kept 5387968/10000000 shots, scored on 5387968
+[causal] wrote experiments/data/circuits/end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y/end2end_d1=3_d2=15_r1=3_r2=0_p=0.001_inj=unitary_b=Y_causal_shots10000000.json

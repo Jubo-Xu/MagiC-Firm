@@ -1,0 +1,14 @@
+# pip alternative to environment.yml (Python 3.12). Versions as used for the paper.
+stim==1.15.0
+sinter==1.15.0
+pymatching==2.3.1
+numpy==2.4.4
+scipy==1.17.1
+matplotlib==3.10.8
+networkx==3.6.1
+cairosvg==2.9.0
+pillow==12.2.0
+chromobius==1.1.1
+pygltflib==1.16.5
+pytest==9.0.3
+hypothesis==6.152.3
