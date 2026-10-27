@@ -16,10 +16,23 @@ python hardware/synth/gen_synth.py <compiled tree dir> --out-dir <bundles>/<name
     [--part xcvu19p-fsva3824-2-e] [--fifo 4] [--period-ns 2.0] [--select pareto|all]
 ```
 
-A bundle is self-contained: `src/` (a wrapper module per board with its
-literal parameters), `mem/` (the board's register files), `tcl/` (one
-Vivado batch script per board: out-of-context synthesis, placement,
-routing, reports, a JSON summary) and `boards.json`.
+The bundle is written to `<bundles>/<name>/<tree name>/` and is
+self-contained: `src/` (a wrapper module per board with its literal
+parameters), `mem/` (the board's register files), `tcl/` (one Vivado batch
+script per board: out-of-context synthesis, placement, routing, reports, a
+JSON summary) and `boards.json`.
+
+The compiled tree must include the per-board instruction and command-word
+programs and the readout stimulus, because the leaf wrapper takes its
+memory depths from them. Trees written by `gen_control_config.py` do not
+have them; compile the tree again from its circuit and the config that
+script wrote:
+
+```bash
+cd hardware/compiler/control_system
+python cli.py <circuit folder>/<name>.stim <circuit folder>/control_system/config_q14_f29.json \
+    --out <tree parent dir> --instr-reg sim --cw-mem sim --sim readout
+```
 
 - `--part` takes any device Vivado supports; synthesis is out of context
   with a single clock constraint (`--period-ns`), so no board file or pin

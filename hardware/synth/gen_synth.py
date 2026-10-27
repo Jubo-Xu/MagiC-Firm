@@ -222,7 +222,7 @@ def main():
     for d in ("src", "boards", "mem", "tcl"):
         os.makedirs(os.path.join(out, d))
 
-    src = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src"))
+    src = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "rtl", "src"))
     for sub, mods in RTL_MODULES.items():
         for m in mods:
             shutil.copy(os.path.join(src, sub, m + ".sv"), os.path.join(out, "src", m + ".sv"))
